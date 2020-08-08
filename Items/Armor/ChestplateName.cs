@@ -28,10 +28,10 @@ namespace MyFirstBasicMod.Items.Armor
         }
         public override void UpdateEquip(Player player)
         {
-            player.setBonus = "Being the best you possible";
+            player.setBonus = "Being Awesome!";
             player.meleeDamage += 0.15f; //+15 % damage
-            player.rangedDamage += 0.45f; //Ranged damage +45%
-            player.statDefense = (int)(player.statDefense * 1.62f);  // 65% defense
+            player.rangedDamage += 0.15f; //Ranged damage +45%
+            player.statDefense = (int)(player.statDefense * 1.22);  // 65% defense
         }
         public override void AddRecipes()  //How to craft this item
         {
