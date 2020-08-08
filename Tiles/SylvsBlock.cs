@@ -17,7 +17,7 @@ namespace MyFirstBasicMod.Tiles
             Main.tileValue[Type] = 370;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sylv's Block");
-            drop = ItemType<Items.Placeable.SylvsBlock>()            
+            drop = ItemType<Items.Placeable.SylvsBlock>();         
             AddMapEntry(new Color(200, 200, 200));
             soundType = SoundID.Tink;
             soundStyle = 1;
