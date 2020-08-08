@@ -14,7 +14,7 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults() 
 		{
-			item.damage = 1233;
+			item.damage = 300;
 			item.melee = true;
 			item.width = 30;
 			item.height = 60;
@@ -31,7 +31,7 @@ namespace MyFirstBasicMod.Items
 		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 8);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 14);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

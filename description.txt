@@ -1,12 +1,5 @@
 This is Pinkalicious21902's first mod. It's completely based off of his personality so don't judge.
 
-Currently 1 sword
-
-Future plans:
-armor
-mobs
-maybe a boss or 2
-more weapons
-NO I AM NOT ADDING GUNS SO DON'T ASK
+This mod's stuff is mostly overpowered. DO NOT think this is survival-friendly. The whole reason I made this is to test my C# skills lol.
 
 Find me on discord: Pinkalicious21902#3947

@@ -19,7 +19,7 @@ namespace MyFirstBasicMod.Items.Armor
             item.height = 18;
             item.value = 65000;
             item.rare = 2;
-            item.defense = 65;
+            item.defense = 37;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
