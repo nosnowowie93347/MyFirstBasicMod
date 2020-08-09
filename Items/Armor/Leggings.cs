@@ -32,6 +32,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.meleeDamage += 0.15f; //+15 % damage
             player.rangedDamage += 0.15f; //Ranged damage +45%
             player.statDefense = (int)(player.statDefense * 1.22);  // 65% defense
+            player.statLifeMax2 += 70;
         }
         public override void AddRecipes()  //How to craft this item
         {

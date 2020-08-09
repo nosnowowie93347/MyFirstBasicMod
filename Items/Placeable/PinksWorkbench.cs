@@ -1,19 +1,20 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Placeable
 {
-	public class SylvsDoor : ModItem
+	public class PinksWorkbench : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Sylv's Door");
-			Tooltip.SetDefault("Sylv's very own door.\nMade by Sylv.");
+			Tooltip.SetDefault("This is a modded workbench.");
+            DisplayName.SetDefault("Pink's Work Bench");
 		}
 
 		public override void SetDefaults() {
-			item.width = 14;
-			item.height = 28;
+			item.width = 28;
+			item.height = 14;
 			item.maxStack = 99;
 			item.useTurn = true;
 			item.autoReuse = true;
@@ -22,13 +23,13 @@ namespace MyFirstBasicMod.Items.Placeable
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = TileType<Tiles.SylvsDoorClosed>();
+			item.createTile = TileType<Tiles.PinksWorkbench>();
 		}
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.WorkBench);
 			recipe.AddIngredient(ItemType<SylvsBlock>(), 10);
-			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

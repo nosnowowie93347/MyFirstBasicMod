@@ -14,7 +14,6 @@ namespace MyFirstBasicMod.Tiles
             Main.tileSolid[Type] = true;
             Main.tileMergeDirt[Type] = true;
             Main.tileBlockLight[Type] = true;
-            Main.tileValue[Type] = 370;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sylv's Block");
             drop = ItemType<Items.Placeable.SylvsBlock>();         

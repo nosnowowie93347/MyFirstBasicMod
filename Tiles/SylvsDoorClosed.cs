@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
-using MyFirstBasicMod.Items.Placeable
+using MyFirstBasicMod.Items.Placeable;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
@@ -57,14 +57,14 @@ namespace MyFirstBasicMod.Tiles
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY) {
-			Item.NewItem(i * 16, j * 16, 16, 48, ItemType<ExampleDoor>());
+			Item.NewItem(i * 16, j * 16, 16, 48, ItemType<Items.Placeable.SylvsDoor>());
 		}
 
 		public override void MouseOver(int i, int j) {
 			Player player = Main.LocalPlayer;
 			player.noThrow = 2;
 			player.showItemIcon = true;
-			player.showItemIcon2 = ItemType<ExampleDoor>();
+			player.showItemIcon2 = ItemType<Items.Placeable.SylvsDoor>();
 		}
 	}
 }

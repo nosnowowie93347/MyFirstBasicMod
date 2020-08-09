@@ -14,14 +14,14 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults() 
 		{
-			item.damage = 300;
+			item.damage = 250;
 			item.melee = true;
 			item.width = 30;
 			item.height = 60;
-			item.useTime = 5;
-			item.useAnimation = 5;
+			item.useTime = 11;
+			item.useAnimation = 11;
 			item.useStyle = 1;
-			item.knockBack = 9;
+			item.knockBack = 7;
 			item.value = 99999;
 			item.rare = 3;
 			item.UseSound = SoundID.Item16;
