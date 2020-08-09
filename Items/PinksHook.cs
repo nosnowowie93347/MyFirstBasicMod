@@ -38,6 +38,13 @@ namespace MyFirstBasicMod.Items
 			item.shootSpeed = 18f; // how quickly the hook is shot.
 			item.shoot = ProjectileType<PinksHookProjectile>();
 		}
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 16);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 
 	internal class PinksHookProjectile : ModProjectile
