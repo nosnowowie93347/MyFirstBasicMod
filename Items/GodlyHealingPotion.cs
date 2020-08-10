@@ -3,7 +3,7 @@ using Terraria.ID;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
-
+using static Terraria.ModLoader.ModContent;
 namespace MyFirstBasicMod.Items
 {
 	public class GodlyHealingPotion : ModItem

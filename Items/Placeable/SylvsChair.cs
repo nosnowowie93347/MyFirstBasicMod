@@ -9,7 +9,7 @@ namespace MyFirstBasicMod.Items.Placeable
 	{
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Sylv's Chair");
-			Tooltip.SetDefault("This is a modded chair made by Sylv.");
+			Tooltip.SetDefault("This chair was made by Sylv.\nDo not underestimate its power.");
 		}
 
 		public override void SetDefaults() {
