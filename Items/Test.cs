@@ -31,7 +31,7 @@ namespace MyFirstBasicMod.Items
 		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 14);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 15);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

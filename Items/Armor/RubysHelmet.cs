@@ -10,7 +10,7 @@ namespace MyFirstBasicMod.Items.Armor
 	{
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Ruby's Helmet");
-			Tooltip.SetDefault("Ruby's very own helmet. \nNot part of a set");
+			Tooltip.SetDefault("Ruby's very own helmet. \n-15% aggro, +70 Life");
 		}
 
 		public override void SetDefaults() {
@@ -20,9 +20,13 @@ namespace MyFirstBasicMod.Items.Armor
 			item.rare = ItemRarityID.Green;
 			item.defense = 17;
 		}
-        public override void UpdateArmorSet(Player player) {
-            player.statLifeMax2 += 70;
-}
+        public override void UpdateEquip(Player player)
+        {
+            base.UpdateEquip(player);
+			player.aggro -= (int)(player.aggro -0.15);
+			player.statLifeMax2 += 70;
+        }
+
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);

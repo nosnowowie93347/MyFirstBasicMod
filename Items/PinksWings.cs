@@ -24,7 +24,7 @@ namespace MyFirstBasicMod.Items
 		}
 		//these wings use the same values as the solar wings
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.wingTimeMax = 195;
+			player.wingTimeMax = 211;
 		}
 
 		public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
@@ -38,7 +38,7 @@ namespace MyFirstBasicMod.Items
 
 		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration) {
 			speed = 9f;
-			acceleration *= 2.75f;
+			acceleration *= 2.83f;
 		}
 
 		public override void AddRecipes() {

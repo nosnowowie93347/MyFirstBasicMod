@@ -42,5 +42,13 @@ namespace MyFirstBasicMod
 				}
 			}
 		}
+
+		public override void GetFishingLevel(Item fishingRod, Item bait, ref int fishingLevel)
+		{
+			if (player.FindBuffIndex(BuffType<Buffs.CarMount>()) > -1)
+			{
+				fishingLevel = (int)(fishingLevel * 1.1f);
+			}
+		}
 	}
 }
