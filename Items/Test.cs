@@ -20,10 +20,10 @@ namespace MyFirstBasicMod.Items
 			item.height = 60;
 			item.useTime = 11;
 			item.useAnimation = 11;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 7;
 			item.value = 99999;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 			item.UseSound = SoundID.Item16;
 			item.autoReuse = true;
 		}

@@ -24,7 +24,9 @@ namespace MyFirstBasicMod
 		public bool manaHeart;
 		public int manaHeartCounter;
 
-		public override void OnConsumeMana(Item item, int manaConsumed) {
+        public int constantDamage { get; internal set; }
+
+        public override void OnConsumeMana(Item item, int manaConsumed) {
 			if (manaHeart) {
 				manaHeartCounter += manaConsumed;
 				if (manaHeartCounter >= 200) { 					
@@ -45,10 +47,6 @@ namespace MyFirstBasicMod
 
 		public override void GetFishingLevel(Item fishingRod, Item bait, ref int fishingLevel)
 		{
-			if (player.FindBuffIndex(BuffType<Buffs.CarMount>()) > -1)
-			{
-				fishingLevel = (int)(fishingLevel * 1.1f);
-			}
 		}
 	}
 }
