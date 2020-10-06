@@ -1,20 +1,20 @@
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items
 {
-	public class Test : ModItem
+	public class SwordOfDreams : ModItem
 	{
-		public override void SetStaticDefaults() 
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pink's Sword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Waaaaaay too overpowered.\nIt's OPNess is over 9000!!");
+			DisplayName.SetDefault("Sword of Dreams"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("This sword belongs to a user going by the name Dream.\nIt's OPNess is over 9000!!");
 		}
 
-		public override void SetDefaults() 
+		public override void SetDefaults()
 		{
-			item.damage = 250;
+			item.damage = 150;
 			item.melee = true;
 			item.width = 30;
 			item.height = 60;
@@ -28,7 +28,7 @@ namespace MyFirstBasicMod.Items
 			item.autoReuse = true;
 		}
 
-		public override void AddRecipes() 
+		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 15);
