@@ -31,17 +31,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\owenr\\.nuget\\packages\\": {}
+    "C:\\Users\\owenr\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Libraries\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+      "projectUniqueName": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
       "projectName": "MyFirstBasicMod",
-      "projectPath": "G:\\Libraries\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+      "projectPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
       "packagesPath": "C:\\Users\\owenr\\.nuget\\packages\\",
-      "outputPath": "G:\\Libraries\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\obj\\",
+      "outputPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\owenr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -71,8 +75,7 @@
             "target": "Package",
             "version": "[0.1.*, )"
           }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
       }
     }
   }

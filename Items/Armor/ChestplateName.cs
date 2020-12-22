@@ -19,7 +19,7 @@ namespace MyFirstBasicMod.Items.Armor
             item.height = 18;
             item.value = 65000;
             item.rare = ItemRarityID.Green;
-            item.defense = 37;
+            item.defense = 30;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -31,14 +31,14 @@ namespace MyFirstBasicMod.Items.Armor
             player.setBonus = "Being Awesome!";
             player.meleeDamage += 0.15f; //+15 % damage
             player.rangedDamage += 0.15f; //Ranged damage +45%
-            player.statDefense = (int)(player.statDefense * 1.22);  // 65% defense
-            player.statLifeMax2 += 70;
+            player.statDefense = (int)(player.statDefense * 0.65);  // 65% defense
+            player.statLifeMax2 += 30;
         }
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 30);   //you need 10 Wood
-            recipe.AddTile(TileID.WorkBenches);   //at work bench
+            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 37);   
+            recipe.AddTile(TileID.MythrilAnvil);   //at mythril anvil
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

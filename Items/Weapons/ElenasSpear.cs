@@ -39,5 +39,14 @@ namespace MyFirstBasicMod.Items.Weapons
 			// Ensures no more than one spear can be thrown out, use this when using autoReuse
 			return player.ownedProjectileCounts[item.shoot] < 1;
 		}
-	}
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemType<Placeable.PinksBar>(), 20);
+            recipe.AddIngredient(ItemID.DarkLance, 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+        }
+    }
 }

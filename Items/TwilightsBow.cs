@@ -16,7 +16,7 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 250;
+			item.damage = 100;
 			item.ranged = true;
 			item.width = 34;
 			item.height = 55;
@@ -36,7 +36,8 @@ namespace MyFirstBasicMod.Items
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 10);
+			recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 20);
+            recipe.AddIngredient(ItemID.MoltenFury, 1);
 			recipe.AddTile(TileType<PinksWorkbench>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();

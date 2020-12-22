@@ -1,6 +1,6 @@
 This is Pinkalicious21902's first mod. It's completely based off of him and his friends so don't judge.
 
-This mod's stuff is mostly overpowered. The whole reason I made this is to test my C# skills lol.
+This mod's stuff is kinda overpowered, but I'm working on balancing it by making stuff expensive to craft. The whole reason I made this is to test my C# skills lol.
 
 
 Find me on discord: Pinkalicious21902#3947
