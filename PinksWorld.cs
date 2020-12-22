@@ -43,7 +43,7 @@ namespace MyFirstBasicMod
 				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY); // WorldGen.worldSurfaceLow is actually the highest surface tile. In practice you might want to use WorldGen.rockLayer or other WorldGen values.
 
 				// Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place. Feel free to experiment with strength and step to see the shape they generate.
-				WorldGen.TileRunner(x, y, WorldGen.genRand.Next(2, 5), WorldGen.genRand.Next(1, 5), TileType<PinksOre>());
+				WorldGen.TileRunner(x, y, WorldGen.genRand.Next(16, 19), WorldGen.genRand.Next(15, 19), TileType<PinksOre>());
 
 				
 			}

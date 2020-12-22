@@ -16,7 +16,7 @@ namespace MyFirstBasicMod.Items.Weapons
 		}
 
 		public override void SetDefaults() {
-			item.damage = 228;
+			item.damage = 80;
 			item.ranged = true;
 			item.width = 8;
 			item.height = 8;
@@ -40,7 +40,7 @@ namespace MyFirstBasicMod.Items.Weapons
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MusketBall, 50);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this, 50);
 			recipe.AddRecipe();
 		}
