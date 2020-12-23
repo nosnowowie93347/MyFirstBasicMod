@@ -23,9 +23,35 @@ namespace MyFirstBasicMod
 
 		public bool manaHeart;
 		public int manaHeartCounter;
+        public const int maxExampleLifeFruits = 10;
+        public int exampleLifeFruits;
 
         public int constantDamage { get; internal set; }
+        public override void ResetEffects () {
+                  player.statLifeMax2 += exampleLifeFruits * 2;
+        }
+        public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {
+			ModPacket packet = mod.GetPacket();
+			packet.Write(exampleLifeFruits);
+			packet.Send(toWho, fromWho);
+		}
+        public override TagCompound Save() {
+			// Read https://github.com/tModLoader/tModLoader/wiki/Saving-and-loading-using-TagCompound to better understand Saving and Loading data.
+			return new TagCompound {
+				{"exampleLifeFruits", exampleLifeFruits},
 
+
+			};
+			//note that C# 6.0 supports indexer initializers
+			//return new TagCompound {
+			//	["score"] = score
+			//};
+		}
+
+		public override void Load(TagCompound tag) {
+			
+			exampleLifeFruits = tag.GetInt("exampleLifeFruits");
+			}
         public override void OnConsumeMana(Item item, int manaConsumed) {
 			if (manaHeart) {
 				manaHeartCounter += manaConsumed;
