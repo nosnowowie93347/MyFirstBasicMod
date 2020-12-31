@@ -1,0 +1,26 @@
+[18:53:20] [46/WARN] [tML]: Silently Caught Exception: 
+System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at FargowiltasSouls.Fargowiltas.AddThoriumPets() in FargowiltasSouls\Fargowiltas.cs:line 860
+   at FargowiltasSouls.Fargowiltas.PostSetupContent() in FargowiltasSouls\Fargowiltas.cs:line 827
+   at Terraria.ModLoader.ModContent.<>c.<Load>b__38_1(Mod mod) in tModLoader\Terraria.ModLoader\ModContent.cs:line 369
+   at Terraria.ModLoader.ModContent.LoadModContent(CancellationToken token, Action`1 loadAction) in tModLoader\Terraria.ModLoader\ModContent.cs:line 398
+   at Terraria.ModLoader.ModContent.Load(CancellationToken token) in tModLoader\Terraria.ModLoader\ModContent.cs:line 371
+   at Terraria.ModLoader.ModLoader.Load(CancellationToken token) in tModLoader\Terraria.ModLoader\ModLoader.cs:line 140
+   at Terraria.ModLoader.ModLoader.<>c__DisplayClass42_0.<BeginLoad>b__0() in tModLoader\Terraria.ModLoader\ModLoader.cs:line 117
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+   at System.Threading.Tasks.Task.ExecutionContextCallback(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+   at System.Threading.Tasks.Task.ExecuteEntry(Boolean bPreventDoubleExecution)
+   at System.Threading.Tasks.Task.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+
+[18:53:20] [46/INFO] [FargowiltasSouls]: FargowiltasSouls PostSetupContent Error:    at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at FargowiltasSouls.Fargowiltas.AddThoriumPets() in FargowiltasSouls\Fargowiltas.cs:line 859
+   at FargowiltasSouls.Fargowiltas.PostSetupContent() in FargowiltasSouls\Fargowiltas.cs:line 827An item with the same key has already been added.
