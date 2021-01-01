@@ -15,7 +15,7 @@ namespace MyFirstBasicMod.Items.Weapons
 
         public override void SetDefaults()
         {
-            item.damage = 90;
+            item.damage = 140;
             item.noMelee = true;
             item.magic = true;
             item.channel = true; //Channel so that you can hold the weapon [Important]
@@ -36,7 +36,7 @@ namespace MyFirstBasicMod.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemType<Placeable.PinksBar>(), 20);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileType<Tiles.PinksAnvil>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

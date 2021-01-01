@@ -13,8 +13,8 @@ namespace MyFirstBasicMod.Items.Placeable
 
 		public override void SetDefaults()
 		{
-			item.width = 24;
-			item.height = 14;
+			item.width = 14;
+			item.height = 24;
 			item.maxStack = 99;
 			item.useTurn = true;
 			item.autoReuse = true;

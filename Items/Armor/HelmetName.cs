@@ -11,7 +11,7 @@ namespace MyFirstBasicMod.Items.Armor
         
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pink's Helmet");
-            Tooltip.SetDefault("Pink's Helmet");
+            Tooltip.SetDefault("Pink's Helmet\n Immune to most debuffs");
         }
         public override void SetDefaults()
         {
@@ -29,6 +29,20 @@ namespace MyFirstBasicMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.setBonus = "Being Awesome!";
+            player.buffImmune[BuffID.OnFire] = true;
+            player.buffImmune[BuffID.WitheredWeapon] = true;
+            player.buffImmune[BuffID.WitheredArmor] = true;
+            player.buffImmune[BuffID.Stoned] = true;
+            player.buffImmune[BuffID.Obstructed] = true;
+            player.buffImmune[BuffID.Silenced] = true;
+            player.buffImmune[BuffID.Slow] = true;
+            player.buffImmune[BuffID.Electrified] = true;
+            player.buffImmune[BuffID.BrokenArmor] = true;
+            player.buffImmune[BuffID.Bleeding] = true;
+            player.buffImmune[BuffID.Ichor] = true;
+            player.buffImmune[BuffID.OgreSpit] = true;
+            player.buffImmune[BuffID.Cursed] = true;
+            player.buffImmune[BuffID.CursedInferno] = true;
             player.meleeDamage += 0.15f; //+15 % damage
             player.rangedDamage += 0.15f; //Ranged damage +45%
             player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
@@ -38,7 +52,7 @@ namespace MyFirstBasicMod.Items.Armor
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 25);   //you need 10 Wood
-            recipe.AddTile(TileID.MythrilAnvil);   //at work bench
+            recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());   //at work bench
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
