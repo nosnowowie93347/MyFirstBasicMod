@@ -47,10 +47,6 @@ namespace MyFirstBasicMod.Items.Abomination
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-			recipe = new ModRecipe(mod);
-			recipe.AddTile(TileType<PinksWorkbench>());
-			recipe.SetResult(this, 20);
-			recipe.AddRecipe();
 		}
 	}
 }
