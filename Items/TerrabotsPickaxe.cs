@@ -16,7 +16,7 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults() {
 			item.damage = 300;
-			item.melee = true;
+			Item.DamageType = DamageClass.Melee
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 6;
