@@ -37,5 +37,9 @@
 
 # Build results
 [Dd]ebug/
+/src
+**/bin/
+**/obj/
+**/packages/
 [Dd]ebugPublic/
 /setup/logs
