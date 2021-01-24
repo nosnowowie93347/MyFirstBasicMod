@@ -1,4 +1,4 @@
-﻿using Terraria.ID;
+using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -14,18 +14,18 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults()
 		{
-			item.damage = 150;
-			item.melee = true;
-			item.width = 30;
-			item.height = 60;
-			item.useTime = 11;
-			item.useAnimation = 11;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 7;
-			item.value = 99999;
-			item.rare = ItemRarityID.Orange;
-			item.UseSound = SoundID.Item16;
-			item.autoReuse = true;
+			Item.damage = 150;
+			Item.DamageType = DamageClass.Melee
+			Item.width = 30;
+			Item.height = 60;
+			Item.useTime = 11;
+			Item.useAnimation = 11;
+			Item.useStyle = ItemUseStyleID.SwingThrow;
+			Item.knockBack = 7;
+			Item.value = 99999;
+			Item.rare = ItemRarityID.Orange;
+			Item.UseSound = SoundID.Item16;
+			Item.autoReuse = true;
 		}
 
 		public override void AddRecipes()
