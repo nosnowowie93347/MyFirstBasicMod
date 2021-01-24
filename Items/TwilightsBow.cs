@@ -1,6 +1,7 @@
 using MyFirstBasicMod.Tiles;
 using Terraria.ID;
 using Terraria;
+using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria.ModLoader;
@@ -17,7 +18,7 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults() {
 			item.damage = 100;
-			item.ranged = true;
+			Item.DamageType = DamageClass.Ranged;
 			item.width = 34;
 			item.height = 55;
 			item.useTime = 12;
@@ -52,33 +53,6 @@ namespace MyFirstBasicMod.Items
 		{
 			return Main.rand.NextFloat() >= .58f;
 		}
-
-		// What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
-		// Uzi/Molten Fury style: Replace normal Bullets with Highvelocity
-		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			if (type == ProjectileID.Bullet) // or ProjectileID.WoodenArrowFriendly
-			{
-				type = ProjectileID.BulletHighVelocity; // or ProjectileID.FireArrow;
-			}
-			return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
-		}*/
-
-		// What if I wanted it to shoot like a shotgun?
-		// Shotgun style: Multiple Projectiles, Random spread 
-		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			int numberProjectiles = 4 + Main.rand.Next(2); // 4 or 5 shots
-			for (int i = 0; i < numberProjectiles; i++)
-			{
-				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.
-				// If you want to randomize the speed to stagger the projectiles
-				// float scale = 1f - (Main.rand.NextFloat() * .3f);
-				// perturbedSpeed = perturbedSpeed * scale; 
-				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
-			}
-			return false; // return false because we don't want tmodloader to shoot projectile
-		}*/
 
 		// What if I wanted an inaccurate gun? (Chain Gun)
 		// Inaccurate Gun style: Single Projectile, Random spread 
