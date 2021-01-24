@@ -16,7 +16,7 @@ using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod
 {
-	public class PinksWorld : ModWorld
+	public class PinksWorld : ModSystem
 	{
 
 		
@@ -32,9 +32,9 @@ namespace MyFirstBasicMod
 
 	
 
-		private void MyFirstBasicModOres(GenerationProgress progress) {
+		private void MyFirstBasicModOres(GameConfiguration configuration) {
 			// progress.Message is the message shown to the user while the following code is running. Try to make your message clear. You can be a little bit clever, but make sure it is descriptive enough for troubleshooting purposes. 
-			progress.Message = "My First Basic Mod Ores";
+			configuration.Message = "My First Basic Mod Ores";
 
 			for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++) {
 				// The inside of this for loop corresponds to one single splotch of our Ore.
