@@ -17,7 +17,7 @@ namespace MyFirstBasicMod.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Pink's Anvil");
 			AddMapEntry(new Color(200, 200, 200), name);
-			disableSmartCursor = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
 			adjTiles = new int[] { TileID.Anvils };
 		}
 

@@ -4,31 +4,27 @@ using Terraria.ID;
 
 namespace MyFirstBasicMod.Items.Placeable
 {
-	public class SylvsWall : ModItem
-	{
-		public override void SetStaticDefaults() {
+    public class SylvsWall : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
             DisplayName.SetDefault("Sylv's Wall");
-			Tooltip.SetDefault("This is a modded wall for Sylv.");
-		}
+            Tooltip.SetDefault("This is a modded wall for Sylv.");
+        }
 
-		public override void SetDefaults() {
-			item.width = 12;
-			item.height = 12;
-			item.maxStack = 999;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 7;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.consumable = true;
-			item.createWall = WallType<Walls.SylvsWall>();
-		}
+        public override void SetDefaults()
+        {
+            Item.width = 12;
+            Item.height = 12;
+            Item.maxStack = 999;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.useAnimation = 15;
+            Item.useTime = 7;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.consumable = true;
+            Item.createWall = WallType<Walls.SylvsWall>();
+        }
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemType<SylvsBlock>());
-			recipe.SetResult(this, 4);
-			recipe.AddRecipe();
-		}
-	}
+    }
 }

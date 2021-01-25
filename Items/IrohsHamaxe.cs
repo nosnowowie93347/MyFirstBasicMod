@@ -16,28 +16,29 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 65;
-			item.melee = true;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 4;
-			item.useAnimation = 4;
-			item.axe = 190;          //How much axe power the weapon has, note that the axe power displayed in-game is this value multiplied by 5
-			item.hammer = 165;      //How much hammer power the weapon has
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6;
-			item.value = 999999;
-			item.rare = ItemRarityID.Green;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 65;
+            Item.DamageType = DamageClass.Melee;
+            Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 4;
+			Item.useAnimation = 4;
+			Item.axe = 190;          //How much axe power the weapon has, note that the axe power displayed in-game is this value multiplied by 5
+			Item.hammer = 165;      //How much hammer power the weapon has
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.knockBack = 6;
+			Item.value = 999999;
+			Item.rare = ItemRarityID.Green;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 10);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(10)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }
 

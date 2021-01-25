@@ -14,18 +14,18 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 300;
-			item.ranged = true;
-			item.width = 1;
-			item.height = 1;
-			item.maxStack = 999;
-			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
-			item.knockBack = 1.5f;
-			item.value = 10;
-			item.rare = ItemRarityID.Green;
-			item.shoot = ProjectileType<Projectiles.TwilightArrow>();   //The projectile shoot when your weapon using this ammo
-			item.shootSpeed = 16f;                  //The speed of the projectile
-			item.ammo = AmmoID.Arrow;              //The ammo class this ammo belongs to.
+			Item.damage = 300;
+            Item.DamageType = DamageClass.Ranged;
+			Item.width = 1;
+			Item.height = 1;
+			Item.maxStack = 999;
+			Item.consumable = true;             //You need to set the Item consumable so that the ammo would automatically consumed
+			Item.knockBack = 1.5f;
+			Item.value = 10;
+			Item.rare = ItemRarityID.Green;
+			Item.shoot = ProjectileType<Projectiles.TwilightArrow>();   //The projectile shoot when your weapon using this ammo
+			Item.shootSpeed = 16f;                  //The speed of the projectile
+			Item.ammo = AmmoID.Arrow;              //The ammo class this ammo belongs to.
 		}
 
 		// Give each bullet consumed a 20% chance of granting the Wrath buff for 5 seconds
@@ -35,12 +35,13 @@ namespace MyFirstBasicMod.Items
 			}
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WoodenArrow, 50);
-			recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 1);
-			recipe.SetResult(this, 50);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(1)
+                .AddIngredient(ItemID.WoodenArrow, 50)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }

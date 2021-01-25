@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
@@ -20,13 +21,12 @@ namespace MyFirstBasicMod.Tiles
 			Main.tileShine[Type] = 1200;
 			Main.tileFrameImportant[Type] = true;
 			Main.tileNoAttach[Type] = true;
-			Main.tileValue[Type] = 500;
+            Main.tileOreFinderPriority[Type] = 500;
 			TileID.Sets.HasOutlines[Type] = true;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
 			TileObjectData.newTile.Origin = new Point16(0, 1);
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
-			TileObjectData.newTile.HookCheck = new PlacementHook(new Func<int, int, int, int, int, int>(Chest.FindEmptyChest), -1, 0, true);
-			TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(new Func<int, int, int, int, int, int>(Chest.AfterPlacement_Hook), -1, 0, false);
+			
 			TileObjectData.newTile.AnchorInvalidTiles = new[] { 127 };
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newTile.LavaDeath = false;
@@ -38,9 +38,9 @@ namespace MyFirstBasicMod.Tiles
 			name = CreateMapEntryName(Name + "_Locked"); // With multiple map entries, you need unique translation keys.
 			name.SetDefault("Locked Pink's Chest");
 			AddMapEntry(new Color(0, 141, 63), name, MapChestName);
-			disableSmartCursor = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
 			adjTiles = new int[] { TileID.Containers };
-			chest = "Pink's Chest";
+
 			chestDrop = ItemType<Items.Placeable.PinksChest>();
 		}
 
@@ -79,7 +79,7 @@ namespace MyFirstBasicMod.Tiles
 			Chest.DestroyChest(i, j);
 		}
 
-		public override bool NewRightClick(int i, int j) {
+		public override bool RightClick(int i, int j) {
 			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[i, j];
 			Main.mouseRightRelease = false;
@@ -92,13 +92,13 @@ namespace MyFirstBasicMod.Tiles
 				top--;
 			}
 			if (player.sign >= 0) {
-				Main.PlaySound(SoundID.MenuClose);
+				SoundEngine.PlaySound(SoundID.MenuClose);
 				player.sign = -1;
 				Main.editSign = false;
 				Main.npcChatText = "";
 			}
 			if (Main.editChest) {
-				Main.PlaySound(SoundID.MenuTick);
+				SoundEngine.PlaySound(SoundID.MenuTick);
 				Main.editChest = false;
 				Main.npcChatText = "";
 			}
@@ -111,42 +111,14 @@ namespace MyFirstBasicMod.Tiles
 				if (left == player.chestX && top == player.chestY && player.chest >= 0) {
 					player.chest = -1;
 					Recipe.FindRecipes();
-					Main.PlaySound(SoundID.MenuClose);
+					SoundEngine.PlaySound(SoundID.MenuClose);
 				}
 				else {
 					NetMessage.SendData(MessageID.RequestChestOpen, -1, -1, null, left, (float)top, 0f, 0f, 0, 0, 0);
 					Main.stackSplit = 600;
 				}
 			}
-			else {
-				if (isLocked) {
-					int key = ItemType<Items.PinksChestKey>();
-					if (player.ConsumeItem(key) && Chest.Unlock(left, top)) {
-						if (Main.netMode == NetmodeID.MultiplayerClient) {
-							NetMessage.SendData(MessageID.Unlock, -1, -1, null, player.whoAmI, 1f, (float)left, (float)top);
-						}
-					}
-				}
-				else {
-					int chest = Chest.FindChest(left, top);
-					if (chest >= 0) {
-						Main.stackSplit = 600;
-						if (chest == player.chest) {
-							player.chest = -1;
-							Main.PlaySound(SoundID.MenuClose);
-						}
-						else {
-							player.chest = chest;
-							Main.playerInventory = true;
-							Main.recBigList = false;
-							player.chestX = left;
-							player.chestY = top;
-							Main.PlaySound(player.chest < 0 ? SoundID.MenuOpen : SoundID.MenuTick);
-						}
-						Recipe.FindRecipes();
-					}
-				}
-			}
+
 			return true;
 		}
 
@@ -162,29 +134,21 @@ namespace MyFirstBasicMod.Tiles
 				top--;
 			}
 			int chest = Chest.FindChest(left, top);
-			player.showItemIcon2 = -1;
+            player.cursorItemIconID = -1;
 			if (chest < 0) {
-				player.showItemIconText = Language.GetTextValue("LegacyChestType.0");
+				player.cursorItemIconText = Language.GetTextValue("LegacyChestType.0");
 			}
-			else {
-				player.showItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Pink's Chest";
-				if (player.showItemIconText == "Pink's Chest") {
-					player.showItemIcon2 = ItemType<Items.Placeable.PinksChest>();
-					if (Main.tile[left, top].frameX / 36 == 1)
-						player.showItemIcon2 = ItemType<Items.PinksChestKey>();
-					player.showItemIconText = "";
-				}
-			}
+
 			player.noThrow = 2;
-			player.showItemIcon = true;
+            player.cursorItemIconEnabled = true;
 		}
 
 		public override void MouseOverFar(int i, int j) {
 			MouseOver(i, j);
 			Player player = Main.LocalPlayer;
-			if (player.showItemIconText == "") {
-				player.showItemIcon = false;
-				player.showItemIcon2 = 0;
+			if (player.cursorItemIconText == "") {
+                player.cursorItemIconEnabled = false;
+                player.cursorItemIconID = 0;
 			}
 		}
 	}

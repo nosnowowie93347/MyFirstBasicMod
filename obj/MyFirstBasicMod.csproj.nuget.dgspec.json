@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj": {}
+    "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj": {
+    "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+        "projectUniqueName": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
         "projectName": "MyFirstBasicMod",
-        "projectPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+        "projectPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
         "packagesPath": "C:\\Users\\owenr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\obj\\",
+        "outputPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\owenr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\owenr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net45"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,12 +43,6 @@
         "net45": {
           "targetAlias": "net45",
           "dependencies": {
-            "Microsoft.NETFramework.ReferenceAssemblies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )",
-              "autoReferenced": true
-            },
             "tModLoader.CodeAssist": {
               "target": "Package",
               "version": "[0.1.*, )"

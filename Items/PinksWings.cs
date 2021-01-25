@@ -16,11 +16,11 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.width = 22;
-			item.height = 20;
-			item.value = 10000;
-			item.rare = ItemRarityID.Green;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 20;
+			Item.value = 10000;
+			Item.rare = ItemRarityID.Green;
+			Item.accessory = true;
 		}
 		//these wings use the same values as the solar wings
 		public override void UpdateAccessory(Player player, bool hideVisual) {
@@ -41,12 +41,12 @@ namespace MyFirstBasicMod.Items
 			acceleration *= 2.83f;
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 30);
-			recipe.AddTile(TileType<Tiles.PinksAnvil>());
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(10)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }

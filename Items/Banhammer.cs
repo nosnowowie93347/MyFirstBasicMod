@@ -16,28 +16,29 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 85;
-			item.melee = true;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 4;
-			item.useAnimation = 4;
-			item.hammer = 105;      //How much hammer power the weapon has
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6;
-			item.value = 99999;
-			item.rare = ItemRarityID.Green;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 85;
+            Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 4;
+			Item.useAnimation = 4;
+			Item.hammer = 105;      //How much hammer power the weapon has
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.knockBack = 6;
+			Item.value = 99999;
+			Item.rare = ItemRarityID.Green;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 19);
-			recipe.AddIngredient(ModContent.ItemType<Items.EpicSoul>(), 5);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(19)
+                .AddIngredient<Items.EpicSoul>(9)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }
 

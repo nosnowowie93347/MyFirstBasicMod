@@ -27,7 +27,6 @@ namespace MyFirstBasicMod.Tiles{
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Sylv's Chair");
 			AddMapEntry(new Color(200, 200, 200), name);
-			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Chairs };
 		}
 

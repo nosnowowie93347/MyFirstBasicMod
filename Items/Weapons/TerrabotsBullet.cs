@@ -1,48 +1,43 @@
-using Terraria;
-using Terraria.ID;
 using MyFirstBasicMod.Tiles;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
+using MyFirstBasicMod.Items;
+using Terraria.ID;
+using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Weapons
 {
-	public class TerrabotsBullet : ModItem
-	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Made by Terrabot himself!");
-			DisplayName.SetDefault("Terrabot's Bullet");
-		}
+    public class TerrabotsBullet : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            Tooltip.SetDefault("This is a modded bullet ammo."); // The Item's description, can be set to whatever you want.
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
+        }
 
-		public override void SetDefaults() {
-			item.damage = 80;
-			item.ranged = true;
-			item.width = 8;
-			item.height = 8;
-			item.maxStack = 999;
-			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
-			item.knockBack = 3.25f;
-			item.value = 10;
-			item.rare = ItemRarityID.Green;
-			item.shoot = ProjectileType<Projectiles.TerrabotsBullet>();   //The projectile shoot when your weapon using this ammo
-			item.shootSpeed = 34f;                  //The speed of the projectile
-			item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
-		}
+        public override void SetDefaults()
+        {
+            Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the Item together.
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 8;
+            Item.height = 8;
+            Item.maxStack = 999;
+            Item.consumable = true; // This marks the Item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
+            Item.knockBack = 1.5f;
+            Item.value = 10;
+            Item.rare = ItemRarityID.Green;
+            Item.shoot = ModContent.ProjectileType<Projectiles.TerrabotsBullet>(); //The projectile that weapons fire when using this Item as ammunition.
+            Item.shootSpeed = 16f; // The speed of the projectile.
+            Item.ammo = AmmoID.Bullet; // The ammo class this ammo belongs to.
+        }
 
-		// Give each bullet consumed a 20% chance of granting the Wrath buff for 5 seconds
-		public override void OnConsumeAmmo(Player player) {
-			if (Main.rand.NextBool(5)) {
-				player.AddBuff(BuffID.Wrath, 300);
-			}
-		}
-
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.MusketBall, 50);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this, 50);
-			recipe.AddRecipe();
-		}
-	}
+        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Placeable.PinksBar>(5)
+                .AddIngredient(ItemID.MusketBall, 100)
+                .AddTile<PinksWorkbench>()
+                .Register();
+        }
+    }
 }

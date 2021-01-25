@@ -15,13 +15,13 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.width = 24;
-			item.height = 28;
-			item.value = 100000;
-			item.rare = ItemRarityID.Green;
-			item.accessory = true;
-			item.defense = 100;
-			item.lifeRegen = 19;
+			Item.width = 24;
+			Item.height = 28;
+			Item.value = 100000;
+			Item.rare = ItemRarityID.Green;
+			Item.accessory = true;
+			Item.defense = 100;
+			Item.lifeRegen = 19;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
@@ -30,12 +30,12 @@ namespace MyFirstBasicMod.Items
 			
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 40);
-			recipe.AddTile(ModContent.TileType<Tiles.PinksWorkbench>());
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(40)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }

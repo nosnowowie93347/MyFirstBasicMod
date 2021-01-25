@@ -8,34 +8,33 @@ namespace MyFirstBasicMod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			ItemID.Sets.SortingPriorityMaterials[item.type] = 59; // influences the inventory sort order. 59 is PlatinumBar, higher is more valuable.
+			ItemID.Sets.SortingPriorityMaterials[Item.type] = 59; // influences the inventory sort order. 59 is PlatinumBar, higher is more valuable.
 			DisplayName.SetDefault("Pink's Bar");
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 20;
-			item.height = 20;
-			item.maxStack = 99;
-			item.value = 750;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.useTurn = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.autoReuse = true;
-			item.consumable = true;
-			item.createTile = TileType<Tiles.PinksBar>();
-			item.placeStyle = 0;
+			Item.width = 20;
+			Item.height = 20;
+			Item.maxStack = 99;
+			Item.value = 750;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.useTurn = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.autoReuse = true;
+			Item.consumable = true;
+			Item.createTile = TileType<Tiles.PinksBar>();
+			Item.placeStyle = 0;
 		}
 
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemType<PinksOre>(), 4);
-            recipe.AddIngredient(ItemID.CopperOre, 4);
-            recipe.AddTile(TileID.Furnaces);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksOre>(4)
+                .AddIngredient(ItemID.CopperOre, 4)
+                .AddTile(TileID.Hellforge)
+                .Register();
+        }
+    }
 }

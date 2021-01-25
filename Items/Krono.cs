@@ -14,27 +14,26 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults()
 		{
-			item.damage = 166;
-			item.melee = true;
-			item.width = 40;
-			item.height = 70;
-			item.useTime = 14;
-			item.useAnimation = 11;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 5;
-			item.value = 99999;
-			item.rare = ItemRarityID.Orange;
-			item.UseSound = SoundID.Item16;
-			item.autoReuse = true;
+			Item.damage = 166;
+            Item.DamageType = DamageClass.Melee;
+            Item.width = 40;
+			Item.height = 70;
+			Item.useTime = 14;
+			Item.useAnimation = 11;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.knockBack = 5;
+			Item.value = 99999;
+			Item.rare = ItemRarityID.Orange;
+			Item.UseSound = SoundID.Item16;
+			Item.autoReuse = true;
 		}
 
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 15);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(15)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }

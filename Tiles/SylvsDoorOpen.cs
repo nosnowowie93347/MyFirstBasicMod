@@ -61,7 +61,6 @@ namespace MyFirstBasicMod.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Sylv's Door");
 			AddMapEntry(new Color(200, 200, 200), name);
-			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.OpenDoor };
 			closeDoorID = TileType<SylvsDoorClosed>();
 		}
@@ -81,8 +80,8 @@ namespace MyFirstBasicMod.Tiles
 		public override void MouseOver(int i, int j) {
 			Player player = Main.LocalPlayer;
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			player.showItemIcon2 = ItemType<Items.Placeable.SylvsDoor>();
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = ItemType<Items.Placeable.SylvsDoor>();
 		}
 	}
 }

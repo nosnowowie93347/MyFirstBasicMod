@@ -15,24 +15,17 @@ namespace MyFirstBasicMod.Items.Placeable
     	}
         public override void SetDefaults()
         {
-            item.width = 12;
-            item.height = 12;
-            item.maxStack = 999;
-            item.createTile = TileType<Tiles.SylvsBlock>();
-            item.useTurn = true;
-            item.autoReuse = true;
-            item.useAnimation = 15;
-            item.useTime = 10;
-            item.useStyle = 1;
-            item.consumable = true;
+            Item.width = 12;
+            Item.height = 12;
+            Item.maxStack = 999;
+            Item.createTile = TileType<Tiles.SylvsBlock>();
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.useAnimation = 15;
+            Item.useTime = 10;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.consumable = true;
         }
-        public override void AddRecipes()  //How to craft this item
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 10);   //you need 10 Wood
-            recipe.AddTile(TileID.WorkBenches);   //at work bench
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        }
+
     }
 }

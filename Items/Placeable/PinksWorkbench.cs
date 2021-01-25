@@ -13,25 +13,25 @@ namespace MyFirstBasicMod.Items.Placeable
 		}
 
 		public override void SetDefaults() {
-			item.width = 28;
-			item.height = 14;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = TileType<Tiles.PinksWorkbench>();
+			Item.width = 28;
+			Item.height = 14;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.consumable = true;
+			Item.createTile = TileType<Tiles.PinksWorkbench>();
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WorkBench);
-			recipe.AddIngredient(ItemType<SylvsBlock>(), 10);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.SylvsBlock>(10)
+                .AddIngredient(ItemID.WorkBench, 1)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+        }
+    }
 }

@@ -17,39 +17,38 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 100;
+			Item.damage = 100;
 			Item.DamageType = DamageClass.Ranged;
-			item.width = 34;
-			item.height = 55;
-			item.useTime = 12;
-			item.useAnimation = 12;
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 5;
-			item.value = 99999;
-			item.rare = ItemRarityID.Green;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = false;
-			item.shoot = 10; //idk why but all the guns in the vanilla source have this
-			item.shootSpeed = 31f;
-			item.useAmmo = AmmoID.Arrow;
+			Item.width = 34;
+			Item.height = 55;
+			Item.useTime = 12;
+			Item.useAnimation = 12;
+            Item.useStyle = ItemUseStyleID.Shoot;
+			Item.knockBack = 5;
+			Item.value = 99999;
+			Item.rare = ItemRarityID.Green;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = false;
+			Item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this
+			Item.shootSpeed = 31f;
+			Item.useAmmo = AmmoID.Arrow;
 		}
 
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 20);
-            recipe.AddIngredient(ItemID.MoltenFury, 1);
-			recipe.AddTile(TileType<PinksWorkbench>());
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(20)
+                .AddIngredient(ItemID.MoltenFury)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
 
-		/*
+        /*
 		 * Feel free to uncomment any of the examples below to see what they do
 		 */
 
-		// What if I wanted this gun to have a 38% chance not to consume ammo?
-		public override bool ConsumeAmmo(Player player)
+        // What if I wanted this gun to have a 38% chance not to consume ammo?
+        public override bool ConsumeAmmo(Player player)
 		{
 			return Main.rand.NextFloat() >= .58f;
 		}
@@ -100,14 +99,14 @@ namespace MyFirstBasicMod.Items
 		// How can I get a "Clockwork Assault Rifle" effect?
 		// 3 round burst, only consume 1 ammo for burst. Delay between bursts, use reuseDelay
 		/*	The following changes to SetDefaults()
-		 	item.useAnimation = 12;
-			item.useTime = 4;
-			item.reuseDelay = 14;
+		 	Item.useAnimation = 12;
+			Item.useTime = 4;
+			Item.reuseDelay = 14;
 		public override bool ConsumeAmmo(Player player)
 		{
-			// Because of how the game works, player.itemAnimation will be 11, 7, and finally 3. (UseAmination - 1, then - useTime until less than 0.) 
-			// We can get the Clockwork Assault Riffle Effect by not consuming ammo when itemAnimation is lower than the first shot.
-			return !(player.itemAnimation < item.useAnimation - 2);
+			// Because of how the game works, player.ItemAnimation will be 11, 7, and finally 3. (UseAmination - 1, then - useTime until less than 0.) 
+			// We can get the Clockwork Assault Riffle Effect by not consuming ammo when ItemAnimation is lower than the first shot.
+			return !(player.ItemAnimation < Item.useAnimation - 2);
 		}*/
 
 		// How can I shoot 2 different projectiles at the same time?

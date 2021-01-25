@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "xcBFDd9C2/rqIfSPBBmq4CvJ6VHdAK0tCI/QDsdWHDTPQBZs6glGNi3zNOOMpINW0XwlF345uNBLzDBVOex56Q==",
+  "dgSpecHash": "BSb+FKQWwIZ0XI2rGtUq8oiZ/9W/7v0+Rwqyn99SL3ggDP3w2dlo2wFyA+LDiGuKQSGxHPNia5oanw4T+CZ0HQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+  "projectFilePath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\owenr\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
-    "C:\\Users\\owenr\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net45\\1.0.0\\microsoft.netframework.referenceassemblies.net45.1.0.0.nupkg.sha512",
     "C:\\Users\\owenr\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
   ],
   "logs": []

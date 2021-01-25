@@ -22,7 +22,6 @@ namespace MyFirstBasicMod.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Pink's Workbench");
 			AddMapEntry(new Color(200, 200, 200), name);
-			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.WorkBenches };
 		}
 

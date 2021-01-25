@@ -37,11 +37,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+      "projectUniqueName": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
       "projectName": "MyFirstBasicMod",
-      "projectPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
+      "projectPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\MyFirstBasicMod.csproj",
       "packagesPath": "C:\\Users\\owenr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MyFirstBasicMod\\obj\\",
+      "outputPath": "C:\\Users\\owenr\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\MyFirstBasicMod\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -59,6 +59,7 @@
       },
       "frameworks": {
         "net45": {
+          "targetAlias": "net45",
           "projectReferences": {}
         }
       },
@@ -70,12 +71,14 @@
     },
     "frameworks": {
       "net45": {
+        "targetAlias": "net45",
         "dependencies": {
           "tModLoader.CodeAssist": {
             "target": "Package",
             "version": "[0.1.*, )"
           }
-        }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -15,12 +15,12 @@ namespace MyFirstBasicMod.Items
 		public override void SetDefaults()
 		{
 			Item.damage = 150;
-			Item.DamageType = DamageClass.Melee
+            Item.DamageType = DamageClass.Melee;
 			Item.width = 30;
 			Item.height = 60;
 			Item.useTime = 11;
 			Item.useAnimation = 11;
-			Item.useStyle = ItemUseStyleID.SwingThrow;
+			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 7;
 			Item.value = 99999;
 			Item.rare = ItemRarityID.Orange;
@@ -28,13 +28,12 @@ namespace MyFirstBasicMod.Items
 			Item.autoReuse = true;
 		}
 
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 15);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(15)
+                .AddTile<Tiles.PinksWorkbench>()
+                .Register();
+        }
+    }
 }
