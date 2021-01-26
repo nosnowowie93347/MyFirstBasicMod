@@ -14,7 +14,7 @@ namespace MyFirstBasicMod.Items
     internal class ExampleLifeFruit : ModItem
     {
         public const int MaxExampleLifeFruits = 20;
-        public const int LifePerFruit = 20;
+        public const int LifePerFruit = 10;
 
         public override string Texture => "Terraria/Images/Item_" + ItemID.LifeFruit;
 
@@ -28,6 +28,7 @@ namespace MyFirstBasicMod.Items
         {
             Item.CloneDefaults(ItemID.LifeFruit);
             Item.color = Color.Purple;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
 
         public override bool CanUseItem(Player player)

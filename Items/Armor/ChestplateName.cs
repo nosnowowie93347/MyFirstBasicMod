@@ -19,7 +19,7 @@ namespace MyFirstBasicMod.Items.Armor
             Item.height = 18;
             Item.value = 65000;
             Item.rare = ItemRarityID.Green;
-            Item.defense = 30;
+            Item.defense = 36;
         }
 
         

@@ -26,7 +26,7 @@ namespace MyFirstBasicMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.setBonus = "Being Awesome!";
-            player.GetDamage(DamageClass.Melee) += 0.15f; //+15 % damage
+            player.GetDamage(DamageClass.Melee) += 0.30f; //+15 % damage
             player.GetDamage(DamageClass.Ranged) += 0.15f;
             player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
             player.statLifeMax2 += 30;

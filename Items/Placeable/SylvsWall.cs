@@ -1,6 +1,7 @@
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
+using Terraria.GameContent.Creative;
 
 namespace MyFirstBasicMod.Items.Placeable
 {
@@ -10,6 +11,7 @@ namespace MyFirstBasicMod.Items.Placeable
         {
             DisplayName.SetDefault("Sylv's Wall");
             Tooltip.SetDefault("This is a modded wall for Sylv.");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 999;
         }
 
         public override void SetDefaults()

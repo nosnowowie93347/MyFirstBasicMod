@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -11,8 +12,9 @@ namespace MyFirstBasicMod.Items
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Soul of Epicness");
 			Tooltip.SetDefault("'Pure epicness'");
-			// ticksperframe, frameCount
-			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
+            // ticksperframe, frameCount
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 			ItemID.Sets.AnimatesAsSoul[Item.type] = true;
 			ItemID.Sets.ItemIconPulse[Item.type] = true;
 			ItemID.Sets.ItemNoGravity[Item.type] = true;

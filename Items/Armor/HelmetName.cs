@@ -19,7 +19,7 @@ namespace MyFirstBasicMod.Items.Armor
             Item.height = 18;
             Item.value = 65000;
             Item.rare = ItemRarityID.Green;
-            Item.defense = 22;
+            Item.defense = 24;
         }
 
         
@@ -30,6 +30,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.WitheredWeapon] = true;
             player.buffImmune[BuffID.WitheredArmor] = true;
             player.buffImmune[BuffID.Stoned] = true;
+
             player.buffImmune[BuffID.Obstructed] = true;
             player.buffImmune[BuffID.Silenced] = true;
             player.buffImmune[BuffID.Slow] = true;
@@ -40,8 +41,8 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.OgreSpit] = true;
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.CursedInferno] = true;
-            player.GetDamage(DamageClass.Melee) += 0.15f; //+15 % damage
-            player.GetDamage(DamageClass.Ranged) += 0.15f;
+            player.GetDamage(DamageClass.Melee) += 0.25f; //+15 % damage
+            player.GetDamage(DamageClass.Ranged) += 0.19f;
             player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
             player.statLifeMax2 += 30;
         }

@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.GameContent.Creative;
+
 namespace MyFirstBasicMod.Items
 {
 	public class GodlyHealingPotion : ModItem
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Godly Healing Potion");
-			Tooltip.SetDefault("Heals for half of your maximum life"
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 30;
+            Tooltip.SetDefault("Heals for half of your maximum life"
 				+ "\nHealing amount reduced by half if quick healing");
 		}
 

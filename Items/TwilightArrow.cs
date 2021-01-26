@@ -1,5 +1,6 @@
 using MyFirstBasicMod.Tiles;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -11,7 +12,8 @@ namespace MyFirstBasicMod.Items
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Twilight's Arrow");
 			Tooltip.SetDefault("Behold. You are now in posession of Twilight's Arrow.");
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 999;
+        }
 
 		public override void SetDefaults() {
 			Item.damage = 300;

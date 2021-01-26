@@ -2,6 +2,7 @@ using Terraria.ID;
 using MyFirstBasicMod.Tiles;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.GameContent.Creative;
 
 namespace MyFirstBasicMod.Items.Placeable
 {
@@ -10,7 +11,8 @@ namespace MyFirstBasicMod.Items.Placeable
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Sylv's Chair");
 			Tooltip.SetDefault("This chair was made by Sylv.\nDo not underestimate its power.");
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
+        }
 
 		public override void SetDefaults() {
 			Item.width = 12;

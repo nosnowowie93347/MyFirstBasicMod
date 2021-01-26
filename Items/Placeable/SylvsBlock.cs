@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.ID;
 using System.Collections.Generic;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
 using static Terraria.ModLoader.ModContent;
 
@@ -12,7 +13,8 @@ namespace MyFirstBasicMod.Items.Placeable
     	public override void SetStaticDefaults() {
     		Tooltip.SetDefault("This is Sylv's Block!");
     		DisplayName.SetDefault("Sylv's Block");
-    	}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
+        }
         public override void SetDefaults()
         {
             Item.width = 12;

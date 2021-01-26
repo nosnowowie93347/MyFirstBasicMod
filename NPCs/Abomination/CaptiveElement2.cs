@@ -358,7 +358,7 @@ namespace MyFirstBasicMod.NPCs.Abomination
             var normalModeRule = new OneFromOptionsDropRule(7, 1, new[]
             {
                 ItemType<Items.Test>(),
-                ItemType<Items.SwordOfDreams>(),
+                ItemType<Items.Weapons.SwordOfDreams>(),
                 ItemType<Items.Weapons.TerrabotsGun>(),
                 ItemType<Items.Weapons.ElenasSpear>(),
                 ItemType<Items.IrohsHamaxe>(),

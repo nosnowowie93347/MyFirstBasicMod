@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.GameContent.Creative;
 
 namespace MyFirstBasicMod.Items.Weapons
 {
@@ -13,7 +14,8 @@ namespace MyFirstBasicMod.Items.Weapons
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Made by Terrabot Himself!");
 			DisplayName.SetDefault("Terrabot's Gun");
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+        }
 
 		public override void SetDefaults() {
 			Item.damage = 250;

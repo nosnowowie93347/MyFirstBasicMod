@@ -3,6 +3,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.GameContent.Creative;
 
 namespace MyFirstBasicMod.Items.Placeable
 {
@@ -12,7 +13,8 @@ namespace MyFirstBasicMod.Items.Placeable
 		{
 			DisplayName.SetDefault("Pink's Ore");
 			ItemID.Sets.SortingPriorityMaterials[Item.type] = 58;
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 300;
+        }
 
 		public override void SetDefaults()
 		{

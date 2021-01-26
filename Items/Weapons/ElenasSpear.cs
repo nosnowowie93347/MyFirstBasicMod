@@ -1,5 +1,6 @@
 ﻿using MyFirstBasicMod.Projectiles;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -11,7 +12,8 @@ namespace MyFirstBasicMod.Items.Weapons
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Ellie's Spear");
 			Tooltip.SetDefault("The spear that belongs to my sister!");
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+        }
 
 		public override void SetDefaults() {
 			Item.damage = 80;
