@@ -76,6 +76,7 @@ namespace MyFirstBasicMod.NPCs.Abomination
 			npc.buffImmune[24] = true;
 			music = MusicID.Boss2;
 		}
+		
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{
@@ -322,8 +323,32 @@ namespace MyFirstBasicMod.NPCs.Abomination
 		// We use this hook to prevent any loot from dropping. We do this because this is a multistage npc and it shouldn't drop anything until the final form is dead.
 		public override bool PreNPCLoot()
 		{
-			return false;
+			PinksWorld.downedAbomination = true;
+			return true;
 		}
+		public override void NPCLoot()
+		{
+			if (Main.expertMode) {
+				npc.DropBossBags();
+				return;
+			}
+
+			npc.DropItem(ModContent.ItemType<Items.EpicSoul>(), Main.rand.Next(16, 28));
+			npc.DropItem(ModContent.ItemType<Items.Placeable.PinksBar>(), Main.rand.Next(9, 18));
+
+			int[] lootTable = {
+				ModContent.ItemType<Items.Weapons.TerrabotsGun>(),
+				ModContent.ItemType<Items.Test>(),
+				ModContent.ItemType<Items.Abomination.FoulOrb>(),
+				ModContent.ItemType<Items.Abomination.MoltenDrill>(),
+			};
+			int loot = Main.rand.Next(lootTable.Length);
+			npc.DropItem(lootTable[loot]);
+
+			npc.DropItem(ModContent.ItemType<Items.Armor.AbominationMask>(), 1f / 7);
+			npc.DropItem(ModContent.ItemType<Items.Placeable.AbominationTrophy>(), 1f / 10);
+		}
+
 
 		// We use this method to inflict a debuff on a player on contact. OnFire is inflicted 100% of the time in expert, and 50% of the time on non-expert mode.
 		public override void OnHitPlayer(Player player, int damage, bool crit)

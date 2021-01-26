@@ -24,11 +24,10 @@ namespace MyFirstBasicMod.Items.Armor
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            return body.type == mod.ItemType("Pink's Chestplate") && legs.type == mod.ItemType("Pink's Pants");  //put your Breastplate name and Leggings name
+            return body.type == ModContent.ItemType<Items.Armor.BreastplateName>() && legs.type == ModContent.ItemType<Items.Armor.Leggings>();
         }
         public override void UpdateEquip(Player player)
         {
-            player.setBonus = "Being Awesome!";
             player.buffImmune[BuffID.OnFire] = true;
             player.buffImmune[BuffID.WitheredWeapon] = true;
             player.buffImmune[BuffID.WitheredArmor] = true;
@@ -43,10 +42,13 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.OgreSpit] = true;
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.CursedInferno] = true;
-            player.meleeDamage += 0.15f; //+15 % damage
-            player.rangedDamage += 0.15f; //Ranged damage +45%
-            player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
-            player.statLifeMax2 += 30;
+            player.meleeDamage += 0.11f; //+15 % damage
+            player.statLifeMax2 += 10;
+        }
+        public override void UpdateArmorSet(Player player)
+        {
+            player.setBonus = "You are awesome!. Full set bonus: +6 defense";
+            player.statDefense = (int)(player.statDefense + 6.00);
         }
         public override void AddRecipes()  //How to craft this item
         {

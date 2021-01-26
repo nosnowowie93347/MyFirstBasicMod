@@ -1,6 +1,8 @@
 using MyFirstBasicMod.Items;
 using MyFirstBasicMod.Projectiles;
 using Microsoft.Xna.Framework;
+using MyFirstBasicMod.NPCs;
+using MyFirstBasicMod.NPCs.PuritySpirit;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -22,7 +24,17 @@ namespace MyFirstBasicMod
 	{
 
 		public bool manaHeart;
+		public bool purityMinion;
+		public bool examplePet;
+		public PlayerEffect setbonus = null;
 		public int manaHeartCounter;
+		public float percentDamage;
+		public float defenseEffect = -1f;
+		public int reviveTime;
+		public bool badHeal;
+		public int healHurt;
+		public int heroLives;
+		public bool infinity;
         public const int maxExampleLifeFruits = 10;
         public int exampleLifeFruits;
 
@@ -52,6 +64,67 @@ namespace MyFirstBasicMod
 			
 			exampleLifeFruits = tag.GetInt("exampleLifeFruits");
 			}
+
+		private void PuritySpiritTeleport(NPC npc) {
+			int halfWidth = PuritySpirit.arenaWidth / 2;
+			int halfHeight = PuritySpirit.arenaHeight / 2;
+			Vector2 newPosition = player.position;
+			if (player.position.X <= npc.Center.X - halfWidth) {
+				newPosition.X = npc.Center.X + halfWidth - player.width - 1;
+				while (Collision.SolidCollision(newPosition, player.width, player.height)) {
+					newPosition.X -= 16f;
+				}
+			}
+			else if (player.position.X + player.width >= npc.Center.X + halfWidth) {
+				newPosition.X = npc.Center.X - halfWidth + 1;
+				while (Collision.SolidCollision(newPosition, player.width, player.height)) {
+					newPosition.X += 16f;
+				}
+			}
+			else if (player.position.Y <= npc.Center.Y - halfHeight) {
+				newPosition.Y = npc.Center.Y + halfHeight - player.height - 1;
+				while (Collision.SolidCollision(newPosition, player.width, player.height)) {
+					newPosition.Y -= 16f;
+				}
+			}
+			else if (player.position.Y + player.height >= npc.Center.Y + halfHeight) {
+				newPosition.Y = npc.Center.Y - halfHeight + 1;
+				while (Collision.SolidCollision(newPosition, player.width, player.height)) {
+					newPosition.Y += 16f;
+				}
+			}
+			if (newPosition != player.position) {
+				player.Teleport(newPosition, 1, 0);
+				NetMessage.SendData(MessageID.Teleport, -1, -1, null, 0, player.whoAmI, newPosition.X, newPosition.Y, 1, 0, 0);
+			}
+		}
+		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource) {
+			if (heroLives > 0) {
+				heroLives--;
+				if (Main.netMode == NetmodeID.MultiplayerClient) {
+					ModPacket packet = mod.GetPacket();
+					packet.Write(player.whoAmI);
+					packet.Write(heroLives);
+					packet.Send();
+				}
+				if (heroLives > 0) {
+					player.statLife = player.statLifeMax2;
+					player.HealEffect(player.statLifeMax2);
+					player.immune = true;
+					player.immuneTime = player.longInvince ? 180 : 120;
+					for (int k = 0; k < player.hurtCooldowns.Length; k++) {
+						player.hurtCooldowns[k] = player.longInvince ? 180 : 120;
+					}
+					Main.PlaySound(SoundID.Item29, player.position);
+					reviveTime = 60;
+					return false;
+				}
+			}
+			if (healHurt > 0 && damage == 10.0 && hitDirection == 0 && damageSource.SourceOtherIndex == 8) {
+				damageSource = PlayerDeathReason.ByCustomReason(" was dissolved by holy powers");
+			}
+			return true;
+		}
         public override void OnConsumeMana(Item item, int manaConsumed) {
 			if (manaHeart) {
 				manaHeartCounter += manaConsumed;

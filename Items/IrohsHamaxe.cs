@@ -20,8 +20,8 @@ namespace MyFirstBasicMod.Items
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 4;
-			item.useAnimation = 4;
+			item.useTime = 7;
+			item.useAnimation = 7;
 			item.axe = 190;          //How much axe power the weapon has, note that the axe power displayed in-game is this value multiplied by 5
 			item.hammer = 165;      //How much hammer power the weapon has
 			item.useStyle = ItemUseStyleID.SwingThrow;

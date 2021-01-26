@@ -11,7 +11,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-namespace ExampleMod.NPCs
+namespace MyFirstBasicMod.NPCs
 {
     // [AutoloadHead] and npc.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
     [AutoloadHead]
@@ -48,8 +48,8 @@ namespace ExampleMod.NPCs
             npc.width = 18;
             npc.height = 40;
             npc.aiStyle = 7;
-            npc.damage = 10;
-            npc.defense = 15;
+            npc.damage = 30;
+            npc.defense = 95;
             npc.lifeMax = 250;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
@@ -78,7 +78,7 @@ namespace ExampleMod.NPCs
 
                 foreach (Item item in player.inventory)
                 {
-                    if (item.type == ItemID.CopperBar || item.type == ModContent.ItemType<MyFirstBasicMod.Items.Placeable.PinksBar>())
+                    if (item.type == ItemID.CopperBar || item.type == ModContent.ItemType<Items.Placeable.PinksBar>())
                     {
                         return true;
                     }
@@ -166,48 +166,72 @@ namespace ExampleMod.NPCs
 			return chat; // chat is implicitly cast to a string. You can also do "return chat.Get();" if that makes you feel better
 		}
 		*/
-
+        public override void SetChatButtons(ref string button, ref string button2) {
+            button = Language.GetTextValue("LegacyInterface.28");
+            button2 = "stuff";
+        }
+        public override void OnChatButtonClicked(bool firstButton, ref bool shop) {
+            if (firstButton) {
+                // We want 3 different functionalities for chat buttons, so we use HasItem to change button 1 between a shop and upgrade action.
+                shop = true;
+            }
+            else {
+                // If the 2nd button is pressed, open the inventory...
+                Main.playerInventory = true;
+                // remove the chat window...
+                Main.npcChatText = "";
+                // and start an instance of our UIState.
+                
+                // Note that even though we remove the chat window, Main.LocalPlayer.talkNPC will still be set correctly and we are still technically chatting with the npc.
+            }
+        }
         
 
         
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.Placeable.SylvsBlock>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.SylvsBlock>());
             nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.Weapons.TerrabotsBullet>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsBullet>());
             nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.Weapons.TerrabotsGun>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsGun>());
             nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.Placeable.PinksChest>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.PinksChest>());
             nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.SwordOfDreams>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.SwordOfDreams>());
             nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.BreadPickaxe>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BreadPickaxe>());
             nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.IrohsHamaxe>());
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.IrohsHamaxe>());
             nextSlot++;
             
             if (Main.moonPhase < 2)
             {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.Test>());
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Test>());
                 nextSlot++;
             }
             else if (Main.moonPhase < 6)
             {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<MyFirstBasicMod.Items.Weapons.EpicLaserOfDoom>());
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.EpicLaserOfDoom>());
                 nextSlot++;
             }
             else
             {
             }
+            // // Here is an example of how your npc can sell items from other mods.
+            // var modCalamity = ModLoader.GetMod("Calamity");
+            // if (modCalamity != null) {
+            //     shop.item[nextSlot].SetDefaults(modCalamity.ItemType("RampartOfDeities"));
+            //     nextSlot++;
+            // }
             
             
         }
 
         public override void NPCLoot()
         {
-            Item.NewItem(npc.getRect(), ModContent.ItemType<MyFirstBasicMod.Items.Armor.RubysRobe>());
+            Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Armor.RubysRobe>());
         }
 
         // Make this Town NPC teleport to the King and/or Queen statue when triggered.
@@ -245,7 +269,7 @@ namespace ExampleMod.NPCs
                 {
                     position.Y = Math.Sign(position.Y) * 20;
                 }
-                Dust.NewDustPerfect(npc.Center + position, ModContent.DustType<MyFirstBasicMod.Dusts.Sparkle>(), Vector2.Zero).noGravity = true;
+                Dust.NewDustPerfect(npc.Center + position, ModContent.DustType<Dusts.Sparkle>(), Vector2.Zero).noGravity = true;
             }
         }
 
@@ -257,8 +281,8 @@ namespace ExampleMod.NPCs
 
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
         {
-            cooldown = 30;
-            randExtraCooldown = 30;
+            cooldown = 10;
+            randExtraCooldown = 10;
         }
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)

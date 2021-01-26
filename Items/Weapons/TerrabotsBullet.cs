@@ -16,7 +16,8 @@ namespace MyFirstBasicMod.Items.Weapons
 		}
 
 		public override void SetDefaults() {
-			item.damage = 80;
+			item.damage = 46;
+			item.crit = -5;
 			item.ranged = true;
 			item.width = 8;
 			item.height = 8;
@@ -26,7 +27,7 @@ namespace MyFirstBasicMod.Items.Weapons
 			item.value = 10;
 			item.rare = ItemRarityID.Green;
 			item.shoot = ProjectileType<Projectiles.TerrabotsBullet>();   //The projectile shoot when your weapon using this ammo
-			item.shootSpeed = 34f;                  //The speed of the projectile
+			item.shootSpeed = 20f;                  //The speed of the projectile
 			item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
 		}
 

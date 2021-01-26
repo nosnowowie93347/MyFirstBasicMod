@@ -26,7 +26,7 @@ namespace MyFirstBasicMod.Items
 			item.knockBack = 7.5f;
 			item.value = 59990;
 			item.rare = ItemRarityID.Green;
-			item.UseSound = SoundID.Item16;
+			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
 

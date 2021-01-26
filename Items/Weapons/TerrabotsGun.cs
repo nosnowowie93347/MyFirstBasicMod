@@ -16,15 +16,16 @@ namespace MyFirstBasicMod.Items.Weapons
 		}
 
 		public override void SetDefaults() {
-			item.damage = 250;
+			item.damage = 200;
 			item.ranged = true;
 			item.width = 40;
+			item.crit = -9;
 			item.height = 20;
-			item.useTime = 12;
-			item.useAnimation = 12;
+			item.useTime = 16;
+			item.useAnimation = 16;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 7;
+			item.knockBack = 5;
 			item.value = 99999;
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item11;
@@ -49,7 +50,7 @@ namespace MyFirstBasicMod.Items.Weapons
 		// What if I wanted this gun to have a 38% chance not to consume ammo?
 		public override bool ConsumeAmmo(Player player)
 		{
-			return Main.rand.NextFloat() >= .58f;
+			return Main.rand.NextFloat() >= .38f;
 		}
 
 		// What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
