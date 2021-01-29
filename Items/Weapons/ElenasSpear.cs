@@ -17,7 +17,7 @@ namespace MyFirstBasicMod.Items.Weapons
 
 		public override void SetDefaults() {
 			Item.damage = 80;
-			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.useAnimation = 18;
 			Item.useTime = 16;
 			Item.shootSpeed = 3.7f;

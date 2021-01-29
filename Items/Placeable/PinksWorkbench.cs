@@ -2,6 +2,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using static Terraria.ModLoader.ModContent;
+using Terraria.GameContent.Creative;
 
 namespace MyFirstBasicMod.Items.Placeable
 {
@@ -10,7 +11,8 @@ namespace MyFirstBasicMod.Items.Placeable
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("This is a modded workbench.");
             DisplayName.SetDefault("Pink's Work Bench");
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 30;
+        }
 
 		public override void SetDefaults() {
 			Item.width = 28;

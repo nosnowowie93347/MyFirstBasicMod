@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Tiles
@@ -16,10 +17,12 @@ namespace MyFirstBasicMod.Tiles
 			Main.tileShine2[Type] = true; // Modifies the draw color slightly.
 			Main.tileShine[Type] = 975; // How often tiny dust appear off this tile. Larger is less frequently
 			Main.tileMergeDirt[Type] = true;
+            Main.tileLavaDeath[Type] = false;
 			Main.tileSolid[Type] = true;
 			Main.tileBlockLight[Type] = true;
+            TileObjectData.newTile.LavaDeath = false;
 
-			ModTranslation name = CreateMapEntryName();
+            ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Pink's Ore");
 			AddMapEntry(new Color(255, 200, 200), name);
 

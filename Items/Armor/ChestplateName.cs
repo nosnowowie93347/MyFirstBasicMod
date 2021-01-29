@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,6 +13,7 @@ namespace MyFirstBasicMod.Items.Armor
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pink's Chestplate");
             Tooltip.SetDefault("Pink's Chestplate");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
         {

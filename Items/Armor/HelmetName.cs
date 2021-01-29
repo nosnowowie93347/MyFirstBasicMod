@@ -21,8 +21,11 @@ namespace MyFirstBasicMod.Items.Armor
             Item.rare = ItemRarityID.Green;
             Item.defense = 24;
         }
+        public override bool IsArmorSet(Item head, Item body, Item legs)
+        {
+            return body.type == ModContent.ItemType<BreastplateName>() && legs.type == ModContent.ItemType<Leggings>();
+        }
 
-        
         public override void UpdateEquip(Player player)
         {
             player.setBonus = "Being Awesome!";
@@ -45,6 +48,11 @@ namespace MyFirstBasicMod.Items.Armor
             player.GetDamage(DamageClass.Ranged) += 0.19f;
             player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
             player.statLifeMax2 += 30;
+        }
+        public override void UpdateArmorSet(Player player)
+        {
+            player.setBonus = "You are awesome!. Full set bonus: +6 defense";
+            player.statDefense = (int)(player.statDefense + 6.00);
         }
         public override void AddRecipes()
         {

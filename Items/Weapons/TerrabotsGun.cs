@@ -24,7 +24,7 @@ namespace MyFirstBasicMod.Items.Weapons
 			Item.height = 20;
 			Item.useTime = 12;
 			Item.useAnimation = 12;
-			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true; //so the Item's animation doesn't do damage
 			Item.knockBack = 7;
 			Item.value = 99999;

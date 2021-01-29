@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -12,7 +13,8 @@ namespace MyFirstBasicMod.Items
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("This pickaxe was created by Terrabot, Pink's Discord bot.");
 			DisplayName.SetDefault("Terrabot's Pickaxe");
-		}
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+        }
 
 		public override void SetDefaults() {
 			Item.damage = 200;

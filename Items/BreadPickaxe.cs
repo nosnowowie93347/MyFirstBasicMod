@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.GameContent.Creative;
 
 namespace MyFirstBasicMod.Items
 {
@@ -12,12 +13,13 @@ namespace MyFirstBasicMod.Items
         public override void SetStaticDefaults() {
             Tooltip.SetDefault("Made of the strongest bread in all the land.");
             DisplayName.SetDefault("Bread Pickaxe");
-            
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+
         }
         public override void SetDefaults() {
-            Item.damage = 111;
+            Item.damage = 90;
             Item.autoReuse = true;
-            Item.pick = 140;
+            Item.pick = 145;
             Item.useTime = 8;
             Item.useAnimation = 8;
             Item.width = 40;
@@ -29,6 +31,13 @@ namespace MyFirstBasicMod.Items
 			Item.rare = ItemRarityID.Green;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Items.Placeable.PinksBar>(14)
+                .AddTile<Tiles.PinksAnvil>()
+                .Register();
         }
     }
 }

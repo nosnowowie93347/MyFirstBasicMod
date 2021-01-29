@@ -34,7 +34,7 @@ namespace MyFirstBasicMod.Items.Abomination
             player.TryGettingDevArmor();
             if (Main.rand.NextBool(7))
             {
-                player.QuickSpawnItem(ModContent.ItemType<Items.Test>());
+                player.QuickSpawnItem(ModContent.ItemType<Items.Armor.AbominationMask>());
             }
             player.QuickSpawnItem(ModContent.ItemType<Items.EpicSoul>());
             player.QuickSpawnItem(ModContent.ItemType<Items.PinksWings>());

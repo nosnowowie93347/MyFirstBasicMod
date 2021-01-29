@@ -1,4 +1,6 @@
 ﻿using Terraria;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -30,6 +32,17 @@ namespace MyFirstBasicMod.NPCs
             banner = Item.NPCtoBanner(NPCID.Zombie);
             bannerItem = Item.BannerToItem(banner);
         }
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+				// Sets the spawning conditions of this NPC that is listed in the bestiary.
+				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
+
+				// Sets the description of this NPC that is listed in the bestiary.
+				new FlavorTextBestiaryInfoElement("This zombie LOVES to party.")
+            });
+        }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
@@ -48,5 +61,6 @@ namespace MyFirstBasicMod.NPCs
                 dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
             }
         }
+        
     }
 }

@@ -352,25 +352,19 @@ namespace MyFirstBasicMod.NPCs.Abomination
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-            npcLoot.Add(new CommonDrop(ItemType<Items.Placeable.PinksBar>(), 16));
-            npcLoot.Add(new CommonDrop(ItemType<Items.ExampleLifeFruit>(), 4));
+            npcLoot.Add(new CommonDrop(ItemType<Items.Placeable.PinksOre>(), 13, 1, 10, 13));
+            npcLoot.Add(new CommonDrop(ItemType<Items.Test>(), 8, 1, 1, 8));
+            npcLoot.Add(new CommonDrop(ItemType<Items.Placeable.GlowingOre>(), 13, 1, 10, 13));
+            npcLoot.Add(new CommonDrop(ItemType<Items.Armor.AbominationMask>(), 4, 1, 1, 4));
+            npcLoot.Add(new CommonDrop(ItemID.GoldCoin, 20, 9, 15, 20));
 
-            var normalModeRule = new OneFromOptionsDropRule(7, 1, new[]
-            {
-                ItemType<Items.Test>(),
-                ItemType<Items.Weapons.SwordOfDreams>(),
-                ItemType<Items.Weapons.TerrabotsGun>(),
-                ItemType<Items.Weapons.ElenasSpear>(),
-                ItemType<Items.IrohsHamaxe>(),
-                ItemType<Items.ExampleLifeFruit>(),
-                ItemType<Items.Armor.BreastplateName>()
-            });
+
         }
 
 		public override void BossLoot(ref string name, ref int potionType)
 		{
 			name = "The Abomination";
-			potionType = ItemID.GreaterHealingPotion;
+			potionType = ItemType<Items.Consumables.DiamondskinPotion>();
 		}
 
 		public override bool CanHitPlayer(Player target, ref int cooldownSlot)
