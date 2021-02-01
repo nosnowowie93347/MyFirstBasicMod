@@ -22,12 +22,12 @@ namespace MyFirstBasicMod.Items.Weapons
             Item.DamageType = DamageClass.Melee;
 			Item.width = 40;
 			Item.height = 40;
-			Item.useTime = 4;
-			Item.useAnimation = 4;
+			Item.useTime = 9;
+			Item.useAnimation = 9;
 			Item.hammer = 105;      //How much hammer power the weapon has
 			Item.useStyle = ItemUseStyleID.Swing;
-			Item.knockBack = 6;
-			Item.value = 99999;
+			Item.knockBack = 5.5f;
+			Item.value = Item.sellPrice(0, 20, 0, 0);
 			Item.rare = ItemRarityID.Green;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;

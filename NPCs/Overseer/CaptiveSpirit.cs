@@ -20,9 +20,9 @@ namespace MyFirstBasicMod.NPCs.Overseer
 			NPC.width = 34;
 			NPC.height = 70;
 
-			NPC.damage = 120;
-			NPC.defense = 74;
-			NPC.lifeMax = 900;
+			NPC.damage = 70;
+			NPC.defense = 64;
+			NPC.lifeMax = 850;
 			NPC.knockBackResist = 0;
 
 			NPC.noGravity = true;

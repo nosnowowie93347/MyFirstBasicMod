@@ -11,7 +11,10 @@ namespace MyFirstBasicMod.Tiles
 	{
 		public override void SetDefaults()
 		{
-			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
+            Main.tileSolidTop[Type] = true;
+            Main.tileFrameImportant[Type] = true;
+            Main.tileNoAttach[Type] = true;
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
 			TileObjectData.newTile.CoordinateHeights = new[] { 18 };
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
@@ -19,12 +22,13 @@ namespace MyFirstBasicMod.Tiles
 			AddMapEntry(new Color(200, 200, 200), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
 			adjTiles = new int[] { TileID.Anvils };
-		}
+            drop = ItemType<Items.Placeable.PinksAnvil>();
+        }
 
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ItemType<Items.Placeable.PinksAnvil>());
-		}
+		//public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		//{
+		//	Item.NewItem(i * 16, j * 16, 32, 16, ItemType<Items.Placeable.PinksAnvil>());
+		//}
 	}
 }

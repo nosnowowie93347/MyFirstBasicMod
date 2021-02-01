@@ -17,9 +17,9 @@ namespace MyFirstBasicMod.Items
 
         }
         public override void SetDefaults() {
-            Item.damage = 90;
+            Item.damage = 70;
             Item.autoReuse = true;
-            Item.pick = 145;
+            Item.pick = 155;
             Item.useTime = 8;
             Item.useAnimation = 8;
             Item.width = 40;

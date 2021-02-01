@@ -22,7 +22,7 @@ namespace MyFirstBasicMod.NPCs.Overseer
 			Projectile.hostile = true;
 			Projectile.ignoreWater = true;
 			Projectile.tileCollide = false;
-
+            Projectile.damage = 30;
 			Projectile.penetrate = -1;
 
 			Projectile.timeLeft = 300;

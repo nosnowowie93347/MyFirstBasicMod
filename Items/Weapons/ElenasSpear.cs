@@ -16,7 +16,7 @@ namespace MyFirstBasicMod.Items.Weapons
         }
 
 		public override void SetDefaults() {
-			Item.damage = 80;
+			Item.damage = 100;
 			Item.useStyle = ItemUseStyleID.Thrust;
 			Item.useAnimation = 18;
 			Item.useTime = 16;
@@ -41,6 +41,14 @@ namespace MyFirstBasicMod.Items.Weapons
 			// Ensures no more than one spear can be thrown out, use this when using autoReuse
 			return player.ownedProjectileCounts[Item.shoot] < 1;
 		}
+          public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemType<Placeable.PinksBar>(), 20)
+                .AddIngredient(ItemID.DarkLance, 1)
+                .AddTile(TileID.Anvils)
+                .Register();
+        }
      //   public override void AddRecipes()
        // {
         //    ModRecipe recipe = new ModRecipe(mod);

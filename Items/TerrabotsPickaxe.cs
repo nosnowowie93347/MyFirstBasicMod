@@ -17,15 +17,15 @@ namespace MyFirstBasicMod.Items
         }
 
 		public override void SetDefaults() {
-			Item.damage = 200;
+			Item.damage = 90;
             Item.DamageType = DamageClass.Melee;
 			Item.width = 40;
 			Item.height = 40;
-			Item.useTime = 6;
-			Item.useAnimation = 6;
-			Item.pick = 235;
+			Item.useTime = 9;
+			Item.useAnimation = 9;
+			Item.pick = 230;
 			Item.useStyle = ItemUseStyleID.Swing;
-			Item.knockBack = 7.5f;
+			Item.knockBack = 6.75f;
 			Item.value = 59990;
 			Item.rare = ItemRarityID.Green;
 			Item.UseSound = SoundID.Item1;

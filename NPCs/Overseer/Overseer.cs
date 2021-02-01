@@ -27,8 +27,8 @@ namespace MyFirstBasicMod.NPCs.Overseer
 			NPC.width = 148;
 			NPC.height = 172;
 
-			NPC.damage = 96;
-			NPC.defense = 55;
+			NPC.damage = 76;
+			NPC.defense = 50;
 			NPC.lifeMax = 17900;
 			NPC.knockBackResist = 0;
 
@@ -53,7 +53,6 @@ namespace MyFirstBasicMod.NPCs.Overseer
 			}
 
             NPCLoot.Add(new CommonDrop(ModContent.ItemType<Items.EpicSoul>(), 13, 1, 10, 13));
-            NPCLoot.Add(new CommonDrop(ModContent.ItemType<Items.Weapons.SwordOfDreams>(), 20, 1, 1, 20));
             NPCLoot.Add(new CommonDrop(ModContent.ItemType<Items.Weapons.TerrabotsGun>(), 10, 1, 1, 10));
             NPCLoot.Add(new CommonDrop(ModContent.ItemType<Items.Consumables.DiamondskinPotion>(), 19, 5, 13, 19));
             NPCLoot.Add(new CommonDrop(ModContent.ItemType<Items.Weapons.ElenasSpear>(), 17, 1, 1, 17));

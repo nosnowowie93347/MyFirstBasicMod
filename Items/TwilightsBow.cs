@@ -19,7 +19,7 @@ namespace MyFirstBasicMod.Items
         }
 
 		public override void SetDefaults() {
-			Item.damage = 120;
+			Item.damage = 150;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 44;
 			Item.height = 65;
