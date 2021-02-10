@@ -1,7 +1,7 @@
 using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
-
+using static Terraria.ModLoader.ModContent;
 namespace MyFirstBasicMod.Items
 {
 	public class Test : ModItem
@@ -21,9 +21,9 @@ namespace MyFirstBasicMod.Items
 			item.useTime = 11;
 			item.useAnimation = 11;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 7;
-			item.value = 99999;
-			item.rare = ItemRarityID.Orange;
+			item.knockBack = 6.5f;
+			item.value = 999999;
+			item.rare = ItemRarityID.LightPurple;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
@@ -31,10 +31,10 @@ namespace MyFirstBasicMod.Items
 		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 35);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 30);
             recipe.AddIngredient(ItemID.Excalibur, 1);
-            recipe.AddIngredient(ItemID.BrokenHeroSword, 2);
-			recipe.AddTile(TileID.WorkBenches);
+            recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
+			recipe.AddTile(TileType<Tiles.PinksAnvil>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

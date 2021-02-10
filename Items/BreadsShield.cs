@@ -11,29 +11,31 @@ namespace MyFirstBasicMod.Items
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault(""
-				+ "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 1000));
+				+ "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 20));
 		}
 
 		public override void SetDefaults() {
 			item.width = 24;
 			item.height = 28;
-			item.value = 100000;
-			item.rare = ItemRarityID.Green;
+			item.value = 300000;
+			item.rare = ItemRarityID.Pink;
 			item.accessory = true;
-			item.defense = 100;
-			item.lifeRegen = 19;
+			item.defense = 8;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			
-				player.allDamage += 10f; // increase all damage by 1900%
+            
+            player.allDamage += .20f; // increase all damage by 1900%
+            player.meleeCrit += 5;
+            player.lifeRegen += 6;
+            player.armorPenetration += 3;
 			
 		}
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 40);
-			recipe.AddTile(ModContent.TileType<Tiles.PinksWorkbench>());
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 33);
+			recipe.AddTile(ModContent.TileType<PinksWorkbench>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

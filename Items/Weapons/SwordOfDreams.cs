@@ -17,8 +17,8 @@ namespace MyFirstBasicMod.Items.Weapons
 
         public override void SetDefaults()
         {
-            item.width = 31;
-            item.height = 47;
+            item.width = 46;
+            item.height = 62;
 
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.useTime = 14;
@@ -26,10 +26,10 @@ namespace MyFirstBasicMod.Items.Weapons
             item.autoReuse = true;
 
             item.melee = true;
-            item.damage = 210;
-            item.knockBack = 5;
-            item.crit = 9;
-            item.value = 99999;
+            item.damage = 310;
+            item.knockBack = 5.75f;
+            item.crit = 11;
+            item.value = Item.buyPrice(platinum: 7);
             item.rare = ItemRarityID.Pink;
             item.UseSound = SoundID.Item1;
 
@@ -74,8 +74,9 @@ namespace MyFirstBasicMod.Items.Weapons
         public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 15);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 24);
+            recipe.AddIngredient(ItemID.NightsEdge);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

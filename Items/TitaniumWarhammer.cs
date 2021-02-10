@@ -15,10 +15,10 @@ namespace MyFirstBasicMod.Items
 		{
 			item.width = 44;
 			item.height = 44;
-			item.value = 10000;
+			item.value = 19900;
 			item.rare = ItemRarityID.LightRed;
 
-			item.hammer = 86;
+			item.hammer = 88;
 
 			item.damage = 50;
 			item.knockBack = 8.5f;

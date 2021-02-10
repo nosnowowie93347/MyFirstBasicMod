@@ -14,15 +14,15 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 300;
+			item.damage = 60;
 			item.ranged = true;
 			item.width = 1;
 			item.height = 1;
 			item.maxStack = 999;
 			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
 			item.knockBack = 1.5f;
-			item.value = 10;
-			item.rare = ItemRarityID.Green;
+			item.value = 100000;
+			item.rare = ItemRarityID.Orange;
 			item.shoot = ProjectileType<Projectiles.TwilightArrow>();   //The projectile shoot when your weapon using this ammo
 			item.shootSpeed = 16f;                  //The speed of the projectile
 			item.ammo = AmmoID.Arrow;              //The ammo class this ammo belongs to.

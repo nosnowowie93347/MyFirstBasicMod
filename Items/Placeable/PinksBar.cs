@@ -31,7 +31,7 @@ namespace MyFirstBasicMod.Items.Placeable
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemType<PinksOre>(), 4);
+			recipe.AddIngredient(ItemType<PinksOre>(), 3);
             recipe.AddIngredient(ItemID.CopperOre, 4);
             recipe.AddTile(TileID.Furnaces);
 			recipe.SetResult(this);

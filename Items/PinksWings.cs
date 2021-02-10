@@ -18,13 +18,14 @@ namespace MyFirstBasicMod.Items
 		public override void SetDefaults() {
 			item.width = 22;
 			item.height = 20;
-			item.value = 10000;
-			item.rare = ItemRarityID.Green;
+			item.value = 200000;
+			item.rare = ItemRarityID.Pink;
 			item.accessory = true;
 		}
 		//these wings use the same values as the solar wings
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.wingTimeMax = 211;
+            player.lifeRegen += 4;
 		}
 
 		public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items.Armor
@@ -11,14 +12,14 @@ namespace MyFirstBasicMod.Items.Armor
         
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pink's Pants");
-            Tooltip.SetDefault("Pink's Pants");
+            Tooltip.SetDefault("+26% melee damage");
         }
         public override void SetDefaults()
         {
             item.width = 18;
             item.height = 18;
             item.value = 65000;
-            item.rare = 2;
+            item.rare = ItemRarityID.LightPurple;
             item.defense = 42;
         }
 
@@ -26,6 +27,8 @@ namespace MyFirstBasicMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.rangedDamage += 0.09f; //Ranged damage +45%
+            player.meleeDamage += .26f;
+            player.meleeCrit += 7;
         }
         public override void AddRecipes()  //How to craft this item
         {

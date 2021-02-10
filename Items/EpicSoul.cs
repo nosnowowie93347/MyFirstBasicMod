@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-
+using static Terraria.ModLoader.ModContent;
 namespace MyFirstBasicMod.Items
 {
 	public class EpicSoul : ModItem
@@ -25,11 +25,21 @@ namespace MyFirstBasicMod.Items
 			item.width = refItem.width;
 			item.height = refItem.height;
 			item.maxStack = 999;
-			item.value = 1000;
-			item.rare = ItemRarityID.Orange;
+			item.value = 100000;
+			item.rare = ItemRarityID.Pink;
 		}
 		public override void PostUpdate() {
 			Lighting.AddLight(item.Center, Color.WhiteSmoke.ToVector3() * 0.55f * Main.essScale);
 		}
-	}
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.SoulofMight, 10);
+            recipe.AddIngredient(ItemID.SoulofSight, 10);
+            recipe.AddIngredient(ItemID.SoulofFright, 10);
+            recipe.AddTile(TileType<Tiles.PinksAnvil>());
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+        }
+    }
 }

@@ -27,8 +27,8 @@ namespace MyFirstBasicMod.Items.Armor
 		}
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "You are glowing. Full set bonus: +4 defense";
-			player.statDefense = (int)(player.statDefense + 4.00);
+			player.setBonus = "You are glowing. Full set bonus: +5 defense";
+			player.statDefense = (int)(player.statDefense + 5.00);
 		}
 		public override void UpdateEquip(Player player)
 		{

@@ -25,8 +25,8 @@ namespace MyFirstBasicMod.Items
             item.melee = true;
             item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
-			item.value = 10000;
-			item.rare = ItemRarityID.Green;
+            item.value = Item.buyPrice(platinum: 12);
+            item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
         }

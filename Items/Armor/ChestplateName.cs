@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items.Armor
@@ -11,21 +12,23 @@ namespace MyFirstBasicMod.Items.Armor
         
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pink's Chestplate");
-            Tooltip.SetDefault("Pink's Chestplate");
+            Tooltip.SetDefault(Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 22));
         }
         public override void SetDefaults()
         {
             item.width = 18;
             item.height = 18;
             item.value = 65000;
-            item.rare = ItemRarityID.Green;
+            item.rare = ItemRarityID.LightRed;
             item.defense = 30;
         }
 
         
         public override void UpdateEquip(Player player)
         {
-            player.statLifeMax2 += 10;
+            player.statLifeMax2 += 30;
+            player.meleeDamage += .22f;
+            player.meleeCrit += 6;
         }
         public override void AddRecipes()  //How to craft this item
         {

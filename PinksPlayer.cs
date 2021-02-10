@@ -143,8 +143,19 @@ namespace MyFirstBasicMod
 				}
 			}
 		}
-
-		public override void GetFishingLevel(Item fishingRod, Item bait, ref int fishingLevel)
+        public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
+        {
+            if (junk)
+            {
+                return;
+            }
+            
+            if (questFish == ItemType<ExampleQuestFish>() && Main.rand.NextBool())
+            {
+                caughtType = ItemType<ExampleQuestFish>();
+            }
+        }
+        public override void GetFishingLevel(Item fishingRod, Item bait, ref int fishingLevel)
 		{
 		}
 	}

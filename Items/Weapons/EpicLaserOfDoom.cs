@@ -29,7 +29,7 @@ namespace MyFirstBasicMod.Items.Weapons
             item.shootSpeed = 14f;
             item.useAnimation = 20;
             item.shoot = ProjectileType<Projectiles.EpicLaserOfDoom>();
-            item.value = Item.sellPrice(silver: 3);
+            item.value = Item.buyPrice(platinum: 5);
         }
 
         public override void AddRecipes()

@@ -24,7 +24,7 @@ namespace MyFirstBasicMod.Items
 			item.UseSound = SoundID.Item3;
 			item.maxStack = 75;
 			item.consumable = true;
-			item.rare = ItemRarityID.Orange;
+			item.rare = ItemRarityID.LightRed;
 			item.healLife = 100; // While we change the actual healing value in GetHealLife, item.healLife still needs to be higher than 0 for the item to be considered a healing item
 			item.potion = true; // Makes it so this item applies potion sickness on use and allows it to be used with quick heal
 		}

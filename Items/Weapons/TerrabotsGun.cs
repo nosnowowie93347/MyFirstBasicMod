@@ -16,18 +16,17 @@ namespace MyFirstBasicMod.Items.Weapons
 		}
 
 		public override void SetDefaults() {
-			item.damage = 200;
+			item.damage = 240;
 			item.ranged = true;
 			item.width = 40;
-			item.crit = -9;
 			item.height = 20;
 			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 5;
-			item.value = 99999;
-			item.rare = ItemRarityID.Green;
+			item.value = Item.sellPrice(platinum: 3);
+            item.rare = ItemRarityID.Yellow;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
 			item.shoot = 10; //idk why but all the guns in the vanilla source have this
@@ -111,46 +110,16 @@ namespace MyFirstBasicMod.Items.Weapons
 			return new Vector2(10, 0);
 		}
 
-		// How can I make the shots appear out of the muzzle exactly?
-		// Also, when I do this, how do I prevent shooting through tiles?
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
-			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
-			{
-				position += muzzleOffset;
-			}
-			return true;
-		}
-
-		// How can I get a "Clockwork Assault Rifle" effect?
-		// 3 round burst, only consume 1 ammo for burst. Delay between bursts, use reuseDelay
-		/*	The following changes to SetDefaults()
-		 	item.useAnimation = 12;
-			item.useTime = 4;
-			item.reuseDelay = 14;
-		public override bool ConsumeAmmo(Player player)
-		{
-			// Because of how the game works, player.itemAnimation will be 11, 7, and finally 3. (UseAmination - 1, then - useTime until less than 0.) 
-			// We can get the Clockwork Assault Riffle Effect by not consuming ammo when itemAnimation is lower than the first shot.
-			return !(player.itemAnimation < item.useAnimation - 2);
-		}*/
-
-		// How can I shoot 2 different projectiles at the same time?
-		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.GrenadeI, damage, knockBack, player.whoAmI);
-			// By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
-			return true;
-		}*/
-
-		// How can I choose between several projectiles randomly?
-		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
-			type = Main.rand.Next(new int[] { type, ProjectileID.GoldenBullet, ProjectileType<Projectiles.ExampleBullet>() });
-			return true;
-		}*/
+        // How can I make the shots appear out of the muzzle exactly?
+        // Also, when I do this, how do I prevent shooting through tiles?
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
+            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+            {
+                position += muzzleOffset;
+            }
+            return true;
+        }
 	}
 }

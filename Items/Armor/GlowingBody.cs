@@ -25,6 +25,8 @@ namespace MyFirstBasicMod.Items.Armor
 		{
 			player.meleeCrit += 10;
 			player.meleeDamage += .12f;
+            player.buffImmune[BuffID.MoonLeech] = true;
+            player.buffImmune[BuffID.OgreSpit] = true;
 
 		}
 		public override void AddRecipes()

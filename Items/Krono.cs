@@ -14,16 +14,17 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults()
 		{
-			item.damage = 166;
+			item.damage = 146;
 			item.melee = true;
 			item.width = 40;
+            item.crit = 5;
 			item.height = 70;
 			item.useTime = 14;
 			item.useAnimation = 11;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 5;
 			item.value = 99999;
-			item.rare = ItemRarityID.Orange;
+			item.rare = ItemRarityID.LightRed;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
@@ -31,8 +32,8 @@ namespace MyFirstBasicMod.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 15);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 25);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

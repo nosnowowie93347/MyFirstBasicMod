@@ -14,17 +14,18 @@ namespace MyFirstBasicMod.Items.Weapons
 		}
 
 		public override void SetDefaults() {
-			item.damage = 80;
+			item.damage = 100;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 18;
 			item.useTime = 16;
 			item.shootSpeed = 3.7f;
+            item.crit = 20;
 			item.knockBack = 6.5f;
 			item.width = 32;
 			item.height = 32;
 			item.scale = 1f;
-			item.rare = ItemRarityID.Pink;
-			item.value = Item.sellPrice(silver: 10);
+			item.rare = ItemRarityID.LightPurple;
+			item.value = Item.sellPrice(gold: 10);
 
 			item.melee = true;
 			item.noMelee = true; // Important because the spear is actually a projectile instead of an item. This prevents the melee hitbox of this item.
