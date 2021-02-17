@@ -16,9 +16,9 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 110;
+			item.damage = 107;
 			item.ranged = true;
-            item.crit = 13;
+            item.crit = 14;
 			item.width = 34;
 			item.height = 55;
 			item.useTime = 12;
@@ -30,8 +30,8 @@ namespace MyFirstBasicMod.Items
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = false;
-			item.shoot = 10; //idk why but all the guns in the vanilla source have this
-			item.shootSpeed = 31f;
+			item.shoot = ItemID.Shuriken; //idk why but all the guns in the vanilla source have this
+			item.shootSpeed = 22f;
 			item.useAmmo = AmmoID.Arrow;
 		}
 
@@ -49,10 +49,7 @@ namespace MyFirstBasicMod.Items
 		 */
 
 		// What if I wanted this gun to have a 38% chance not to consume ammo?
-		public override bool ConsumeAmmo(Player player)
-		{
-			return Main.rand.NextFloat() >= .28f;
-		}
+		
 
         // What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
         // Uzi/Molten Fury style: Replace normal Bullets with Highvelocity

@@ -15,7 +15,7 @@ namespace MyFirstBasicMod.NPCs
 {
     // [AutoloadHead] and npc.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
     [AutoloadHead]
-    public class ExamplePerson : ModNPC
+    public class Pinkalicious21902 : ModNPC
     {
         public override string Texture => "MyFirstBasicMod/NPCs/ExamplePerson";
 
@@ -191,20 +191,48 @@ namespace MyFirstBasicMod.NPCs
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.SylvsBlock>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsBullet>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsGun>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.PinksChest>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.SwordOfDreams>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BreadPickaxe>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.IrohsHamaxe>());
-            nextSlot++;
+            var modCalamity = ModLoader.GetMod("Calamity");
+            if (modCalamity != null)
+            {
+
+                shop.item[nextSlot].SetDefaults(modCalamity.ItemType("Cryophobia"));
+                nextSlot++;
+                if (Main.hardMode && NPC.downedPirates)
+                {
+                    shop.item[nextSlot].SetDefaults(modCalamity.ItemType("AbsoluteZero"));
+                    nextSlot++;
+                }
+                //If Plantera is dead, and the world is in Expert mode, sell blossom flux from calamity
+                if (NPC.downedPlantBoss && Main.expertMode)
+                {
+                    shop.item[nextSlot].SetDefaults(modCalamity.ItemType("BlossomFlux"));
+                    nextSlot++;
+                }
+                //If moon lord is dead, sell rampart of deities
+                if (NPC.downedMoonlord) {
+                    shop.item[nextSlot].SetDefaults(modCalamity.ItemType("RampartOfDeities"));
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(modCalamity.ItemType("OmegaHealingPotion"));
+                    nextSlot++;
+                }
+            }
+            if (modCalamity == null)
+            {
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.SylvsBlock>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsBullet>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsGun>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.PinksChest>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.SwordOfDreams>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BreadPickaxe>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.IrohsHamaxe>());
+                nextSlot++;
+            }
             
             if (Main.moonPhase < 2)
             {

@@ -26,9 +26,10 @@ namespace MyFirstBasicMod.Items.Armor
         
         public override void UpdateEquip(Player player)
         {
-            player.statLifeMax2 += 30;
+            player.statLifeMax2 += 40;
             player.meleeDamage += .22f;
             player.meleeCrit += 6;
+            player.rangedCrit += 8;
         }
         public override void AddRecipes()  //How to craft this item
         {

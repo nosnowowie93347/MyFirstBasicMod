@@ -35,12 +35,12 @@ namespace MyFirstBasicMod
 		public int healHurt;
 		public int heroLives;
 		public bool infinity;
-        public const int maxExampleLifeFruits = 10;
+        public const int maxExampleLifeFruits = 22;
         public int exampleLifeFruits;
 
         public int constantDamage { get; internal set; }
         public override void ResetEffects () {
-                  player.statLifeMax2 += exampleLifeFruits * 2;
+                  player.statLifeMax2 += exampleLifeFruits * 5;
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {
 			ModPacket packet = mod.GetPacket();

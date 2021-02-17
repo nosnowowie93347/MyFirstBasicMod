@@ -7,7 +7,7 @@ namespace MyFirstBasicMod.Items.Weapons
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3279);
+			item.CloneDefaults(ItemID.CorruptYoyo);
 
 			item.damage = 86;
 			item.width = 30;
@@ -15,7 +15,7 @@ namespace MyFirstBasicMod.Items.Weapons
 			item.shoot = mod.ProjectileType("CorfirePro");
 			item.knockBack = 6;
 			item.value = 10000;
-			item.rare = 2;
+			item.rare = ItemRarityID.Orange;
 		}
 
 		public override void SetStaticDefaults()
@@ -27,11 +27,11 @@ namespace MyFirstBasicMod.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(3290, 1);
+			recipe.AddIngredient(ItemID.HelFire, 1);
 			recipe.AddIngredient(ItemID.SoulofSight, 5);
 			recipe.AddIngredient(ItemID.CursedFlame, 18);
 			recipe.SetResult(this);
-			recipe.AddTile(134);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.AddRecipe();
 		}
 	}

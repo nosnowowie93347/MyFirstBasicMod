@@ -122,7 +122,7 @@ namespace MyFirstBasicMod.NPCs
 					itemIds.Add(ModContent.ItemType<Items.Abomination.FoulOrb>());
 					break;
 				case 1:
-					itemIds.Add(ModContent.ItemType<Items.Placeable.PinksWorkbench>());
+					itemIds.Add(ModContent.ItemType<Items.Armor.Leggings>());
 					break;
 				default:
 					itemIds.Add(ModContent.ItemType<Items.Placeable.SylvsChair>());
@@ -155,7 +155,7 @@ namespace MyFirstBasicMod.NPCs
 		}
 
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Pink the Traveler");
+			DisplayName.SetDefault("Traveler");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 9;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -173,7 +173,7 @@ namespace MyFirstBasicMod.NPCs
 			npc.height = 40;
 			npc.aiStyle = 7;
 			npc.damage = 34;
-			npc.defense = 45;
+			npc.defense = 65;
 			npc.lifeMax = 350;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
@@ -205,15 +205,13 @@ namespace MyFirstBasicMod.NPCs
 		}
 
 		public override string TownNPCName() {
-			switch (Main.rand.Next(4)) {
+			switch (Main.rand.Next(3)) {
 				case 0:
-					return "Someone";
+					return "Pink";
 				case 1:
-					return "Somebody";
-				case 2:
-					return "Blockster";
+					return "Pinkalicious";
 				default:
-					return "Colorful";
+					return "Pinkalicious21902";
 			}
 		}
 

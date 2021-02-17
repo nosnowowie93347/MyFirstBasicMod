@@ -29,8 +29,8 @@ namespace MyFirstBasicMod.Items.Weapons
             item.rare = ItemRarityID.Yellow;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
-			item.shoot = 10; //idk why but all the guns in the vanilla source have this
-			item.shootSpeed = 31f;
+			item.shoot = ProjectileID.Bullet; //idk why but all the guns in the vanilla source have this
+			item.shootSpeed = 16f;
 			item.useAmmo = AmmoID.Bullet;
 		}
 

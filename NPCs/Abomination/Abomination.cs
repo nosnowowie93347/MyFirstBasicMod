@@ -60,7 +60,7 @@ namespace MyFirstBasicMod.NPCs.Abomination
 		{
 			npc.aiStyle = -1;
 			npc.lifeMax = 40000;
-			npc.damage = 100;
+			npc.damage = 60;
 			npc.defense = 55;
 			npc.knockBackResist = 0f;
 			npc.width = 100;
@@ -74,8 +74,8 @@ namespace MyFirstBasicMod.NPCs.Abomination
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.buffImmune[24] = true;
-			music = MusicID.Boss2;
-		}
+            music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Abomination");
+        }
 		
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

@@ -11,7 +11,7 @@ namespace MyFirstBasicMod.Items
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Godly Healing Potion");
 			Tooltip.SetDefault("Heals for half of your maximum life"
-				+ "\nHealing amount reduced by half if quick healing");
+				);
 		}
 
 		public override void SetDefaults() {
@@ -38,7 +38,7 @@ namespace MyFirstBasicMod.Items
 
 		public override void GetHealLife(Player player, bool quickHeal, ref int healValue) {
 			// Make the item heal half the player's max health normally, or one fourth if used with quick heal
-			healValue = player.statLifeMax2 / (quickHeal ? 2 : 2);
+			healValue = player.statLifeMax2 / 2;
 		}
 	}
 }

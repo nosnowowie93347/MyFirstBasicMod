@@ -12,7 +12,7 @@ namespace MyFirstBasicMod.Items.Armor
         
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pink's Helmet");
-            Tooltip.SetDefault("Immune to almost all vanilla debuffs, and a few calamity debuffs" + "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 11));
+            Tooltip.SetDefault("Immune to almost all vanilla debuffs, and a few calamity debuffs" + "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 15));
         }
         public override void SetDefaults()
         {
@@ -25,7 +25,7 @@ namespace MyFirstBasicMod.Items.Armor
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            return body.type == ModContent.ItemType<Items.Armor.BreastplateName>() && legs.type == ModContent.ItemType<Items.Armor.Leggings>();
+            return body.type == ModContent.ItemType<BreastplateName>() && legs.type == ModContent.ItemType<Items.Armor.Leggings>();
         }
         public override void UpdateEquip(Player player)
         {
@@ -63,10 +63,12 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.OgreSpit] = true;
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.CursedInferno] = true;
-            player.allDamage += 0.11f; //+15 % damage
-            player.statLifeMax2 += 20;
+            player.allDamage += 0.15f; //+15 % damage
+            player.statLifeMax2 += 30;
             player.meleeCrit += 7;
-            player.lifeRegen += 4;
+            player.magicCrit += 11;
+            player.rangedCrit += 5;
+            player.lifeRegen += 5;
         }
         public override void UpdateArmorSet(Player player)
         {
@@ -76,7 +78,7 @@ namespace MyFirstBasicMod.Items.Armor
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 25);   //you need 10 Wood
+            recipe.AddIngredient(ModContent.ItemType<Placeable.PinksBar>(), 27);   //you need 10 Wood
             recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());   //at work bench
             recipe.SetResult(this);
             recipe.AddRecipe();

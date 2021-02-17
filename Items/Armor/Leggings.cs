@@ -18,22 +18,24 @@ namespace MyFirstBasicMod.Items.Armor
         {
             item.width = 18;
             item.height = 18;
-            item.value = 65000;
-            item.rare = ItemRarityID.LightPurple;
-            item.defense = 42;
+            item.value = 85000;
+            item.rare = ItemRarityID.Lime;
+            item.defense = 43;
         }
 
         
         public override void UpdateEquip(Player player)
         {
-            player.rangedDamage += 0.09f; //Ranged damage +45%
+            player.rangedDamage += 0.19f; 
             player.meleeDamage += .26f;
             player.meleeCrit += 7;
+            player.statLifeMax2 += 10;
+            player.rangedCrit += 5;
         }
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 31);   //you need 10 Wood
+            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 32);   //you need 10 Wood
             recipe.AddTile(TileID.MythrilAnvil);   //at work bench
             recipe.SetResult(this);
             recipe.AddRecipe();

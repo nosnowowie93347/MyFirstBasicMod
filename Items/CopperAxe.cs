@@ -12,11 +12,12 @@ namespace MyFirstBasicMod.Items
 	{
 		public override void SetDefaults(Item item)
 		{
-			if (item.type == ItemID.CopperShortsword)
+			if (item.type == ItemID.CopperAxe)
 			{ // Here we make sure to only change Copper Shortsword by checking item.type in an if statement
-				item.damage = 12;       // Changed original CopperShortsword's damage to 50!
+				item.damage = 8;       // Changed original CopperShortsword's damage to 50!
 				item.useTime = 7;
-				item.knockBack = 6;
+                item.axe = 8;
+				item.knockBack = 5.65f;
 			}
 		}
 	}

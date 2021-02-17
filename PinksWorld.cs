@@ -23,7 +23,14 @@ namespace MyFirstBasicMod
 		public static bool downedOverseer = false;
 		public static bool downedPuritySpirit;
 
-		public override TagCompound Save() {
+        public override void Initialize()
+        {
+            downedAbomination = false;
+            downedPuritySpirit = false;
+           PinkTheTraveller.spawnTime = double.MaxValue;
+        }
+
+        public override TagCompound Save() {
 			var downed = new List<string>();
 			if (downedAbomination) {
 				downed.Add("abomination");
@@ -38,8 +45,9 @@ namespace MyFirstBasicMod
 
 
 			return new TagCompound {
-				["downed"] = downed
-			};
+				["downed"] = downed,
+                ["traveler"] = PinkTheTraveller.Save()
+            };
 		}
 
 		public override void Load(TagCompound tag) {
@@ -47,7 +55,8 @@ namespace MyFirstBasicMod
 			downedAbomination = downed.Contains("abomination");
 			downedPuritySpirit = downed.Contains("puritySpirit");
 			downedOverseer = downed.Contains("overseer");
-		}
+            PinkTheTraveller.Load(tag.GetCompound("traveler"));
+        }
 
 		public override void LoadLegacy(BinaryReader reader) {
 			int loadVersion = reader.ReadInt32();
@@ -103,7 +112,7 @@ namespace MyFirstBasicMod
 
                 // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place. Feel free to experiment with strength and step to see the shape they generate.
                 WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 7), WorldGen.genRand.Next(4, 7), TileType<GlowingOre>());
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(6, 10), WorldGen.genRand.Next(7, 10), TileType<PinksOre>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(7, 11), WorldGen.genRand.Next(8, 11), TileType<PinksOre>());
                 
 				
 
@@ -112,11 +121,16 @@ namespace MyFirstBasicMod
 		}
 
 		public override void PostWorldGen() {
-			int num = NPC.NewNPC((Main.spawnTileX + 5) * 16, Main.spawnTileY * 16, ModContent.NPCType<NPCs.ExamplePerson>(), 0, 0f, 0f, 0f, 0f, 255);
+			int num = NPC.NewNPC((Main.spawnTileX + 5) * 16, Main.spawnTileY * 16, ModContent.NPCType<NPCs.Pinkalicious21902>(), 0, 0f, 0f, 0f, 0f, 255);
 			Main.npc[num].homeTileX = Main.spawnTileX + 5;
 			Main.npc[num].homeTileY = Main.spawnTileY;
 			Main.npc[num].direction = 1;
 			Main.npc[num].homeless = true;
 		}
-	}
+        public override void PreUpdate()
+        {
+            // Update everything about spawning the traveling merchant from the methods we have in the Traveling Merchant's class
+            PinkTheTraveller.UpdateTravelingMerchant();
+        }
+    }
 }

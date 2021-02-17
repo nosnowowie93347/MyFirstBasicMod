@@ -24,12 +24,12 @@ namespace MyFirstBasicMod.NPCs.Overseer
 			npc.width = 148;
 			npc.height = 172;
 
-			npc.damage = 96;
-			npc.defense = 55;
-			npc.lifeMax = 179000;
+			npc.damage = 76;
+			npc.defense = 29;
+			npc.lifeMax = 109000;
 			npc.knockBackResist = 0;
-
-			npc.boss = true;
+            music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Overseer");
+            npc.boss = true;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.npcSlots = 10;
@@ -58,7 +58,7 @@ namespace MyFirstBasicMod.NPCs.Overseer
 				ModContent.ItemType<Items.Weapons.TerrabotsGun>(),
 				ModContent.ItemType<Items.TerrabotsPickaxe>(),
 				ModContent.ItemType<Items.Test>(),
-				ModContent.ItemType<Items.Weapons.TerrabotsBullet>()
+				ModContent.ItemType<Items.Weapons.Eternity>()
 			};
 			int loot = Main.rand.Next(lootTable.Length);
 			npc.DropItem(lootTable[loot]);
@@ -75,7 +75,7 @@ namespace MyFirstBasicMod.NPCs.Overseer
 		public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			if (projectile.type == ProjectileID.LastPrismLaser) {
-				damage /= 3;
+				damage /= 4;
 			}
 		}
 		private void DespawnHandler()

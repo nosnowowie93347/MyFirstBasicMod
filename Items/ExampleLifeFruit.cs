@@ -13,7 +13,7 @@ namespace MyFirstBasicMod.Items
 		public override string Texture => "Terraria/Item_" + ItemID.LifeFruit;
 
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Permanently increases maximum life by 2\nUp to 10 can be used");
+			Tooltip.SetDefault("Permanently increases maximum life by 5\nUp to 20 can be used");
 		}
 
 		public override void SetDefaults() {
@@ -29,11 +29,11 @@ namespace MyFirstBasicMod.Items
 
 		public override bool UseItem(Player player) {
 			// Do not do this: player.statLifeMax += 2;
-			player.statLifeMax2 += 2;
-			player.statLife += 2;
+			player.statLifeMax2 += 5;
+            player.statLife += 5;
 			if (Main.myPlayer == player.whoAmI) {
 				// This spawns the green numbers showing the heal value and informs other clients as well.
-				player.HealEffect(2, true);
+				player.HealEffect(5, true);
 			}
 			// This is very important. This is what makes it permanent.
 			player.GetModPlayer<PinksPlayer>().exampleLifeFruits += 1;

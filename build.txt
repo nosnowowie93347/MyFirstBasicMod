@@ -1,3 +1,4 @@
 displayName = My First Basic Mod
 author = Pinkalicious21902
 version = 1.9.5
+homepage = https://forums.terraria.org/index.php?threads/my-mod.103040/
