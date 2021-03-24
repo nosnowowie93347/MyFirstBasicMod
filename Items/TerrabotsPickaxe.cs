@@ -19,13 +19,13 @@ namespace MyFirstBasicMod.Items
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 64;
+			item.useTime = 17;
             item.crit = 1;
-			item.useAnimation = 64;
-			item.pick = 9999;
+			item.useAnimation = 17;
+			item.pick = 220;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 7.5f;
-			item.value = 599999;
+			item.value = 89999;
 			item.rare = ItemRarityID.Pink;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

@@ -22,7 +22,7 @@ namespace MyFirstBasicMod.Items
 			item.rare = ItemRarityID.Pink;
 			item.accessory = true;
 		}
-		//these wings use the same values as the solar wings
+		
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.wingTimeMax = 261;
             player.lifeRegen += 4;
@@ -30,16 +30,16 @@ namespace MyFirstBasicMod.Items
 
 		public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising,
 			ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend) {
-			ascentWhenFalling = 0.85f;
-			ascentWhenRising = 0.15f;
+			ascentWhenFalling = 0.89f;
+			ascentWhenRising = 0.17f;
 			maxCanAscendMultiplier = 1f;
 			maxAscentMultiplier = 3f;
-			constantAscend = 0.135f;
+			constantAscend = 0.136f;
 		}
 
 		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration) {
 			speed = 9f;
-			acceleration *= 2.83f;
+			acceleration *= 2.85f;
 		}
 
 		public override void AddRecipes() {

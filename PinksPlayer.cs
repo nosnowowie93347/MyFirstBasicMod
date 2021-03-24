@@ -149,9 +149,9 @@ namespace MyFirstBasicMod
                 return;
             }
             
-            if (questFish == ItemType<ExampleQuestFish>() && Main.rand.NextBool())
+            if (questFish == ItemType<PinksFish>() && Main.rand.NextBool())
             {
-                caughtType = ItemType<ExampleQuestFish>();
+                caughtType = ItemType<PinksFish>();
             }
         }
         public override void GetFishingLevel(Item fishingRod, Item bait, ref int fishingLevel)

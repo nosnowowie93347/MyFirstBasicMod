@@ -11,11 +11,11 @@ using Terraria.ModLoader;
 namespace MyFirstBasicMod.NPCs
 {
     [AutoloadBossHead]
-    public class Pinkzor : ModNPC
+    public class Pinky2 : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Pinky 2.0");
+            DisplayName.SetDefault("Pinky 2");
             Main.npcFrameCount[npc.type] = 5;
         }
         public override void SetDefaults()
@@ -42,7 +42,7 @@ namespace MyFirstBasicMod.NPCs
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return spawnInfo.spawnTileY < Main.maxTilesY - 550 && !NPC.AnyNPCs(npc.type) ? 0.09f : 0f;
+            return spawnInfo.spawnTileY < Main.maxTilesY - 550 && !NPC.AnyNPCs(npc.type) ? 0.05f : 0f;
         }
         
         public override void BossLoot(ref string name, ref int potionType)

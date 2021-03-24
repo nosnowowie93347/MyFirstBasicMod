@@ -19,16 +19,16 @@ namespace MyFirstBasicMod.Items
 			item.width = 1;
 			item.height = 1;
 			item.maxStack = 999;
-			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
+			item.consumable = true;            
 			item.knockBack = 1.5f;
 			item.value = 100000;
 			item.rare = ItemRarityID.Orange;
-			item.shoot = ProjectileType<Projectiles.TwilightArrow>();   //The projectile shoot when your weapon using this ammo
-			item.shootSpeed = 16f;                  //The speed of the projectile
-			item.ammo = AmmoID.Arrow;              //The ammo class this ammo belongs to.
+			item.shoot = ProjectileType<Projectiles.TwilightArrow>();  
+			item.shootSpeed = 16f;                
+			item.ammo = AmmoID.Arrow;              
 		}
 
-		// Give each bullet consumed a 20% chance of granting the Wrath buff for 5 seconds
+		// Give each arrow consumed a 20% chance of granting the Wrath buff for 5 seconds
 		public override void OnConsumeAmmo(Player player) {
 			if (Main.rand.NextBool(5)) {
 				player.AddBuff(BuffID.Wrath, 300);
