@@ -36,7 +36,9 @@ namespace MyFirstBasicMod.Items.Armor
                 player.buffImmune[calamity.BuffType("BrimstoneFlames")] = true;
                 player.buffImmune[calamity.BuffType("ExtremeGravity")] = true;
                 player.buffImmune[calamity.BuffType("WeakPetrification")] = true;
+                player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
                 player.buffImmune[calamity.BuffType("WarCleave")] = true;
+                player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
                 player.buffImmune[calamity.BuffType("HolyInferno")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
                 player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;

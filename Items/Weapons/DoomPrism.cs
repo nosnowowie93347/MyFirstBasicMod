@@ -26,9 +26,10 @@ Ignores NPC immunity frames and fires 10 beams at once instead of 6.");
 			// Start by using CloneDefaults to clone all the basic item properties from the vanilla Last Prism.
 			// For example, this copies sprite size, use style, sell price, and the item being a magic weapon.
 			item.CloneDefaults(ItemID.LastPrism);
-			item.mana = 9;
-			item.damage = 130;
-			item.shoot = ModContent.ProjectileType<Projectiles.ExampleLastPrismHoldout>();
+			item.mana = 19;
+            item.crit = -29;
+			item.damage = 80;
+            item.shoot = ModContent.ProjectileType<Projectiles.ExampleLastPrismHoldout>();
 			item.shootSpeed = 39f;
 
 			// Change the item's draw color so that it is visually distinct from the vanilla Last Prism.
@@ -38,8 +39,8 @@ Ignores NPC immunity frames and fires 10 beams at once instead of 6.");
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 20);
-			recipe.AddIngredient(ModContent.ItemType<Items.EpicSoul>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 27);
+			recipe.AddIngredient(ModContent.ItemType<Items.EpicSoul>(), 12);
 			recipe.AddTile(ModContent.TileType<Tiles.PinksWorkbench>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();

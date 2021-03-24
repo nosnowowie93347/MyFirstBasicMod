@@ -6,12 +6,12 @@ using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items.Consumable
 {
-    public class SpiritIdol : ModItem
+    public class GodSpawner : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spirit Idol");
-            Tooltip.SetDefault("Use in the Spirit Biome at nighttime to summon the Overseer");
+            DisplayName.SetDefault("God Spawner");
+            Tooltip.SetDefault("Use at nighttime to summon the Overseer");
         }
 
 

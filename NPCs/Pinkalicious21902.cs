@@ -191,7 +191,7 @@ namespace MyFirstBasicMod.NPCs
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-            var modCalamity = ModLoader.GetMod("Calamity");
+            var modCalamity = ModLoader.GetMod("CalamityMod");
             if (modCalamity != null)
             {
 
@@ -215,6 +215,12 @@ namespace MyFirstBasicMod.NPCs
                     shop.item[nextSlot].SetDefaults(modCalamity.ItemType("OmegaHealingPotion"));
                     nextSlot++;
                 }
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.SwordOfDreams>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BreadPickaxe>());
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.IrohsHamaxe>());
+                nextSlot++;
             }
             if (modCalamity == null)
             {
@@ -315,6 +321,7 @@ namespace MyFirstBasicMod.NPCs
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
         {
+            projType = ModContent.ProjectileType<SparklingBall>();
             attackDelay = 1;
         }
 

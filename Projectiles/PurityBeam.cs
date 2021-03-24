@@ -19,7 +19,8 @@ namespace MyFirstBasicMod.Projectiles
 		public override void SetDefaults() {
 			projectile.width = 80;
 			projectile.height = 14;
-			projectile.penetrate = -1;
+            projectile.damage = 30;
+            projectile.penetrate = -1;
 			projectile.magic = true;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;

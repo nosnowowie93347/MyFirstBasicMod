@@ -19,14 +19,19 @@ namespace MyFirstBasicMod
 {
 	public class PinksWorld : ModWorld
 	{
+        public static bool downedPinkzor;
 		public static bool downedAbomination;
 		public static bool downedOverseer = false;
 		public static bool downedPuritySpirit;
+        public static bool downedSlimePrince = false;
 
         public override void Initialize()
         {
             downedAbomination = false;
+            downedPinkzor = false;
             downedPuritySpirit = false;
+            downedOverseer = false;
+            downedSlimePrince = false;
            PinkTheTraveller.spawnTime = double.MaxValue;
         }
 
@@ -35,6 +40,10 @@ namespace MyFirstBasicMod
 			if (downedAbomination) {
 				downed.Add("abomination");
 			}
+            if (downedPinkzor)
+            {
+                downed.Add("pinkzor");
+            }
 
 			if (downedPuritySpirit) {
 				downed.Add("puritySpirit");
@@ -43,6 +52,10 @@ namespace MyFirstBasicMod
 				downed.Add("overseer");
 			}
 
+            if (downedSlimePrince)
+            {
+                downed.Add("slimePrince");
+            }
 
 			return new TagCompound {
 				["downed"] = downed,
@@ -53,8 +66,10 @@ namespace MyFirstBasicMod
 		public override void Load(TagCompound tag) {
 			var downed = tag.GetList<string>("downed");
 			downedAbomination = downed.Contains("abomination");
+            downedPinkzor = downed.Contains("pinkzor");
 			downedPuritySpirit = downed.Contains("puritySpirit");
 			downedOverseer = downed.Contains("overseer");
+            downedSlimePrince = downed.Contains("slimePrince");
             PinkTheTraveller.Load(tag.GetCompound("traveler"));
         }
 
@@ -65,6 +80,8 @@ namespace MyFirstBasicMod
 				downedAbomination = flags[0];
 				downedPuritySpirit = flags[1];
 				downedOverseer = flags[2];
+                downedPinkzor = flags[3];
+                downedSlimePrince = flags[4];
 			}
 			else {
 				mod.Logger.WarnFormat("MyFirstBasicMod: Unknown loadVersion: {0}", loadVersion);
@@ -76,6 +93,8 @@ namespace MyFirstBasicMod
 			flags[0] = downedAbomination;
 			flags[1] = downedPuritySpirit;
 			flags[2] = downedOverseer;
+            flags[3] = downedPinkzor;
+            flags[4] = downedSlimePrince;
 			writer.Write(flags);
 
 			
@@ -86,6 +105,8 @@ namespace MyFirstBasicMod
 			downedAbomination = flags[0];
 			downedPuritySpirit = flags[1];
 			downedOverseer = flags[2];
+            downedPinkzor = flags[3];
+            downedSlimePrince = flags[4];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
 			// BitsByte flags2 = reader.ReadByte();
 			// downed9thBoss = flags[0];

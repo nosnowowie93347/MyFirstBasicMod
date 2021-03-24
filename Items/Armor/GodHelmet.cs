@@ -35,9 +35,12 @@ namespace MyFirstBasicMod.Items.Armor
             if (calamity != null)
             {
                 player.buffImmune[calamity.BuffType("BrimstoneFlames")] = true;
+                player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
                 player.buffImmune[calamity.BuffType("ExtremeGravity")] = true;
                 player.buffImmune[calamity.BuffType("WeakPetrification")] = true;
+                player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
                 player.buffImmune[calamity.BuffType("WarCleave")] = true;
+                player.buffImmune[calamity.BuffType("VulnerabilityHex")] = true;
                 player.buffImmune[calamity.BuffType("HolyInferno")] = true;
                 player.buffImmune[calamity.BuffType("GodSlayerInferno")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
@@ -49,6 +52,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.Stoned] = true;
             player.buffImmune[BuffID.Obstructed] = true;
             player.buffImmune[BuffID.Chilled] = true;
+            player.buffImmune[BuffID.ManaSickness] = true;
             player.buffImmune[BuffID.Frozen] = true;
             player.buffImmune[BuffID.Silenced] = true;
             player.buffImmune[BuffID.Slow] = true;
@@ -66,7 +70,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.CursedInferno] = true;
             player.allDamage += 0.14f; //+15 % damage
-            
+            player.magicDamage += 0.43f;
             player.meleeCrit += 14;
             player.lifeRegen += 4;
         }

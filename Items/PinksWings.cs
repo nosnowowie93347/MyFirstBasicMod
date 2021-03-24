@@ -24,7 +24,7 @@ namespace MyFirstBasicMod.Items
 		}
 		//these wings use the same values as the solar wings
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.wingTimeMax = 211;
+			player.wingTimeMax = 261;
             player.lifeRegen += 4;
 		}
 

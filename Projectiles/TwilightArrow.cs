@@ -21,7 +21,7 @@ namespace MyFirstBasicMod.Projectiles
 			projectile.friendly = true;         //Can the projectile deal damage to enemies?
 			projectile.hostile = false;         //Can the projectile deal damage to the player?
 			projectile.ranged = true;           //Is the projectile shoot by a ranged weapon?
-			projectile.penetrate = 5;           //How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
+			projectile.penetrate = 6;           //How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
 			projectile.timeLeft = 600;          //The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
 			projectile.tileCollide = true;          //Can the projectile collide with tiles?
 			projectile.extraUpdates = 1;            //Set to above 0 if you want the projectile to update multiple time in a frame

@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.IO;
+using MyFirstBasicMod.NPCs;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;

@@ -55,9 +55,7 @@ namespace MyFirstBasicMod.NPCs.Overseer
 			npc.DropItem(ModContent.ItemType<Items.EpicSoul>(), Main.rand.Next(16, 28));
 
 			int[] lootTable = {
-				ModContent.ItemType<Items.Weapons.TerrabotsGun>(),
-				ModContent.ItemType<Items.TerrabotsPickaxe>(),
-				ModContent.ItemType<Items.Test>(),
+				
 				ModContent.ItemType<Items.Weapons.Eternity>()
 			};
 			int loot = Main.rand.Next(lootTable.Length);

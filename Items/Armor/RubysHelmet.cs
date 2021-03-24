@@ -23,8 +23,8 @@ namespace MyFirstBasicMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             base.UpdateEquip(player);
-			player.aggro -= (int)(player.aggro -0.15);
-			player.statLifeMax2 += 70;
+            player.aggro -= (int)(player.aggro - 0.15);
+            player.statLifeMax2 += 70;
         }
 
 

@@ -19,6 +19,7 @@ namespace MyFirstBasicMod.Projectiles
 
 		public override void SetDefaults() {
 			projectile.width = 40;
+            projectile.damage = 30;
 			projectile.height = 40;
 			projectile.hide = true;
 			projectile.penetrate = -1;

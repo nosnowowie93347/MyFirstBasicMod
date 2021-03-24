@@ -90,7 +90,7 @@ namespace MyFirstBasicMod.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			return !spawnInfo.playerSafe && ExampleWorld.downedAbomination ? SpawnCondition.OceanMonster.Chance * 0.5f : 0f;
+			return !spawnInfo.playerSafe && PinksWorld.downedAbomination ? SpawnCondition.OceanMonster.Chance * 0.5f : 0f;
 		}
 	}
 }

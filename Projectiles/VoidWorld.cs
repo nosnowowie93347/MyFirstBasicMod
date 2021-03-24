@@ -24,7 +24,8 @@ namespace MyFirstBasicMod.Projectiles
 			projectile.height = 80;
 			projectile.penetrate = -1;
 			projectile.magic = true;
-			projectile.hostile = true;
+			projectile.hostile = false;
+            projectile.friendly = true;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 			cooldownSlot = 1;

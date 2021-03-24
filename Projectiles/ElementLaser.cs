@@ -20,7 +20,8 @@ namespace MyFirstBasicMod.Projectiles
 			projectile.timeLeft = 60;
 			projectile.penetrate = -1;
 			projectile.hostile = true;
-			projectile.magic = true;
+            projectile.damage = 30;
+            projectile.magic = true;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}

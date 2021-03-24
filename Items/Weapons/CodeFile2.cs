@@ -10,8 +10,8 @@ namespace MyFirstBasicMod.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Eternity");
-            Tooltip.SetDefault("Occasionally shoots out a cluster of spiritual energy");
+            DisplayName.SetDefault("Pink Eternity");
+            Tooltip.SetDefault("Occasionally shoots out a cluster of epic pinkness");
         }
 
 

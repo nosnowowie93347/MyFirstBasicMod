@@ -25,7 +25,6 @@ namespace MyFirstBasicMod
 
 		public bool manaHeart;
 		public bool purityMinion;
-		public bool examplePet;
 		public PlayerEffect setbonus = null;
 		public int manaHeartCounter;
 		public float percentDamage;
@@ -35,22 +34,22 @@ namespace MyFirstBasicMod
 		public int healHurt;
 		public int heroLives;
 		public bool infinity;
-        public const int maxExampleLifeFruits = 22;
-        public int exampleLifeFruits;
+        public const int maxPinkLifeFruits = 20;
+        public int pinkLifeFruits;
 
         public int constantDamage { get; internal set; }
         public override void ResetEffects () {
-                  player.statLifeMax2 += exampleLifeFruits * 5;
+                  player.statLifeMax2 += pinkLifeFruits * 5;
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {
 			ModPacket packet = mod.GetPacket();
-			packet.Write(exampleLifeFruits);
+			packet.Write(pinkLifeFruits);
 			packet.Send(toWho, fromWho);
 		}
         public override TagCompound Save() {
 			// Read https://github.com/tModLoader/tModLoader/wiki/Saving-and-loading-using-TagCompound to better understand Saving and Loading data.
 			return new TagCompound {
-				{"exampleLifeFruits", exampleLifeFruits},
+				{"pinkLifeFruits", pinkLifeFruits},
 
 
 			};
@@ -62,7 +61,7 @@ namespace MyFirstBasicMod
 
 		public override void Load(TagCompound tag) {
 			
-			exampleLifeFruits = tag.GetInt("exampleLifeFruits");
+			pinkLifeFruits = tag.GetInt("pinkLifeFruits");
 			}
 
 		private void PuritySpiritTeleport(NPC npc) {
