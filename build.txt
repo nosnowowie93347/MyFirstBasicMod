@@ -1,6 +1,6 @@
 displayName = My First Basic Mod
 author = Pinkalicious21902
-version = 1.11
+version = 1.11.2
 hideCode = false
 hideResources = false
 includeSource = true
