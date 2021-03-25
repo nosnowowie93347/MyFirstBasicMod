@@ -1,7 +1,5 @@
 using Terraria;
 using Terraria.ID;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 namespace MyFirstBasicMod.Items
@@ -24,8 +22,8 @@ namespace MyFirstBasicMod.Items
 			item.UseSound = SoundID.Item3;
 			item.maxStack = 75;
 			item.consumable = true;
-			item.rare = ItemRarityID.LightRed;
-			item.healLife = 100; // While we change the actual healing value in GetHealLife, item.healLife still needs to be higher than 0 for the item to be considered a healing item
+			item.rare = ItemRarityID.Pink;
+			item.healLife = 100; 
 			item.potion = true; // Makes it so this item applies potion sickness on use and allows it to be used with quick heal
 		}
 		public override void AddRecipes() {
@@ -37,7 +35,7 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void GetHealLife(Player player, bool quickHeal, ref int healValue) {
-			// Make the item heal half the player's max health normally, or one fourth if used with quick heal
+			// Make the item heal half the player's max health
 			healValue = player.statLifeMax2 / 2;
 		}
 	}

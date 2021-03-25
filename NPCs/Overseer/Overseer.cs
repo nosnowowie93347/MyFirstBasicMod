@@ -15,7 +15,7 @@ namespace MyFirstBasicMod.NPCs.Overseer
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Overseer");
+			DisplayName.SetDefault("Overseer King");
 			Main.npcFrameCount[npc.type] = 7;
 		}
 

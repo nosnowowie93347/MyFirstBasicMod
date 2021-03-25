@@ -7,8 +7,8 @@ namespace MyFirstBasicMod.Buffs
     {
         public override void SetDefaults()
         {
-            DisplayName.SetDefault("Defensive Buff");
-            Description.SetDefault("Grants +12 defense.");
+            DisplayName.SetDefault("Peace Buff");
+            Description.SetDefault("Enemies are less likely to target you.");
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = false; //Add this so the nurse doesn't remove the buff when healing
         }

@@ -1,4 +1,3 @@
-using MyFirstBasicMod.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,7 +9,7 @@ namespace MyFirstBasicMod.Items
 	{
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Twilight's Arrow");
-			Tooltip.SetDefault("Behold. You are now in posession of Twilight's Arrow.");
+			Tooltip.SetDefault("Behold. You are now in posession of Twilight's Arrow.\nIt feels like it's made out of pink gel");
 		}
 
 		public override void SetDefaults() {
@@ -38,7 +37,8 @@ namespace MyFirstBasicMod.Items
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.WoodenArrow, 50);
-			recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 1);
+			recipe.AddIngredient(ItemType<Placeable.PinksBar>(), 1);
+            recipe.AddIngredient(ItemID.PinkGel, 10);
 			recipe.SetResult(this, 50);
 			recipe.AddRecipe();
 		}

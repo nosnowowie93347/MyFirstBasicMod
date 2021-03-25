@@ -17,7 +17,7 @@ namespace MyFirstBasicMod.Items
 
 		public override void SetDefaults() {
 			item.CloneDefaults(ItemID.LifeFruit);
-			item.color = Color.Purple;
+			item.color = Color.LightPink;
 		}
 
 		public override bool CanUseItem(Player player) {

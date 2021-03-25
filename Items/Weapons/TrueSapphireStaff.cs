@@ -16,23 +16,23 @@ namespace MyFirstBasicMod.Items.Weapons
 
         public override void SetDefaults()
         {
-            item.damage = 70; //The damage
+            item.damage = 70; 
             item.magic = true;
             item.crit = 11;
             item.width = 54; //Item width
             item.height = 54; //Item height
             item.maxStack = 1; //How many of this item you can stack
-            item.useTime = 5; //How **** this **** takes for the item to be used -gamrguy: Really? Just really? -Graydee: It was movildima, not me
-            item.useAnimation = 5; //How long the animation of the item takes
-            item.knockBack = 1f; //How much knockback the item produces
-            item.noMelee = true; //Whether the weapon should do melee damage or not
-            item.useStyle = ItemUseStyleID.HoldingOut; //How the weapon is held, 5 is the gun hold style
-            item.value = 120000; //How much the item is worth
-            item.rare = ItemRarityID.Yellow; //The rarity of the item
-            item.shoot = ProjectileID.VortexLightning; //What the item shoots, retains an int value | *
-            item.shootSpeed = 7f; //How fast the projectile fires
+            item.useTime = 5; 
+            item.useAnimation = 5;
+            item.knockBack = 1f; 
+            item.noMelee = true; 
+            item.useStyle = ItemUseStyleID.HoldingOut; 
+            item.value = 120000; 
+            item.rare = ItemRarityID.Yellow; 
+            item.shoot = ProjectileID.VortexLightning; 
+            item.shootSpeed = 7f; 
             item.mana = 4;
-            item.autoReuse = true; //Whether it automatically uses the item again after its done being used/animated
+            item.autoReuse = true; 
         }
 
         

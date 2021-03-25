@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Buffs
 {
-    public class ExampleDefenseBuff : ModBuff
+    public class PinksDefenseBuff : ModBuff
     {
         public override void SetDefaults()
         {
