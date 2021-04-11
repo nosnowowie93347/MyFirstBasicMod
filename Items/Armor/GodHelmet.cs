@@ -20,8 +20,8 @@ namespace MyFirstBasicMod.Items.Armor
             item.width = 18;
             item.height = 18;
             item.value = 65000;
-            item.rare = ItemRarityID.LightRed;
-            item.defense = 48;
+            item.rare = ItemRarityID.Purple;
+            item.defense = 47;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -35,16 +35,27 @@ namespace MyFirstBasicMod.Items.Armor
             if (calamity != null)
             {
                 player.buffImmune[calamity.BuffType("BrimstoneFlames")] = true;
-                player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
+                player.buffImmune[calamity.BuffType("AstralInfection")] = true;
+                player.buffImmune[calamity.BuffType("BurningBlood")] = true;
                 player.buffImmune[calamity.BuffType("ExtremeGravity")] = true;
+                player.buffImmune[calamity.BuffType("CrushDepth")] = true;
+                player.buffImmune[calamity.BuffType("Clamity")] = true;
                 player.buffImmune[calamity.BuffType("WeakPetrification")] = true;
-                player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
-                player.buffImmune[calamity.BuffType("WarCleave")] = true;
-                player.buffImmune[calamity.BuffType("VulnerabilityHex")] = true;
-                player.buffImmune[calamity.BuffType("HolyInferno")] = true;
-                player.buffImmune[calamity.BuffType("GodSlayerInferno")] = true;
+                player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
+                player.buffImmune[calamity.BuffType("Plague")] = true;
+                player.buffImmune[calamity.BuffType("FreezingWeather")] = true;
+                player.buffImmune[calamity.BuffType("FrozenLungs")] = true;
+                player.buffImmune[calamity.BuffType("LethalLavaBurn")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
+                player.buffImmune[calamity.BuffType("WarCleave")] = true;
+                player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
+                player.buffImmune[calamity.BuffType("HolyInferno")] = true;
+                player.buffImmune[calamity.BuffType("PrismaticCooldown")] = true;
+                player.buffImmune[calamity.BuffType("SearingLava")] = true;
+                player.buffImmune[calamity.BuffType("FishAlert")] = true;
+                player.buffImmune[calamity.BuffType("IcarusFolly")] = true;
                 player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;
+                player.buffImmune[calamity.BuffType("VulnerabilityHex")] = true;
                 player.buffImmune[calamity.BuffType("SulphuricPoisoning")] = true;
             }
             player.buffImmune[BuffID.WitheredWeapon] = true;
@@ -52,9 +63,9 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.Stoned] = true;
             player.buffImmune[BuffID.Obstructed] = true;
             player.buffImmune[BuffID.Chilled] = true;
-            player.buffImmune[BuffID.ManaSickness] = true;
             player.buffImmune[BuffID.Frozen] = true;
             player.buffImmune[BuffID.Silenced] = true;
+            player.buffImmune[BuffID.Burning] = true;
             player.buffImmune[BuffID.Slow] = true;
             player.buffImmune[BuffID.Electrified] = true;
             player.buffImmune[BuffID.Confused] = true;
@@ -69,15 +80,18 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.OgreSpit] = true;
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.CursedInferno] = true;
-            player.allDamage += 0.14f; //+15 % damage
-            player.magicDamage += 0.43f;
-            player.meleeCrit += 14;
-            player.lifeRegen += 4;
+            player.allDamage += 0.25f; //+15 % damage
+            player.statLifeMax2 += 80;
+            player.meleeCrit += 13;
+            player.magicCrit += 18;
+            player.rangedCrit += 12;
+            player.statManaMax2 += 70;
+            player.lifeRegen += 14;
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "You are awesome!. Full set bonus: +6 defense";
-            player.statDefense = (int)(player.statDefense + 6.00);
+            player.setBonus = "You are awesome!. Full set bonus: +12 defense";
+            player.statDefense = (int)(player.statDefense + 12.00);
         }
         public override void AddRecipes()  //How to craft this item
         {

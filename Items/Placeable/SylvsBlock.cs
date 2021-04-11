@@ -21,6 +21,7 @@ namespace MyFirstBasicMod.Items.Placeable
             item.createTile = TileType<Tiles.SylvsBlock>();
             item.useTurn = true;
             item.autoReuse = true;
+            item.value = Terraria.Item.sellPrice(0, 0, 50, 0);
             item.useAnimation = 15;
             item.useTime = 10;
             item.useStyle = ItemUseStyleID.SwingThrow;

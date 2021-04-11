@@ -12,7 +12,7 @@ namespace MyFirstBasicMod.Items.Armor
         
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pink's Helmet");
-            Tooltip.SetDefault("Immune to almost all vanilla debuffs, and a few calamity debuffs" + "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 15));
+            Tooltip.SetDefault("Immune to nearly all vanilla and calamity debuffs" + "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 15));
         }
         public override void SetDefaults()
         {
@@ -34,14 +34,27 @@ namespace MyFirstBasicMod.Items.Armor
             if (calamity != null)
             {
                 player.buffImmune[calamity.BuffType("BrimstoneFlames")] = true;
+                player.buffImmune[calamity.BuffType("AstralInfection")] = true;
+                player.buffImmune[calamity.BuffType("BurningBlood")] = true;
                 player.buffImmune[calamity.BuffType("ExtremeGravity")] = true;
+                player.buffImmune[calamity.BuffType("CrushDepth")] = true;
+                player.buffImmune[calamity.BuffType("Clamity")] = true;
                 player.buffImmune[calamity.BuffType("WeakPetrification")] = true;
                 player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
+                player.buffImmune[calamity.BuffType("Plague")] = true;
+                player.buffImmune[calamity.BuffType("FreezingWeather")] = true;
+                player.buffImmune[calamity.BuffType("FrozenLungs")] = true;
+                player.buffImmune[calamity.BuffType("LethalLavaBurn")] = true;
+                player.buffImmune[calamity.BuffType("SearingLava")] = true;
                 player.buffImmune[calamity.BuffType("WarCleave")] = true;
                 player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
                 player.buffImmune[calamity.BuffType("HolyInferno")] = true;
+                player.buffImmune[calamity.BuffType("PrismaticCooldown")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
+                player.buffImmune[calamity.BuffType("FishAlert")] = true;
+                player.buffImmune[calamity.BuffType("IcarusFolly")] = true;
                 player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;
+                player.buffImmune[calamity.BuffType("VulnerabilityHex")] = true;
                 player.buffImmune[calamity.BuffType("SulphuricPoisoning")] = true;
             }
             player.buffImmune[BuffID.WitheredWeapon] = true;
@@ -51,6 +64,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.Chilled] = true;
             player.buffImmune[BuffID.Frozen] = true;
             player.buffImmune[BuffID.Silenced] = true;
+            player.buffImmune[BuffID.Burning] = true;
             player.buffImmune[BuffID.Slow] = true;
             player.buffImmune[BuffID.Electrified] = true;
             player.buffImmune[BuffID.Confused] = true;
@@ -70,6 +84,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.meleeCrit += 7;
             player.magicCrit += 11;
             player.rangedCrit += 5;
+            player.statManaMax2 += 20;
             player.lifeRegen += 5;
         }
         public override void UpdateArmorSet(Player player)

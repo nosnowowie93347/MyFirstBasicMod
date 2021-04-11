@@ -27,8 +27,8 @@ Ignores NPC immunity frames and fires 10 beams at once instead of 6.");
 			// For example, this copies sprite size, use style, sell price, and the item being a magic weapon.
 			item.CloneDefaults(ItemID.LastPrism);
 			item.mana = 19;
-            item.crit = -29;
-			item.damage = 80;
+            item.crit = 12;
+			item.damage = 220;
             item.shoot = ModContent.ProjectileType<Projectiles.ExampleLastPrismHoldout>();
 			item.shootSpeed = 39f;
 

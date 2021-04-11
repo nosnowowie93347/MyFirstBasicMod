@@ -20,8 +20,8 @@ namespace MyFirstBasicMod.Items.Armor
             item.width = 18;
             item.height = 18;
             item.value = 65000;
-            item.rare = ItemRarityID.LightRed;
-            item.defense = 41;
+            item.rare = ItemRarityID.Yellow;
+            item.defense = 49;
         }
 
 
@@ -30,6 +30,7 @@ namespace MyFirstBasicMod.Items.Armor
             player.moveSpeed += .15f;
             player.statLifeMax2 += 60;
             player.meleeDamage += .16f;
+            player.magicDamage += .12f;
             player.meleeCrit += 6;
         }
         public override void AddRecipes()  //How to craft this item

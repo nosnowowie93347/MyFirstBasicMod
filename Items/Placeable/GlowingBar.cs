@@ -15,8 +15,8 @@ namespace MyFirstBasicMod.Items.Placeable
 		{
 			item.width = 30;
 			item.height = 24;
-			item.value = 80000;
-			item.useStyle = ItemUseStyleID.SwingThrow;
+            item.value = Terraria.Item.sellPrice(1, 0, 50, 0);
+            item.useStyle = ItemUseStyleID.SwingThrow;
 			item.rare = ItemRarityID.Yellow;
 			item.consumable = true;
 			item.maxStack = 99;

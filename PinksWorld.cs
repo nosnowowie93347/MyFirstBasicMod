@@ -119,9 +119,36 @@ namespace MyFirstBasicMod
 				
 				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Mod Ores", MyFirstBasicModOres));
 			}
-		}
+            int TrapsIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Traps"));
+            if (TrapsIndex != -1)
+            {
+                tasks.Insert(TrapsIndex + 1, new PassLegacy("Mod Traps", MyFirstBasicModTraps));
+            }
+        }
+        private void MyFirstBasicModTraps(GenerationProgress progress)
+        {
+            progress.Message = "Mod Traps";
 
-		private void MyFirstBasicModOres(GenerationProgress progress) {
+            // Computers are fast, so WorldGen code sometimes looks stupid.
+            // Here, we want to place a bunch of tiles in the world, so we just repeat until success. It might be useful to keep track of attempts and check for attempts > maxattempts so you don't have infinite loops. 
+            // The WorldGen.PlaceTile method returns a bool, but it is useless. Instead, we check the tile after calling it and if it is the desired tile, we know we succeeded.
+            for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
+            {
+                bool placeSuccessful = false;
+                Tile tile;
+                int tileToPlace = ModContent.TileType<Tiles.ExampleCutTileTile>();
+                while (!placeSuccessful)
+                {
+                    int x = WorldGen.genRand.Next(0, Main.maxTilesX);
+                    int y = WorldGen.genRand.Next(0, Main.maxTilesY);
+                    WorldGen.PlaceTile(x, y, tileToPlace);
+                    tile = Main.tile[x, y];
+                    placeSuccessful = tile.active() && tile.type == tileToPlace;
+                }
+            }
+        }
+
+        private void MyFirstBasicModOres(GenerationProgress progress) {
 			// progress.Message is the message shown to the user while the following code is running. Try to make your message clear. You can be a little bit clever, but make sure it is descriptive enough for troubleshooting purposes. 
 			progress.Message = "My First Basic Mod Ores";
 
@@ -132,8 +159,8 @@ namespace MyFirstBasicMod
 				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY); // WorldGen.worldSurfaceLow is actually the highest surface tile. In practice you might want to use WorldGen.rockLayer or other WorldGen values.
 
                 // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place. Feel free to experiment with strength and step to see the shape they generate.
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 7), WorldGen.genRand.Next(4, 7), TileType<GlowingOre>());
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(7, 11), WorldGen.genRand.Next(8, 11), TileType<PinksOre>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(6, 10), WorldGen.genRand.Next(8, 12), TileType<GlowingOre>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(6, 10), WorldGen.genRand.Next(5, 8), TileType<PinksOre>());
                 
 				
 

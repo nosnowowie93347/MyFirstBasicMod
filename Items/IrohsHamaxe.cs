@@ -20,12 +20,12 @@ namespace MyFirstBasicMod.Items
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 7;
-			item.useAnimation = 7;
-			item.axe = 50;          //How much axe power the weapon has, note that the axe power displayed in-game is this value multiplied by 5
-			item.hammer = 145;      //How much hammer power the weapon has
+			item.useTime = 11;
+			item.useAnimation = 11;
+			item.axe = 35;          //How much axe power the weapon has, note that the axe power displayed in-game is this value multiplied by 5
+			item.hammer = 125;      //How much hammer power the weapon has
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6;
+			item.knockBack = 5.825f;
             item.value = Item.buyPrice(platinum: 2);
 			item.rare = ItemRarityID.LightPurple;
 			item.UseSound = SoundID.Item1;
