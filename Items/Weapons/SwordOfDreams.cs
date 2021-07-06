@@ -12,7 +12,7 @@ namespace MyFirstBasicMod.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sword of Dreams");
-            Tooltip.SetDefault("This sword belongs to a user going by the name Dream.\nIt's OPNess is over 9000!!");
+            Tooltip.SetDefault("This sword belongs to a user going by the name Dream.\nMore savage than a supernova!");
         }
 
         public override void SetDefaults()
