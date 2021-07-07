@@ -49,7 +49,7 @@ namespace MyFirstBasicMod.Projectiles
 
             if (Main.rand.Next(2) == 0)
             {
-                Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 75, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100);
+                Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, DustID.CursedTorch, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100);
 
                 // Some dust will be large, the others small and with gravity, to give visual variety.
                 if (Main.rand.NextBool(3))

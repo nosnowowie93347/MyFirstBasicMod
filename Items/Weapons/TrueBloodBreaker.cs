@@ -20,7 +20,7 @@ namespace MyFirstBasicMod.Items.Weapons
             item.useAnimation = 40;
             item.knockBack = 9;
             item.value = 500000;
-            item.rare = 8;
+            item.rare = ItemRarityID.Yellow;
             item.UseSound = SoundID.Item1;
             item.hammer = 100;
             item.useStyle = 1;

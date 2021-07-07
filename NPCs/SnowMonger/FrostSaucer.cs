@@ -139,7 +139,7 @@ namespace MyFirstBasicMod.NPCs.SnowMonger
 
         public override void AI()
         {
-            int dust = Dust.NewDust(npc.position, npc.width, npc.height - 40, 76);
+            int dust = Dust.NewDust(npc.position, npc.width, npc.height - 40, DustID.Snow);
             Main.dust[dust].noGravity = true;
         }
 

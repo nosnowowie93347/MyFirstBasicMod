@@ -27,7 +27,7 @@ namespace MyFirstBasicMod.NPCs.SnowMonger
         {
             for (int i = 0; i < 2; i++)
             {
-                int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 76);
+                int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Snow);
             }
             Main.PlaySound(SoundID.Dig, (int)projectile.position.X, (int)projectile.position.Y);
 
@@ -43,7 +43,7 @@ namespace MyFirstBasicMod.NPCs.SnowMonger
             for (int i = 1; i <= 3; i++)
             {
                 if (Main.rand.Next(4) == 0)
-                    Dust.NewDust(projectile.position, projectile.width, projectile.height, 76);
+                    Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Snow);
             }
         }
 
