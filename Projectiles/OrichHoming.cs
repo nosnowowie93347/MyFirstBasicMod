@@ -7,8 +7,10 @@ namespace MyFirstBasicMod.Projectiles
 {
 	public class OrichHoming : ModProjectile
 	{
-		int target;
-		public override void SetStaticDefaults()
+#pragma warning disable IDE0044 // Add readonly modifier
+        int target;
+#pragma warning restore IDE0044 // Add readonly modifier
+        public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Orichalcum Bloom");
 		}

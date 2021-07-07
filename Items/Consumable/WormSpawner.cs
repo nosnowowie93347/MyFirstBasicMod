@@ -1,4 +1,4 @@
-﻿using MyFirstBasicMod.NPCs.Overseer;
+﻿using MyFirstBasicMod.NPCs.Worm;
 using MyFirstBasicMod.Items.Placeable;
 using Terraria;
 using Terraria.ID;
@@ -6,12 +6,12 @@ using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items.Consumable
 {
-    public class GodSpawner : ModItem
+    public class WormSpawner : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("God Spawner");
-            Tooltip.SetDefault("Use at nighttime to summon the Overseer");
+            DisplayName.SetDefault("Sus Worm Spawner");
+            Tooltip.SetDefault("Use at nighttime to summon the Worm Boss\nThis will spawn a very sus looking worm. I'd be careful...");
         }
 
 
@@ -33,13 +33,13 @@ namespace MyFirstBasicMod.Items.Consumable
 
         public override bool CanUseItem(Player player)
         {
-            if (!NPC.AnyNPCs(ModContent.NPCType<Overseer>()) && !Main.dayTime)
+            if (!NPC.AnyNPCs(ModContent.NPCType<WormHead>()) && !NPC.AnyNPCs(ModContent.NPCType<WormBody>()) && !NPC.AnyNPCs(ModContent.NPCType<WormTail>()) && !Main.dayTime)
                 return true;
             return false;
         }
         public override bool UseItem(Player player)
         {
-            NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Overseer>());
+            NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<WormHead>());
             Main.PlaySound(SoundID.Roar, player.position, 0);
             return true;
         }

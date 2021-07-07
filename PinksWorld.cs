@@ -21,7 +21,6 @@ namespace MyFirstBasicMod
 	{
         public static bool downedPinkzor;
 		public static bool downedAbomination;
-		public static bool downedOverseer = false;
 		public static bool downedPuritySpirit;
         public static bool downedSlimePrince = false;
 
@@ -30,7 +29,6 @@ namespace MyFirstBasicMod
             downedAbomination = false;
             downedPinkzor = false;
             downedPuritySpirit = false;
-            downedOverseer = false;
             downedSlimePrince = false;
            PinkTheTraveller.spawnTime = double.MaxValue;
         }
@@ -48,9 +46,7 @@ namespace MyFirstBasicMod
 			if (downedPuritySpirit) {
 				downed.Add("puritySpirit");
 			}
-			if (downedOverseer) {
-				downed.Add("overseer");
-			}
+			
 
             if (downedSlimePrince)
             {
@@ -68,7 +64,6 @@ namespace MyFirstBasicMod
 			downedAbomination = downed.Contains("abomination");
             downedPinkzor = downed.Contains("pinkzor");
 			downedPuritySpirit = downed.Contains("puritySpirit");
-			downedOverseer = downed.Contains("overseer");
             downedSlimePrince = downed.Contains("slimePrince");
             PinkTheTraveller.Load(tag.GetCompound("traveler"));
         }
@@ -79,7 +74,6 @@ namespace MyFirstBasicMod
 				BitsByte flags = reader.ReadByte();
 				downedAbomination = flags[0];
 				downedPuritySpirit = flags[1];
-				downedOverseer = flags[2];
                 downedPinkzor = flags[3];
                 downedSlimePrince = flags[4];
 			}
@@ -92,7 +86,6 @@ namespace MyFirstBasicMod
 			var flags = new BitsByte();
 			flags[0] = downedAbomination;
 			flags[1] = downedPuritySpirit;
-			flags[2] = downedOverseer;
             flags[3] = downedPinkzor;
             flags[4] = downedSlimePrince;
 			writer.Write(flags);
@@ -104,7 +97,6 @@ namespace MyFirstBasicMod
 			BitsByte flags = reader.ReadByte();
 			downedAbomination = flags[0];
 			downedPuritySpirit = flags[1];
-			downedOverseer = flags[2];
             downedPinkzor = flags[3];
             downedSlimePrince = flags[4];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:

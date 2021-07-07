@@ -87,5 +87,10 @@ namespace MyFirstBasicMod.NPCs.Worm
  
             return false;       //this make that the npc does not have a health bar
         }
+        public override void NPCLoot()
+        {
+            if (Main.rand.Next(7) == 0)
+                Item.NewItem(npc.getRect(), ModContent.ItemType<Items.GodlyHealingPotion>(), 20);
+        }
     }
 }
