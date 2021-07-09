@@ -115,7 +115,6 @@ namespace MyFirstBasicMod.NPCs.SnowMonger
             int[] lootTable = {
                 ModContent.ItemType<ElliesGun>(),
                 ItemID.SnowmanCannon,
-                ModContent.ItemType<PinksStaff>(),
                 ModContent.ItemType<Items.TwilightsBow>()
             };
             int loot = Main.rand.Next(lootTable.Length);

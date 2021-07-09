@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using MyFirstBasicMod.NPCs.PuritySpirit;
 using ReLogic.Graphics;
 using System;
 using System.Collections.Generic;
@@ -37,18 +36,7 @@ namespace MyFirstBasicMod
                     new List<int> { ModContent.ItemType<Items.Abomination.SixColorShield>(), ModContent.ItemType<Items.Abomination.MoltenDrill>() },
                     "$Mods.MyFirstBasicMod.BossSpawnInfo.Abomination"
                 );
-                bossChecklist.Call(
-                    "AddBoss",
-                    15.5f,
-                    ModContent.NPCType<PuritySpirit>(),
-                    this,
-                    "Purity Spirit",
-                    (Func<bool>)(() => PinksWorld.downedPuritySpirit),
-                    ItemID.Bunny,
-                    new List<int> { ModContent.ItemType<Items.PuritySpiritMask>(), ModContent.ItemType<Items.Placeable.PinksWorkbench>() },
-                    new List<int> { ModContent.ItemType<Items.PurityShield>(), ItemID.Bunny },
-                    $"Kill a [i:{ItemID.Bunny}] in front of [i:{ModContent.ItemType<Items.Placeable.PinksBar>()}]"
-                );
+
             }
         }
     }
