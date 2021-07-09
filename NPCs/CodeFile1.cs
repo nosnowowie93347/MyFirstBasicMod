@@ -42,7 +42,7 @@ namespace MyFirstBasicMod.NPCs
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return spawnInfo.spawnTileY < Main.maxTilesY - 550 && !NPC.AnyNPCs(npc.type) ? 0.05f : 0f;
+            return spawnInfo.spawnTileY < Main.maxTilesY - 550 && !NPC.AnyNPCs(npc.type) ? 0.005f : 0f;
         }
         
         public override void BossLoot(ref string name, ref int potionType)

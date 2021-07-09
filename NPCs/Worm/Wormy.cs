@@ -280,5 +280,49 @@ namespace MyFirstBasicMod.NPCs.Worm
             scale = 1.9f;   //this make the NPC Health Bar biger
             return null;
         }
+        public override void NPCLoot()
+        {
+
+            int choice = Main.rand.Next(10);
+            int item = 0;
+            switch (choice)
+            {
+                case 0:
+                    item = ModContent.ItemType<Items.Placeable.PinksChest>();
+                    break;
+                case 1:
+                    item = ModContent.ItemType<Items.GodlyHealingPotion>();
+                    break;
+                case 2:
+                    item = ModContent.ItemType<Items.TwilightsBow>();
+                    break;
+            }
+            if (item > 0)
+            {
+                Item.NewItem(npc.getRect(), item);
+            }
+            if (Main.expertMode)
+            {
+                npc.DropBossBags();
+            }
+            else
+            {
+                choice = Main.rand.Next(7);
+                if (choice == 0)
+                {
+                    Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Placeable.PinksChest>());
+                }
+                else if (choice == 1)
+                {
+                    Item.NewItem(npc.getRect(), ModContent.ItemType<Items.PinksWings>());
+                }
+                if (choice != 1)
+                {
+                    Item.NewItem(npc.getRect(), ItemID.HealingPotion);
+                }
+                Item.NewItem(npc.getRect(), ModContent.ItemType<Items.GodlyHealingPotion>());
+            }
+
+        }
     }
 }
