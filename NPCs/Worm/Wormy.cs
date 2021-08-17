@@ -30,6 +30,7 @@ namespace MyFirstBasicMod.NPCs.Worm
             npc.lavaImmune = true;
             npc.noGravity = true;
             npc.noTileCollide = true;
+            music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Worm");
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
             npc.behindTiles = true;           
@@ -41,7 +42,7 @@ namespace MyFirstBasicMod.NPCs.Worm
  
         public override bool PreAI()
         {
-            if (Main.netMode != 1)
+            if (Main.netMode != NetmodeID.MultiplayerClient)
             {
                 // So, we start the AI off by checking if npc.ai[0] is 0.
                 // This is practically ALWAYS the case with a freshly spawned NPC, so this means this is the first update.
@@ -185,7 +186,7 @@ namespace MyFirstBasicMod.NPCs.Worm
                     if (num1 > 20.0)
                         num1 = 20f;
                     npc.soundDelay = (int)num1;
-                    Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 1);
+                    Main.PlaySound(SoundID.Roar, (int)npc.position.X, (int)npc.position.Y, 1);
                 }
                 float absDirX = Math.Abs(dirX);
                 float absDirY = Math.Abs(dirY);

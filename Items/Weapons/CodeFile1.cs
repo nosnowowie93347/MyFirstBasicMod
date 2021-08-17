@@ -84,7 +84,7 @@ namespace MyFirstBasicMod.Items.Weapons
             {
                 if (player.altFunctionUse == 2)
                 {
-                    int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 169, 0f, 0f, 100, default(Color), 2f);
+                    int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.IchorTorch, 0f, 0f, 100, default(Color), 2f);
                     Main.dust[dust].noGravity = true;
                     Main.dust[dust].velocity.X += player.direction * 2f;
                     Main.dust[dust].velocity.Y += 0.2f;
