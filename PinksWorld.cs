@@ -20,12 +20,10 @@ namespace MyFirstBasicMod
 	public class PinksWorld : ModWorld
 	{
         public static bool downedPinkzor;
-		public static bool downedAbomination;
         public static bool downedSlimePrince = false;
 
         public override void Initialize()
         {
-            downedAbomination = false;
             downedPinkzor = false;
             downedSlimePrince = false;
            PinkTheTraveller.spawnTime = double.MaxValue;
@@ -33,9 +31,7 @@ namespace MyFirstBasicMod
 
         public override TagCompound Save() {
 			var downed = new List<string>();
-			if (downedAbomination) {
-				downed.Add("abomination");
-			}
+			
             if (downedPinkzor)
             {
                 downed.Add("pinkzor");
@@ -54,7 +50,6 @@ namespace MyFirstBasicMod
 
 		public override void Load(TagCompound tag) {
 			var downed = tag.GetList<string>("downed");
-			downedAbomination = downed.Contains("abomination");
             downedPinkzor = downed.Contains("pinkzor");
             downedSlimePrince = downed.Contains("slimePrince");
             PinkTheTraveller.Load(tag.GetCompound("traveler"));
@@ -64,7 +59,6 @@ namespace MyFirstBasicMod
 			int loadVersion = reader.ReadInt32();
 			if (loadVersion == 0) {
 				BitsByte flags = reader.ReadByte();
-				downedAbomination = flags[0];
                 downedPinkzor = flags[3];
                 downedSlimePrince = flags[4];
 			}
@@ -75,7 +69,6 @@ namespace MyFirstBasicMod
 
 		public override void NetSend(BinaryWriter writer) {
 			var flags = new BitsByte();
-			flags[0] = downedAbomination;
             flags[3] = downedPinkzor;
             flags[4] = downedSlimePrince;
 			writer.Write(flags);
@@ -85,7 +78,6 @@ namespace MyFirstBasicMod
 
 		public override void NetReceive(BinaryReader reader) {
 			BitsByte flags = reader.ReadByte();
-			downedAbomination = flags[0];
             downedPinkzor = flags[3];
             downedSlimePrince = flags[4];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:

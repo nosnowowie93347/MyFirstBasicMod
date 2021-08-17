@@ -119,7 +119,7 @@ namespace MyFirstBasicMod.NPCs
 
 			switch (Main.rand.Next(3)) {
 				case 0:
-					itemIds.Add(ModContent.ItemType<Items.Abomination.FoulOrb>());
+					itemIds.Add(ModContent.ItemType<Items.Banhammer>());
 					break;
 				case 1:
 					itemIds.Add(ModContent.ItemType<Items.Armor.Leggings>());
