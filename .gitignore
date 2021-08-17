@@ -36,6 +36,8 @@
 !.vscode/extensions.json
 *.code-workspace
 
+UpgradeLog.htm
+
 # Build results
 [Dd]ebug/
 /src
