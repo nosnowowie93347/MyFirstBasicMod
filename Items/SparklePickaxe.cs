@@ -7,7 +7,7 @@ using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items
 {
-    public class SparklePickaxe : ModItem 
+    public class SparklePick : ModItem 
     {
         public override void SetStaticDefaults() {
             Tooltip.SetDefault("Covered in sparkles.");
