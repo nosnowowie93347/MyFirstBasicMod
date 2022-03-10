@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 namespace MyFirstBasicMod.Items.Weapons
 {
-	public class Test : ModItem
+	public class GalaxySword : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
