@@ -8,7 +8,7 @@ using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Weapons
 {
-	public class ElvenBow : ModItem
+	public class ElvishBow : ModItem
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Forged by the great elves of Terraria.");
@@ -38,22 +38,21 @@ namespace MyFirstBasicMod.Items.Weapons
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Emerald, 20);
-			recipe.AddTile(TileID.Anvil);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 
         // How can I make the shots appear out of the muzzle exactly?
         // Also, when I do this, how do I prevent shooting through tiles?
-        public override bool shoot(player player, ref vector2 position, ref float speedx, ref float speedy, ref int type, ref int damage, ref float knockback)
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-        	vector2 muzzleoffset = vector2.normalize(new vector2(speedx, speedy)) * 25f;
-        	if (collision.canhit(position, 0, 0, position + muzzleoffset, 0, 0))
-        	{
-        		position += muzzleoffset;
-        	}
-        	return true;
-        }
+            if (type == ProjectileID.VenomArrow) // or ProjectileID.WoodenArrowFriendly
+            {
+                type = ProjectileType<Projectiles.TwilightArrow>(); // or ProjectileID.FireArrow;
+            }
+            return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
+    }
 
     }
 }

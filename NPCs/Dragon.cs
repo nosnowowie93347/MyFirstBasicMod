@@ -35,6 +35,7 @@ namespace MyFirstBasicMod.NPCs
             if (Main.hardMode) {
                 return SpawnCondition.SpiderCave.Chance * 0.1f;
             }
+            return 0;
         }
 
         public override void HitEffect(int hitDirection, double damage)

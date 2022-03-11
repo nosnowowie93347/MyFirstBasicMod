@@ -53,3 +53,4 @@ namespace MyFirstBasicMod.Items
             return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
     }
 }
+}
