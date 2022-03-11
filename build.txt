@@ -1,6 +1,6 @@
 displayName = My First Basic Mod
 author = Pinkalicious21902
-version = 1.13.1
+version = 1.14
 hideCode = true
 hideResources = false
 homepage = https://discord.gg/gUpcTRN7Vf
