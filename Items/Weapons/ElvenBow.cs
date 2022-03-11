@@ -19,8 +19,8 @@ namespace MyFirstBasicMod.Items.Weapons
 			item.damage = 37;
 			item.ranged = true;
             item.crit = 14;
-			item.width = 34;
-			item.height = 55;
+			item.width = 20;
+			item.height = 42;
 			item.useTime = 12;
 			item.useAnimation = 12;
 			item.useStyle = ItemUseStyleID.HoldingOut;
