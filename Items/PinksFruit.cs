@@ -42,6 +42,8 @@ namespace MyFirstBasicMod.Items
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Placeable.PinksBar>(), 10);
+			recipe.AddIngredient(ItemID.LifeFruit, 1);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

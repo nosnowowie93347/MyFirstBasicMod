@@ -35,6 +35,7 @@ namespace MyFirstBasicMod.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 19);
 			recipe.AddIngredient(ModContent.ItemType<Items.EpicSoul>(), 5);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

@@ -39,6 +39,7 @@ namespace MyFirstBasicMod.Items.Weapons
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.EmeraldStaff);
             recipe.AddIngredient(ItemID.Emerald, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

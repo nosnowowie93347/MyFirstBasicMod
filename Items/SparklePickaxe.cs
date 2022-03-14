@@ -25,7 +25,7 @@ namespace MyFirstBasicMod.Items
             item.melee = true;
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.knockBack = 2.75f;
-            item.value = Item.buyPrice(platinum: 12);
+            item.value = Item.buyPrice(gold: 12);
             item.rare = ItemRarityID.Green;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;

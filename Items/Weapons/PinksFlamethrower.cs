@@ -20,7 +20,7 @@ namespace MyFirstBasicMod.Items.Weapons
         {
             item.damage = 99;
             item.ranged = true;
-            item.crit = 8;
+            item.crit = 11;
             item.width = 50;
             item.height = 18;
             item.useTime = 4;

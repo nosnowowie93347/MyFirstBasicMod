@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace MyFirstBasicMod.Items.Weapons
 {
@@ -42,6 +44,14 @@ namespace MyFirstBasicMod.Items.Weapons
                 }
             }
             return true;
+        }
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.BloodBreaker, 1);
+            recipe.AddIngredient(ItemID.CrimtaneBar, 10);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
 
