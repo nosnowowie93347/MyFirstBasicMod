@@ -18,7 +18,7 @@ namespace MyFirstBasicMod.NPCs
             npc.height = 30;
             npc.damage = 49;
             npc.defense = 18;
-            npc.lifeMax = 200;
+            npc.lifeMax = 900;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 60f;
