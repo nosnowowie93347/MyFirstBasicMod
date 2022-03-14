@@ -5,7 +5,7 @@ using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Projectiles
 {
-	public class ElenasSpearProjectile : ModProjectile
+	public class ElliesSpearProjectile : ModProjectile
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Spear");

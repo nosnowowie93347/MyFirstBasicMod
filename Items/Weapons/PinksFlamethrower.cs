@@ -49,7 +49,7 @@ namespace MyFirstBasicMod.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Flamethrower);
-            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 3);
+            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 5);
             recipe.AddIngredient(ItemID.CursedFlame, 15);
             recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());
             recipe.SetResult(this);

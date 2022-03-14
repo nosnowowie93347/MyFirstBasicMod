@@ -6,7 +6,7 @@ using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Weapons
 {
-	public class ElenasSpear : ModItem
+	public class ElliesSpear : ModItem
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Ellie's Spear");
@@ -33,7 +33,7 @@ namespace MyFirstBasicMod.Items.Weapons
 			item.autoReuse = true; // Most spears don't autoReuse, but it's possible when used in conjunction with CanUseItem()
 
 			item.UseSound = SoundID.Item1;
-			item.shoot = ProjectileType<ElenasSpearProjectile>();
+			item.shoot = ProjectileType<ElliesSpearProjectile>();
 		}
 		
 		public override bool CanUseItem(Player player) {
@@ -43,9 +43,9 @@ namespace MyFirstBasicMod.Items.Weapons
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<Placeable.PinksBar>(), 20);
+            recipe.AddIngredient(ItemType<Placeable.PinksBar>(), 14);
             recipe.AddIngredient(ItemID.DarkLance, 1);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }

@@ -20,16 +20,16 @@ namespace MyFirstBasicMod.Items.Weapons
             item.height = 42;
 
             item.useStyle = ItemUseStyleID.Stabbing;
-            item.useTime = 14;
-            item.useAnimation = 14;
+            item.useTime = 19;
+            item.useAnimation = 19;
             item.autoReuse = true;
 
             item.melee = true;
-            item.damage = 40;
-            item.knockBack = 5.75f;
-            item.crit = 11;
-            item.value = Item.buyPrice(platinum: 7);
-            item.rare = ItemRarityID.Pink;
+            item.damage = 38;
+            item.knockBack = 4.75f;
+            item.crit = 8;
+            item.value = Item.buyPrice(gold: 2);
+            item.rare = ItemRarityID.LightRed;
             item.UseSound = SoundID.Item1;
 
         }
@@ -37,7 +37,7 @@ namespace MyFirstBasicMod.Items.Weapons
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.CobaltBar, 10);
+            recipe.AddIngredient(ItemID.CobaltBar, 7);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

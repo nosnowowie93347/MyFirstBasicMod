@@ -41,6 +41,7 @@ namespace MyFirstBasicMod.Items.Weapons
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MusketBall, 50);
+			recipe.AddIngredient(ItemID.EmptyBullet, 50);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this, 50);
 			recipe.AddRecipe();

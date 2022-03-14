@@ -30,8 +30,8 @@ namespace MyFirstBasicMod.Items.Weapons
 			recipe.AddIngredient(ItemID.HelFire, 1);
 			recipe.AddIngredient(ItemID.SoulofSight, 5);
 			recipe.AddIngredient(ItemID.CursedFlame, 18);
-			recipe.SetResult(this);
 			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 	}

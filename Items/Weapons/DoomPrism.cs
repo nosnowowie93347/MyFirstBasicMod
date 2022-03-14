@@ -41,7 +41,7 @@ Ignores NPC immunity frames and fires 10 beams at once instead of 6.");
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 27);
 			recipe.AddIngredient(ModContent.ItemType<Items.EpicSoul>(), 12);
-			recipe.AddTile(ModContent.TileType<Tiles.PinksWorkbench>());
+			recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

@@ -42,11 +42,6 @@ namespace MyFirstBasicMod.Items.Weapons
 		 	recipe.AddRecipe();
 		 }
 
-		/*
-		 * Feel free to uncomment any of the examples below to see what they do
-		 */
-
-		// What if I wanted this gun to have a 38% chance not to consume ammo?
 		public override bool ConsumeAmmo(Player player)
 		{
 			return Main.rand.NextFloat() >= .38f;
@@ -54,14 +49,13 @@ namespace MyFirstBasicMod.Items.Weapons
 
 		
 
-		// Help, my gun isn't being held at the handle! Adjust these 2 numbers until it looks right.
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(10, 0);
 		}
 
         // How can I make the shots appear out of the muzzle exactly?
-        // Also, when I do this, how do I prevent shooting through tiles?
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
