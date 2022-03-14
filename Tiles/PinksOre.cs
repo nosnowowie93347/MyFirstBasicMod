@@ -28,7 +28,13 @@ namespace MyFirstBasicMod.Tiles
 			soundType = SoundID.Tink;
 			soundStyle = 1;
 			//mineResist = 4f;
-			minPick = 110;
+			minPick = 130;
+		}
+		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+		{
+			r = 1.2f;
+			g = 0.3f;
+			b = 1.0f;
 		}
 	}
 }

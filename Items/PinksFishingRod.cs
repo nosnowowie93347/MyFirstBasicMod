@@ -29,7 +29,7 @@ namespace MyFirstBasicMod.Items
 			item.CloneDefaults(ItemID.WoodFishingPole);
 
 			//Sets the poles fishing power
-			item.fishingPole = 30;
+			item.fishingPole = 60;
 
 			//Sets the speed in which the bobbers are launched, Wooden Fishing Pole is 9f and Golden Fishing Rod is 17f
 			item.shootSpeed = 12f;
@@ -40,6 +40,14 @@ namespace MyFirstBasicMod.Items
 			// Change the item's draw color so that it is visually distinct from the vanilla Wooden Fishing Rod.
 			item.color = OverrideColor;
 		}
+		public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodFishingPole, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+        }
 
 		
 		public override void HoldItem(Player player)

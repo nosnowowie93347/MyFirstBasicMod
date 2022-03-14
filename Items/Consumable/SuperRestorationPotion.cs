@@ -39,8 +39,8 @@ namespace MyFirstBasicMod.Items.Consumable
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.ItemType("GreaterRestorationPotion"));
-            recipe.AddIngredient(ItemID.SoulofLight);
-            recipe.AddIngredient(ItemID.Ectoplasm);
+            recipe.AddIngredient(ItemID.SoulofLight, 10);
+            recipe.AddIngredient(ItemID.Ectoplasm, 4);
             recipe.AddTile(TileID.Bottles);
             recipe.SetResult(this);
             recipe.AddRecipe();

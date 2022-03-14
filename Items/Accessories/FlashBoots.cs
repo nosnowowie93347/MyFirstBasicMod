@@ -27,5 +27,12 @@ namespace MyFirstBasicMod.Items.Accessories
             player.accRunSpeed = 9f; 
             player.moveSpeed += 0.25f;
         }
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FrostparkBoots, 1);
+            recipe.AddTile(TileType<PinksAnvil>());
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }

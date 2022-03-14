@@ -28,8 +28,8 @@ namespace MyFirstBasicMod.Items
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemType<Items.Placeable.PinksBar>(), 19);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ItemID.GreaterHealingPotion, 5);
+            recipe.AddTile(TileID.AlchemyTable);
 			recipe.SetResult(this, 2);
 			recipe.AddRecipe();
 		}

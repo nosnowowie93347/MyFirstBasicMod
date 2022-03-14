@@ -10,13 +10,14 @@ namespace MyFirstBasicMod.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Emerald Ring");
-            Tooltip.SetDefault("5% increased damage");
+            Tooltip.SetDefault("5% increased damage, and +3 defense");
         }
 
         public override void SetDefaults()
         {
             item.width = 40;
             item.height = 40;
+            item.defense = 3;
             item.value = Item.sellPrice(0, 0, 70, 0);
             item.rare = ItemRarityID.Green;
             item.accessory = true;

@@ -28,6 +28,7 @@ namespace MyFirstBasicMod.Items.Placeable
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Chest);
 			recipe.AddIngredient(ItemType<PinksBar>(), 10);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

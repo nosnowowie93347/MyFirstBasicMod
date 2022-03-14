@@ -33,7 +33,7 @@ namespace MyFirstBasicMod.Items.Placeable
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemType<PinksOre>(), 3);
             recipe.AddIngredient(ItemID.CopperOre, 4);
-            recipe.AddTile(TileID.Furnaces);
+            recipe.AddTile(TileID.Hellforge);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

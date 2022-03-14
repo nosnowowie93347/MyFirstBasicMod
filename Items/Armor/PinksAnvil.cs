@@ -1,5 +1,6 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
+using MyFirstBasicMod.Tiles;
 using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Placeable
@@ -31,6 +32,7 @@ namespace MyFirstBasicMod.Items.Placeable
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.IronAnvil);
 			recipe.AddIngredient(ItemType<PinksBar>(), 10);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

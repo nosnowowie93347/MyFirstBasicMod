@@ -289,7 +289,7 @@ namespace MyFirstBasicMod.NPCs.Worm
             switch (choice)
             {
                 case 0:
-                    item = ModContent.ItemType<Items.Placeable.PinksChest>();
+                    item = ModContent.ItemType<Items.EpicSoul>();
                     break;
                 case 1:
                     item = ModContent.ItemType<Items.GodlyHealingPotion>();
@@ -311,7 +311,7 @@ namespace MyFirstBasicMod.NPCs.Worm
                 choice = Main.rand.Next(7);
                 if (choice == 0)
                 {
-                    Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Placeable.PinksChest>());
+                    Item.NewItem(npc.getRect(), ModContent.ItemType<Items.EpicSoul>());
                 }
                 else if (choice == 1)
                 {

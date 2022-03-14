@@ -27,5 +27,14 @@ namespace MyFirstBasicMod.Items.Consumable
             item.buffType = ModContent.BuffType<Buffs.PinksDefenseBuff>(); //Specify an existing buff to be applied when used.
             item.buffTime = 18000; //The amount of time the buff declared in item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.IronskinPotion, 3);
+            recipe.AddIngredient(ItemID.Rockfish, 1)
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this, 2);
+            recipe.AddRecipe();
+        }
     }
 }

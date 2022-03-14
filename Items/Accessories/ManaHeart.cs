@@ -17,6 +17,7 @@ namespace MyFirstBasicMod.Items.Accessories
 			item.width = 20;
 			item.height = 20;
 			item.accessory = true;
+			item.defense = 2;
 			item.value = Item.sellPrice(silver: 30);
 			item.rare = ItemRarityID.Blue;
 		}

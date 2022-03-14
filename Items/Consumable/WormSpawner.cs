@@ -46,10 +46,9 @@ namespace MyFirstBasicMod.Items.Consumable
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.SoulofLight, 4);
-            recipe.AddIngredient(ItemID.SoulofNight, 4);
-            recipe.AddIngredient(ModContent.ItemType<PinksBar>(), 4);
-            recipe.AddIngredient(ItemID.LunarBar, 4);
+            recipe.AddIngredient(ItemID.SoulofLight, 6);
+            recipe.AddIngredient(ItemID.SoulofNight, 6);
+            recipe.AddIngredient(ModContent.ItemType<PinksBar>(), 7);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();
