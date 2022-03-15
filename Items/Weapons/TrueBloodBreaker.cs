@@ -25,7 +25,7 @@ namespace MyFirstBasicMod.Items.Weapons
             item.rare = ItemRarityID.Yellow;
             item.UseSound = SoundID.Item1;
             item.hammer = 100;
-            item.useStyle = 1;
+            item.useStyle = ItemUseStyleID.SwingThrow;
             item.tileBoost = 2;
             item.autoReuse = true;
             item.useTurn = true;
@@ -40,14 +40,14 @@ namespace MyFirstBasicMod.Items.Weapons
                 }
                 else
                 {
-                    Main.PlaySound(42, player.position, 213 + Main.rand.Next(4));
+                    Main.PlaySound(SoundID.Trackable, player.position, 213 + Main.rand.Next(4));
                 }
             }
             return true;
         }
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.BloodBreaker, 1);
+            recipe.AddIngredient(ItemID.FleshGrinder, 1);
             recipe.AddIngredient(ItemID.CrimtaneBar, 10);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);

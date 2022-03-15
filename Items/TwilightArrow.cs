@@ -39,7 +39,7 @@ namespace MyFirstBasicMod.Items
 			recipe.AddIngredient(ItemID.WoodenArrow, 50);
 			recipe.AddIngredient(ItemType<Placeable.PinksBar>(), 1);
             recipe.AddIngredient(ItemID.PinkGel, 10);
-            recipe.AddTile(TileID.MythrilAnvil)
+            recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this, 50);
 			recipe.AddRecipe();
 		}

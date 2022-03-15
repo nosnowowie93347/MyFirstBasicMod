@@ -31,7 +31,7 @@ namespace MyFirstBasicMod.Items.Consumable
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.IronskinPotion, 3);
-            recipe.AddIngredient(ItemID.Rockfish, 1)
+            recipe.AddIngredient(ItemID.Rockfish, 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this, 2);
             recipe.AddRecipe();

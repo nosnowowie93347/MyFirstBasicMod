@@ -3,6 +3,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using MyFirstBasicMod.Items.Weapons;
+using MyFirstBasicMod.Items;
+using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.NPCs
 {
@@ -22,18 +24,23 @@ namespace MyFirstBasicMod.NPCs
         {
             npc.width = 344;
             npc.height = 298;
-            npc.damage = 290;
-            npc.lifeMax = 30000;
-            npc.knockBackResist = 0;
-
+            npc.damage = 140;
+            npc.defense = 89;
+            npc.lifeMax = 34500;
+            npc.knockBackResist = 0.5f;
+            npc.lavaImmune = true;
             npc.boss = true;
             npc.noGravity = true;
             npc.noTileCollide = true;
-
+            music = MusicID.Boss2;
             npc.HitSound = SoundID.NPCHit7;
             npc.DeathSound = SoundID.NPCDeath5;
         }
-
+        public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
+            npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+            npc.damage = (int)(npc.damage * 1.3f);
+            npc.defense = (int)(npc.defense * 1.4f);
+        }
         private int Counter;
         public override bool PreAI()
         {
@@ -88,20 +95,7 @@ namespace MyFirstBasicMod.NPCs
                     Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X + A, direction.Y + B, ProjectileID.FrostBlastHostile, 29, 1, Main.myPlayer, 0, 0);
                 }
             }
-            else if (timer == 300 || timer == 340 || timer == 380 || timer == 420 || timer == 460 || timer == 470 || timer == 480 || timer == 490)
-            {
-                Vector2 direction = Main.player[npc.target].Center - npc.Center;
-                direction.Normalize();
-                direction.X *= 14f;
-                direction.Y *= 14f;
-
-                int amountOfProjectiles = Main.rand.Next(1, 1);
-                for (int i = 0; i < amountOfProjectiles; ++i)
-                {
-                    Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, ModContent.ProjectileType<SnowBall>(), 32, 1, Main.myPlayer, 0, 0);
-                }
-
-            }
+            
             else if (timer >= 500)
             {
                 timer = 0;
@@ -118,7 +112,7 @@ namespace MyFirstBasicMod.NPCs
             };
             int loot = Main.rand.Next(lootTable.Length);
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, lootTable[loot]);
-
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EpicSoul>(), Main.rand.Next(15, 23));
             for (int i = 0; i < 15; ++i)
             {
                 if (Main.rand.Next(8) == 0)

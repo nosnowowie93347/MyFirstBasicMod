@@ -16,9 +16,9 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void SetDefaults() {
-			item.damage = 107;
+			item.damage = 137;
 			item.ranged = true;
-            		item.crit = 14;
+            item.crit = 14;
 			item.width = 34;
 			item.height = 55;
 			item.useTime = 12;

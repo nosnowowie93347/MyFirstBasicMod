@@ -110,7 +110,7 @@ namespace MyFirstBasicMod.NPCs
 			// For each slot we add a switch case to determine what should go in that slot
 			switch (Main.rand.Next(2)) {
 				case 0:
-					itemIds.Add(ModContent.ItemType<Items.Weapons.ElenasSpear>());
+					itemIds.Add(ModContent.ItemType<Items.Weapons.ElliesSpear>());
 					break;
 				default:
 					itemIds.Add(ModContent.ItemType<Items.EpicSoul>());

@@ -1,6 +1,8 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using MyFirstBasicMod.Tiles;
+using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Accessories
 {
@@ -29,7 +31,7 @@ namespace MyFirstBasicMod.Items.Accessories
         }
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.FrostparkBoots, 1);
+            recipe.AddIngredient(ItemID.FrostsparkBoots, 1);
             recipe.AddTile(TileType<PinksAnvil>());
             recipe.SetResult(this);
             recipe.AddRecipe();

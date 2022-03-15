@@ -1,8 +1,9 @@
-using MyFirstBasicMod.NPCs.Worm;
+using MyFirstBasicMod.NPCs;
 using MyFirstBasicMod.Items.Placeable;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace MyFirstBasicMod.Items.Consumable
 {
@@ -39,7 +40,7 @@ namespace MyFirstBasicMod.Items.Consumable
         }
         public override bool UseItem(Player player)
         {
-            NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<WormHead>());
+            NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Ocram2>());
             Main.PlaySound(SoundID.Roar, player.position, 0);
             return true;
         }
@@ -48,7 +49,7 @@ namespace MyFirstBasicMod.Items.Consumable
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.SoulofLight, 6);
             recipe.AddIngredient(ItemID.SoulofNight, 6);
-            recipe.AddIngredient(ModContent.ItemType<PinksBar>(), 7);
+            recipe.AddIngredient(ItemType<PinksBar>(), 7);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();

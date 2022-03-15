@@ -38,7 +38,7 @@ namespace MyFirstBasicMod.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.CobaltBar, 7);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

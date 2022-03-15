@@ -35,8 +35,8 @@ namespace MyFirstBasicMod.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.SoulofMight, 10);
-            recipe.AddIngredient(ItemID.SoulOfLight, 10);
-            recipe.AddIngredient(ItemID.SoulOfNight, 10);
+            recipe.AddIngredient(ItemID.SoulofLight, 10);
+            recipe.AddIngredient(ItemID.SoulofNight, 10);
             recipe.AddIngredient(ItemID.SoulofSight, 10);
             recipe.AddIngredient(ItemID.SoulofFright, 10);
             recipe.AddTile(TileType<Tiles.PinksAnvil>());

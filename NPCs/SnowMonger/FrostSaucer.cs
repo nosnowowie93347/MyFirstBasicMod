@@ -124,7 +124,7 @@ namespace MyFirstBasicMod.NPCs.SnowMonger
             {
                 if (Main.rand.Next(8) == 0)
                 {
-                    int newDust = Dust.NewDust(npc.position, npc.width, npc.height, 76, 0f, 0f, 100, default(Color), 2.5f);
+                    int newDust = Dust.NewDust(npc.position, npc.width, npc.height, DustID.Snow, 0f, 0f, 100, default(Color), 2.5f);
                     Main.dust[newDust].noGravity = true;
                     Main.dust[newDust].velocity *= 5f;
                 }
