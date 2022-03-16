@@ -36,7 +36,7 @@ namespace MyFirstBasicMod.Items.Weapons
             {
                 if (player.velocity.Y == 0)
                 {
-                    Main.PlaySound(42, player.position, 207 + Main.rand.Next(3));
+                    Main.PlaySound(SoundID.Trackable, player.position, 207 + Main.rand.Next(3));
                 }
                 else
                 {

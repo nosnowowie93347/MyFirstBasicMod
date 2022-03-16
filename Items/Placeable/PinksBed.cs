@@ -27,7 +27,7 @@ namespace MyFirstBasicMod.Items.Placeable
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bed);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksOre>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 4);
 			recipe.AddTile(ModContent.TileType<Tiles.PinksWorkbench>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -18,9 +18,9 @@ namespace MyFirstBasicMod.Items.Armor
         {
             item.width = 18;
             item.height = 18;
-            item.value = 65000;
+            item.value = Item.sellPrice(gold: 15);
             item.rare = ItemRarityID.LightRed;
-            item.defense = 23;
+            item.defense = 29;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -39,6 +39,8 @@ namespace MyFirstBasicMod.Items.Armor
                 player.buffImmune[calamity.BuffType("ExtremeGravity")] = true;
                 player.buffImmune[calamity.BuffType("CrushDepth")] = true;
                 player.buffImmune[calamity.BuffType("Clamity")] = true;
+                player.buffImmune[calamity.BuffType("GodSlayerInferno")] = true;
+                player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;
                 player.buffImmune[calamity.BuffType("WeakPetrification")] = true;
                 player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
                 player.buffImmune[calamity.BuffType("Plague")] = true;
@@ -47,13 +49,13 @@ namespace MyFirstBasicMod.Items.Armor
                 player.buffImmune[calamity.BuffType("LethalLavaBurn")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
                 player.buffImmune[calamity.BuffType("WarCleave")] = true;
+                player.buffImmune[calamity.BuffType("Warped")] = true;
                 player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
                 player.buffImmune[calamity.BuffType("HolyInferno")] = true;
                 player.buffImmune[calamity.BuffType("PrismaticCooldown")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
                 player.buffImmune[calamity.BuffType("FishAlert")] = true;
                 player.buffImmune[calamity.BuffType("IcarusFolly")] = true;
-                player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;
                 player.buffImmune[calamity.BuffType("VulnerabilityHex")] = true;
                 player.buffImmune[calamity.BuffType("SulphuricPoisoning")] = true;
             }

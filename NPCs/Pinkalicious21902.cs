@@ -217,6 +217,8 @@ namespace MyFirstBasicMod.NPCs
                 }
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.SwordOfDreams>());
                 nextSlot++;
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsBullet>());
+                nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BreadPickaxe>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.IrohsHamaxe>());
@@ -230,7 +232,7 @@ namespace MyFirstBasicMod.NPCs
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TerrabotsGun>());
                 nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Placeable.PinksChest>());
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.TrueEdgeShortsword>());
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Weapons.SwordOfDreams>());
                 nextSlot++;

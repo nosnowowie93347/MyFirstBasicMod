@@ -24,8 +24,8 @@ namespace MyFirstBasicMod.Items.Weapons
 			item.maxStack = 999;
 			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
 			item.knockBack = 3.25f;
-			item.value = Item.buyPrice(0, 85, 99, 99);
-            item.rare = ItemRarityID.Green;
+			item.value = Item.buyPrice(0, 10, 0, 0);
+            item.rare = ItemRarityID.Pink;
 			item.shoot = ProjectileType<Projectiles.TerrabotsBullet>();   //The projectile shoot when your weapon using this ammo
 			item.shootSpeed = 20f;                  //The speed of the projectile
 			item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
@@ -40,7 +40,7 @@ namespace MyFirstBasicMod.Items.Weapons
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.MusketBall, 50);
+			recipe.AddIngredient(ItemID.MusketBall, 100);
 			recipe.AddIngredient(ItemID.EmptyBullet, 50);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this, 50);

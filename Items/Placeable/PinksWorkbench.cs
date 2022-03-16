@@ -22,7 +22,7 @@ namespace MyFirstBasicMod.Items.Placeable
 			item.useTime = 10;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.consumable = true;
-			item.value = 150;
+			item.value = 950;
 			item.createTile = TileType<Tiles.PinksWorkbench>();
 		}
 

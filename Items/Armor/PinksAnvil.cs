@@ -1,5 +1,6 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria;
 using MyFirstBasicMod.Tiles;
 using static Terraria.ModLoader.ModContent;
 
@@ -23,7 +24,7 @@ namespace MyFirstBasicMod.Items.Placeable
 			item.useTime = 10;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.consumable = true;
-			item.value = 150;
+			item.value = Item.sellPrice(silver: 75);
 			item.createTile = TileType<Tiles.PinksAnvil>();
 		}
 

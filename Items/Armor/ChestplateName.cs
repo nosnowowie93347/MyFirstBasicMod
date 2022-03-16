@@ -20,7 +20,7 @@ namespace MyFirstBasicMod.Items.Armor
             item.height = 18;
             item.value = 65000;
             item.rare = ItemRarityID.LightRed;
-            item.defense = 30;
+            item.defense = 41;
         }
 
         
@@ -35,7 +35,7 @@ namespace MyFirstBasicMod.Items.Armor
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 37);   
-            recipe.AddTile(TileID.MythrilAnvil);   //at mythril anvil
+            recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());   //at mythril anvil
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

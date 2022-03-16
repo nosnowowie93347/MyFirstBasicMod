@@ -7,38 +7,34 @@ using Terraria.ModLoader;
 namespace MyFirstBasicMod.Items.Armor
 {
     [AutoloadEquip(EquipType.Body)]
-    public class GodChestplate : ModItem
+    public class SteelChest : ModItem
     {
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("God Chestplate");
-            Tooltip.SetDefault(Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 22));
+            DisplayName.SetDefault("Steel Chestplate");
+            Tooltip.SetDefault(Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 11));
         }
         public override void SetDefaults()
         {
             item.width = 18;
             item.height = 18;
-            item.value = 65000;
+            item.value = Item.sellPrice(gold: 9);
             item.rare = ItemRarityID.Yellow;
-            item.defense = 69;
+            item.defense = 35;
         }
-
 
         public override void UpdateEquip(Player player)
         {
-            player.moveSpeed += .15f;
-            player.statLifeMax2 += 60;
-            player.meleeDamage += .16f;
-            player.magicDamage += .12f;
-            player.rangedDamage += .55f;
+            player.meleeDamage += 0.11f;
             player.meleeCrit += 6;
         }
+        
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Armor.BreastplateName>(), 1);
-            recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());   //at mythril anvil
+            recipe.AddIngredient(ModContent.ItemType<Placeable.SteelBar>(), 23);  
+            recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());   
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

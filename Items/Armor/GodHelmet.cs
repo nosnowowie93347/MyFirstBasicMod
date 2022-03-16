@@ -40,6 +40,8 @@ namespace MyFirstBasicMod.Items.Armor
                 player.buffImmune[calamity.BuffType("ExtremeGravity")] = true;
                 player.buffImmune[calamity.BuffType("CrushDepth")] = true;
                 player.buffImmune[calamity.BuffType("Clamity")] = true;
+                player.buffImmune[calamity.BuffType("GodSlayerInferno")] = true;
+                player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;
                 player.buffImmune[calamity.BuffType("WeakPetrification")] = true;
                 player.buffImmune[calamity.BuffType("ArmorCrunch")] = true;
                 player.buffImmune[calamity.BuffType("Plague")] = true;
@@ -48,13 +50,13 @@ namespace MyFirstBasicMod.Items.Armor
                 player.buffImmune[calamity.BuffType("LethalLavaBurn")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
                 player.buffImmune[calamity.BuffType("WarCleave")] = true;
+                player.buffImmune[calamity.BuffType("Warped")] = true;
                 player.buffImmune[calamity.BuffType("AbyssalFlames")] = true;
                 player.buffImmune[calamity.BuffType("HolyInferno")] = true;
                 player.buffImmune[calamity.BuffType("PrismaticCooldown")] = true;
                 player.buffImmune[calamity.BuffType("SearingLava")] = true;
                 player.buffImmune[calamity.BuffType("FishAlert")] = true;
                 player.buffImmune[calamity.BuffType("IcarusFolly")] = true;
-                player.buffImmune[calamity.BuffType("WhisperingDeath")] = true;
                 player.buffImmune[calamity.BuffType("VulnerabilityHex")] = true;
                 player.buffImmune[calamity.BuffType("SulphuricPoisoning")] = true;
             }
@@ -80,13 +82,14 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.OgreSpit] = true;
             player.buffImmune[BuffID.Cursed] = true;
             player.buffImmune[BuffID.CursedInferno] = true;
-            player.allDamage += 0.25f; //+15 % damage
+            player.allDamage += 0.85f; //+15 % damage
             player.statLifeMax2 += 80;
             player.meleeCrit += 13;
+            player.meleeDamage += 0.9f;
+            player.magicDamage += 0.9f;
             player.magicCrit += 18;
             player.rangedCrit += 12;
             player.statManaMax2 += 70;
-            player.lifeRegen += 14;
         }
         public override void UpdateArmorSet(Player player)
         {
@@ -96,6 +99,7 @@ namespace MyFirstBasicMod.Items.Armor
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 20);
             recipe.AddIngredient(ModContent.ItemType<Items.Armor.HelmetName>(), 1);   //you need 10 Wood
             recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());   //at work bench
             recipe.SetResult(this);
