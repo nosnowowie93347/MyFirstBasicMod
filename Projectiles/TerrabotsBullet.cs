@@ -30,6 +30,7 @@ namespace MyFirstBasicMod.Projectiles
 			projectile.tileCollide = true;          //Can the projectile collide with tiles?
 			projectile.extraUpdates = 1;            //Set to above 0 if you want the projectile to update multiple time in a frame
 			aiType = ProjectileID.Bullet;           //Act exactly like default Bullet
+			projectile.hide = true;
 		}
 
 		public override bool OnTileCollide(Vector2 oldVelocity) {

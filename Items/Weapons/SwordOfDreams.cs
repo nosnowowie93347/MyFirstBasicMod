@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using System;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -74,11 +75,24 @@ namespace MyFirstBasicMod.Items.Weapons
         public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 24);
-            recipe.AddIngredient(ItemID.NightsEdge);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+            var modCalamity = ModLoader.GetMod("CalamityMod");
+            if (modCalamity != null)
+            {
+                recipe.AddIngredient(modCalamity.ItemType("CosmiliteBar"), 15);
+                recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 24);
+                recipe.AddIngredient(ItemID.NightsEdge);
+                recipe.AddTile(TileID.MythrilAnvil);
+                recipe.SetResult(this);
+                recipe.AddRecipe();
+            }
+            else
+            {
+                recipe.AddIngredient(ModContent.ItemType<Items.Placeable.PinksBar>(), 24);
+                recipe.AddIngredient(ItemID.NightsEdge);
+                recipe.AddTile(TileID.MythrilAnvil);
+                recipe.SetResult(this);
+                recipe.AddRecipe();
+            }
 		}
     }
 }

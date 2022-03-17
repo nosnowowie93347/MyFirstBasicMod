@@ -27,7 +27,7 @@ namespace MyFirstBasicMod.Tiles
 			ModTranslation name = CreateMapEntryName();
 			// name.SetDefault("Example Clock"); // Automatic from .lang files
 			AddMapEntry(new Color(200, 200, 200), name);
-			dustType = ModContent.DustType<Pixel>();
+			dustType = ModContent.DustType<Smoke>();
 			adjTiles = new int[] { TileID.GrandfatherClocks };
 		}
 

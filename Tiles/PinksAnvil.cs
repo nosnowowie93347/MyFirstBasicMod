@@ -28,9 +28,9 @@ namespace MyFirstBasicMod.Tiles
 		}
 
 
-		// public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		// {
-		// 	Item.NewItem(i * 16, j * 16, 14, 24, ItemType<Items.Placeable.PinksAnvil>());
-		// }
+		 public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		 {
+		 	Item.NewItem(i * 16, j * 16, 14, 24, ItemType<Items.Placeable.PinksAnvil>());
+		 }
 	}
 }
