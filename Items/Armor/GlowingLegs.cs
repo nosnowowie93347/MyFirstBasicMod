@@ -19,17 +19,20 @@ namespace MyFirstBasicMod.Items.Armor
 			item.height = 24;
 			item.value = Terraria.Item.sellPrice(0, 5, 0, 0);
 			item.rare = ItemRarityID.Yellow;
-			item.defense = 14;
+			item.defense = 53;
 		}
 		public override void UpdateEquip(Player player)
 		{
-			player.moveSpeed += .07f;
-			player.meleeSpeed += .05f;
-
+			player.moveSpeed += .29f;
+			player.allDamage += .25f;
+			player.meleeCrit += 7;
+			player.magicDamage += .10f;
+			player.rangedCrit += 4;
 		}
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ModContent.ItemType<TrueSolarFlareLeggings>());
 			recipe.AddIngredient(ModContent.ItemType<GlowingBar>(), 8);
 			recipe.AddTile(ModContent.TileType<Tiles.PinksAnvil>());
 			recipe.SetResult(this);

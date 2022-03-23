@@ -34,7 +34,7 @@ namespace MyFirstBasicMod.Items.Consumable
 
         public override bool CanUseItem(Player player)
         {
-            if (!NPC.AnyNPCs(ModContent.NPCType<Ocram2>()) && Main.hardMode && !Main.dayTime)
+            if (!NPC.AnyNPCs(ModContent.NPCType<Ocram2>()) && Main.hardMode && NPC.downedGolemBoss && !Main.dayTime)
                 return true;
             return false;
         }

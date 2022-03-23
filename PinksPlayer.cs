@@ -28,6 +28,7 @@ namespace MyFirstBasicMod
 		public float percentDamage;
 		public float defenseEffect = -1f;
 		public bool badHeal;
+		public bool annoyingLittleLight;
 		public int healHurt;
 		public bool infinity;
         public const int maxPinkLifeFruits = 20;
@@ -35,6 +36,7 @@ namespace MyFirstBasicMod
 
         public int constantDamage { get; internal set; }
         public override void ResetEffects () {
+				  annoyingLittleLight = false;
                   player.statLifeMax2 += pinkLifeFruits * 5;
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {
