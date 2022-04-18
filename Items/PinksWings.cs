@@ -11,14 +11,11 @@ namespace MyFirstBasicMod.Items
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("This is a modded wing.");
+            Tooltip.SetDefault("These wings are very pink.");
             DisplayName.SetDefault("Pink's Wings");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
-            // These wings use the same values as the solar wings
-            // Fly time: 180 ticks = 3 seconds
-            // Fly speed: 9
-            // Acceleration multiplier: 2.5
+            
             ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(230, 9.01f, 2.9f);
         }
 

@@ -12,8 +12,8 @@ namespace MyFirstBasicMod.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hard Crystal Helm");
-            Tooltip.SetDefault("6% increased magic and summon damage"
-                + "\nIncreases maximum minions");
+            Tooltip.SetDefault("16% increased magic and summon damage"
+                + "\nIncreases maximum minions by 1");
         }
 
         public override void SetDefaults()
@@ -27,8 +27,8 @@ namespace MyFirstBasicMod.Items.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage(DamageClass.Magic) *= 1.06f;
-            player.GetDamage(DamageClass.Summon) *= 1.06f;
+            player.GetDamage(DamageClass.Magic) += 0.16f;
+            player.GetDamage(DamageClass.Summon) += 0.16f;
             player.maxMinions += 1;
         }
 
@@ -39,9 +39,9 @@ namespace MyFirstBasicMod.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "10% mangic and summon damage";
-            player.GetDamage(DamageClass.Magic) *= 1.1f;
-            player.GetDamage(DamageClass.Summon) *= 1.1f;
+            player.setBonus = "+15% magic and summon damage";
+            player.GetDamage(DamageClass.Magic) += 0.15f;
+            player.GetDamage(DamageClass.Summon) += 0.15f;
         }
 
         public override void AddRecipes()

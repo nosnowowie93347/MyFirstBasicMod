@@ -1,17 +1,185 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\references\tModLoader.targets" />
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Configuration Condition=" '$(Configuration)' == '' ">Mono</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7773BDD8-037E-46DB-B842-B0EE41E74873}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>MyFirstBasicMod</AssemblyName>
-    <TargetFramework>net45</TargetFramework>
-    <PlatformTarget>x86</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <Target Name="BuildMod" AfterTargets="Build">
-    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
-  </Target>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Mono|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Mono</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp bin/${ProjectConfigName}/${TargetName} ${ProjectConfigName}.dll</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Windows|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp bin/${ProjectConfigName}/${TargetName} ${ProjectConfigName}.dll</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>MyFirstBasicMod</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  <Reference Include="FNA" Condition="'$(Configuration)' == 'Mono'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\Terraria\FNA.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="Microsoft.Xna.Framework" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="Microsoft.Xna.Framework.Game" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.Game.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="Microsoft.Xna.Framework.Graphics" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="Microsoft.Xna.Framework.Xact" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\Microsoft.Xna.Framework.Xact.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="tModLoaderWindows" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\tModLoaderWindows.exe</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="ShaderLib-Windows" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\ShaderLib\Windows.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="Terraria" Condition="'$(Configuration)' == 'Mono'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
+  </Reference>
+  <Reference Include="ReLogic" Condition="'$(Configuration)' == 'Windows'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\ReLogic.dll</HintPath>
+  </Reference>
+  <Reference Include="ReLogicLinux" Condition="'$(Configuration)' == 'Mono'">
+    <HintPath>..\..\..\..\Steam\steamapps\common\Terraria\ModCompile\ReLogicLinux.dll</HintPath>
+  </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buffs\CodeFile1.cs" />
+    <Compile Include="Dusts\Sparkle.cs" />
+    <Compile Include="Dusts\CodeFile1.cs" />
+    <Compile Include="ExampleRecipes.cs" />
+    <Compile Include="MyFirstBasicMod.cs" />
+    <Compile Include="PinksPlayer.cs" />
+    <Compile Include="PinksWorld.cs" />
+    <Compile Include="Items\Accessories\GreenRing.cs" />
+    <Compile Include="Items\Accessories\ManaHeart.cs" />
+    <Compile Include="Items\Accessories\OrangeRing.cs" />
+    <Compile Include="Items\Armor\ChestplateName.cs" />
+    <Compile Include="Items\Armor\HelmetName.cs" />
+    <Compile Include="Items\Armor\Leggings.cs" />
+    <Compile Include="Items\Armor\GlowingHead.cs" />
+    <Compile Include="Items\Armor\GlowingBody.cs" />
+    <Compile Include="Items\Armor\GlowingLegs.cs" />
+    <Compile Include="Items\Armor\CodeFile1.cs" />
+    <Compile Include="Items\Armor\CodeFile2.cs" />
+    <Compile Include="Items\Armor\CodeFile3.cs" />
+    <Compile Include="Items\BreadPickaxe.cs" />
+    <Compile Include="Items\BreadsShield.cs" />
+    <Compile Include="Items\Consumable\DiamondskinPotion.cs" />
+    <Compile Include="Items\CopperShortsword.cs" />
+    <Compile Include="Items\EpicSoul.cs" />
+    <Compile Include="Items\GodlyHealingPotion.cs" />
+    <Compile Include="Items\PinksHook.cs" />
+    <Compile Include="Items\PinksLifeFruit.cs" />
+    <Compile Include="Items\PinksWings.cs" />
+    <Compile Include="Items\StarCannon.cs" />
+    <Compile Include="Items\TerrabotsPickaxe.cs" />
+    <Compile Include="Items\Test.cs" />
+    <Compile Include="Items\TwilightArrow.cs" />
+    <Compile Include="Items\TwilightsBow.cs" />
+    <Compile Include="Items\Placeable\GlowingOre.cs" />
+    <Compile Include="Items\Placeable\GlowingBar.cs" />
+    <Compile Include="Items\Placeable\PinksAnvil.cs" />
+    <Compile Include="Items\Placeable\PinksBed.cs" />
+    <Compile Include="Items\Placeable\PinksBar.cs" />
+    <Compile Include="Items\Placeable\PinksOre.cs" />
+    <Compile Include="Items\Placeable\SylvsBlock.cs" />
+    <Compile Include="Items\Placeable\SylvsChair.cs" />
+    <Compile Include="Items\Placeable\PinksChest.cs" />
+    <Compile Include="Items\Placeable\SylvsDoor.cs" />
+    <Compile Include="Items\Placeable\SylvsWall.cs" />
+    <Compile Include="Items\Placeable\PinksWorkbench.cs" />
+    <Compile Include="Items\Weapons\TerrabotsBullet.cs" />
+    <Compile Include="Items\Weapons\TerrabotsGun.cs" />
+    <Compile Include="Items\Weapons\DoomPrism.cs" />
+    <Compile Include="Items\Weapons\ElliesSpear.cs" />
+    <Compile Include="Items\Weapons\OrichalcumStaff.cs" />
+    <Compile Include="Items\Weapons\TrueDiamondStaff.cs" />
+    <Compile Include="Items\Weapons\TrueEmeraldStaff.cs" />
+    <Compile Include="Items\Weapons\TrueSapphireStaff.cs" />
+    <Compile Include="Items\Weapons\TitaniumWarhammer.cs" />
+    <Compile Include="Items\Weapons\SwordOfDreams.cs" />
+    <Compile Include="Items\Weapons\SuperSword.cs" />
+    <Compile Include="Items\Weapons\PinksFlamethrower.cs" />
+    <Compile Include="Items\Weapons\Krono.cs" />
+    <Compile Include="Items\Weapons\Banhammer.cs" />
+    <Compile Include="Items\Weapons\IrohsHamaxe.cs" />
+    <Compile Include="NPCs\ModdedNPC.cs" />
+    <Compile Include="NPCs\FlutterSlime.cs" />
+    <Compile Include="NPCs\PartyZombie.cs" />
+    <Compile Include="Projectiles\ElementBall.cs" />
+    <Compile Include="Projectiles\ElementLaser.cs" />
+    <Compile Include="Projectiles\ElliesSpearProjectile.cs" />
+    <Compile Include="Projectiles\FlamethrowerProjectile.cs" />
+    <Compile Include="Projectiles\OrichalcumStaffProj.cs" />
+    <Compile Include="Projectiles\OrichHoming.cs" />
+    <Compile Include="Projectiles\TerrabotsBullet.cs" />
+    <Compile Include="Projectiles\PixelBall.cs" />
+    <Compile Include="Projectiles\SapphireDroplet.cs" />
+    <Compile Include="Projectiles\SparklingBall.cs" />
+    <Compile Include="RecipeHelper.cs" />
+    <Compile Include="Tiles\PinksAnvil.cs" />
+    <Compile Include="Tiles\PinksBed.cs" />
+    <Compile Include="Tiles\SylvsBlock.cs" />
+    <Compile Include="Tiles\SylvsChair.cs" />
+    <Compile Include="Tiles\PinksChest.cs" />
+    <Compile Include="Tiles\GlowingBar.cs" />
+    <Compile Include="Tiles\GlowingOre.cs" />
+    <Compile Include="Tiles\SylvsDoorClosed.cs" />
+    <Compile Include="Tiles\SylvsDoorOpen.cs" />
+    <Compile Include="Tiles\PinksOre.cs" />
+    <Compile Include="Tiles\PinksBar.cs" />
+    <Compile Include="Tiles\PinksWorkbench.cs" />
+    <Compile Include="Walls\SylvsWall.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build.txt" />
+    <Content Include="description.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
 </Project>

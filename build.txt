@@ -1,3 +1,4 @@
 displayName = My First Basic Mod
 author = Pinkalicious21902
-version = 1.9.3
+version = 1.14.1
+noCompile = true

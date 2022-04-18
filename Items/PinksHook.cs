@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items
 {
-    internal class ExampleHookItem : ModItem
+    internal class PinksHookItem : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -19,9 +19,9 @@ namespace MyFirstBasicMod.Items
         public override void SetDefaults()
         {
             // Copy values from the Amethyst Hook
-            Item.CloneDefaults(ItemID.AmethystHook);
+            Item.CloneDefaults(ItemID.BatHook);
             Item.shootSpeed = 18f; // This defines how quickly the hook is shot.
-            Item.shoot = ModContent.ProjectileType<ExampleHookProjectile>(); // Makes the item shoot the hook's Projectile when used.
+            Item.shoot = ModContent.ProjectileType<PinksHookProjectile>(); // Makes the item shoot the hook's Projectile when used.
         }
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
@@ -34,7 +34,7 @@ namespace MyFirstBasicMod.Items
         }
     }
 
-    internal class ExampleHookProjectile : ModProjectile
+    internal class PinksHookProjectile : ModProjectile
     {
         private static Asset<Texture2D> chainTexture;
 

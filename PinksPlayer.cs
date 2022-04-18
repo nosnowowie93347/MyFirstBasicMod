@@ -1,8 +1,12 @@
 using MyFirstBasicMod.Items;
 using MyFirstBasicMod.Projectiles;
 using Microsoft.Xna.Framework;
+using MyFirstBasicMod.NPCs;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Terraria.Audio;
 using Terraria;
 using Terraria.DataStructures;
@@ -20,30 +24,27 @@ namespace MyFirstBasicMod
 
 		public bool manaHeart;
 		public int manaHeartCounter;
-
+		public const int maxPinkLifeFruits = 20;
+        public int pinkLifeFruits;
 
         public int constantDamage { get; internal set; }
         public override void ResetEffects () {
+        	player.statLifeMax2 += pinkLifeFruits * 5;
+
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {
 			ModPacket packet = Mod.GetPacket();
+			packet.Write((byte)Player.whoAmI);
+			packet.Write(pinkLifeFruits);
 			packet.Send(toWho, fromWho);
 		}
-        public override TagCompound Save() {
-			// Read https://github.com/tModLoader/tModLoader/wiki/Saving-and-loading-using-TagCompound to better understand Saving and Loading data.
-			return new TagCompound {
-
-
-			};
-			//note that C# 6.0 supports indexer initializers
-			//return new TagCompound {
-			//	["score"] = score
-			//};
+        public override void SaveData(TagCompound tag) {
+			tag["pinkLifeFruits"] = pinkLifeFruits;
 		}
 
-		public override void Load(TagCompound tag) {
-			
-			}
+		public override void LoadData(TagCompound tag) {
+			pinkLifeFruits = (int) tag["pinkLifeFruits"];
+		}
         public override void OnConsumeMana(Item item, int manaConsumed) {
 			if (manaHeart) {
 				manaHeartCounter += manaConsumed;
