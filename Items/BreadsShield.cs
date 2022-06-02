@@ -25,10 +25,10 @@ namespace MyFirstBasicMod.Items
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			
-				player.allDamage += 10f; // increase all damage by 1900%
-			
-		}
+
+            player.GetDamage(DamageClass.Generic) += 10f; // increase all damage by 1900%
+
+        }
 
         public override void AddRecipes()
         {

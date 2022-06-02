@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.Creative;
+using Terraria.DataStructures;
 
 namespace MyFirstBasicMod.Items
 {
@@ -45,31 +46,30 @@ namespace MyFirstBasicMod.Items
                 .Register();
         }
 
-        /*
-		 * Feel free to uncomment any of the examples below to see what they do
-		 */
 
-        // What if I wanted this gun to have a 38% chance not to consume ammo?
-        public override bool ConsumeAmmo(Player player)
-		{
-			return Main.rand.NextFloat() >= .18f;
-		}
 
-		
 
-		
 		// Also, when I do this, how do I prevent shooting through tiles?
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
-			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
-			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+			const int NumProjectiles = 8; // The humber of projectiles that this gun will shoot.
+
+			for (int i = 0; i < NumProjectiles; i++)
 			{
-				position += muzzleOffset;
+				// Rotate the velocity randomly by 30 degrees at max.
+				Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(15));
+
+				// Decrease velocity randomly for nicer visuals.
+				newVelocity *= 1f - Main.rand.NextFloat(0.3f);
+
+				// Create a projectile.
+				Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
 			}
-			return true;
+
+			return false; // Return false because we don't want tModLoader to shoot projectile
 		}
 
-		
+
 
 	}
 }

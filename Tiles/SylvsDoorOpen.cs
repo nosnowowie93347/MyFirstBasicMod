@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
+using Terraria.GameContent.ObjectInteractions;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -11,7 +12,7 @@ namespace MyFirstBasicMod.Tiles
 {
 	public class SylvsDoorOpen : ModTile
 	{
-		public override void SetDefaults() {
+		public override void SetStaticDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileSolid[Type] = false;
 			Main.tileLavaDeath[Type] = true;
@@ -61,11 +62,12 @@ namespace MyFirstBasicMod.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Sylv's Door");
 			AddMapEntry(new Color(200, 200, 200), name);
-			adjTiles = new int[] { TileID.OpenDoor };
-			closeDoorID = TileType<SylvsDoorClosed>();
+			AdjTiles = new int[] { TileID.OpenDoor };
+			CloseDoorID = TileType<SylvsDoorClosed>();
 		}
 
-		public override bool HasSmartInteract() {
+		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
+		{
 			return true;
 		}
 
@@ -73,8 +75,9 @@ namespace MyFirstBasicMod.Tiles
 			num = 1;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY) {
-			Item.NewItem(i * 16, j * 16, 32, 48, ItemType<Items.Placeable.SylvsDoor>());
+		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		{
+			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, ModContent.ItemType<Items.Placeable.SylvsDoor>());
 		}
 
 		public override void MouseOver(int i, int j) {

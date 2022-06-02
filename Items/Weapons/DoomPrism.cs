@@ -8,7 +8,7 @@ namespace MyFirstBasicMod.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("This is an example magic weapon");
+            Tooltip.SetDefault("Bring doom upon your enemies!");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

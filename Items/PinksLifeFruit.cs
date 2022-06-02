@@ -16,7 +16,6 @@ namespace MyFirstBasicMod.Items
         public const int maxPinkLifeFruits = 20;
         public const int LifePerFruit = 5;
 
-        public override string Texture => "Terraria/Images/Item_" + ItemID.LifeFruit;
 
         public override void SetStaticDefaults()
         {

@@ -29,7 +29,7 @@ namespace MyFirstBasicMod
 
         public int constantDamage { get; internal set; }
         public override void ResetEffects () {
-        	player.statLifeMax2 += pinkLifeFruits * 5;
+        	Player.statLifeMax2 += pinkLifeFruits * 5;
 
         }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {

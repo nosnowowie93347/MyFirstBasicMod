@@ -5,7 +5,7 @@ namespace MyFirstBasicMod.Buffs
 {
     public class ColdFire : ModBuff
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cold Fire");
             Description.SetDefault("You're Slow.");

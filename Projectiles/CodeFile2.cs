@@ -27,7 +27,7 @@ namespace MyFirstBasicMod.Projectiles
             Projectile.alpha = 255;
             Projectile.extraUpdates = 1;
             Projectile.light = 0;
-            aiType = ProjectileID.ThrowingKnife;
+            AIType = ProjectileID.ThrowingKnife;
         }
 
         /* public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -41,7 +41,7 @@ namespace MyFirstBasicMod.Projectiles
             {
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 6);
             }
-            SoundEngine.PlaySound(0, (int)Projectile.position.X, (int)Projectile.position.Y);
+            
         }
 
         //public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)

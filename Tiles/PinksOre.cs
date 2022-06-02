@@ -9,7 +9,7 @@ namespace MyFirstBasicMod.Tiles
 {
 	public class PinksOre : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			TileID.Sets.Ore[Type] = true;
 			Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
@@ -26,12 +26,11 @@ namespace MyFirstBasicMod.Tiles
 			name.SetDefault("Pink's Ore");
 			AddMapEntry(new Color(255, 200, 200), name);
 
-			dustType = 84;
-			drop = ItemType<Items.Placeable.PinksOre>();
-			soundType = SoundID.Tink;
-			soundStyle = 1;
-			//mineResist = 4f;
-			//minPick = 200;
-		}
+			DustType = 84;
+			ItemDrop = ItemType<Items.Placeable.PinksOre>();
+			HitSound = SoundID.Tink;
+            MineResist = 4f;
+            MinPick = 200;
+        }
 	}
 }

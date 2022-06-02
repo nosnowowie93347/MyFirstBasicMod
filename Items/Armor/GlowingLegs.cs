@@ -24,7 +24,7 @@ namespace MyFirstBasicMod.Items.Armor
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += .07f;
-			player.meleeSpeed += .09f;
+			player.GetAttackSpeed(DamageClass.Melee) += .09f;
 
 		}
         public override void AddRecipes()

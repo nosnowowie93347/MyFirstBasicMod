@@ -24,7 +24,7 @@ namespace MyFirstBasicMod
 			//The following basic recipe makes 999 ExampleItems out of 1 stone block.//
 			///////////////////////////////////////////////////////////////////////////
 
-			var recipe = mod.CreateRecipe(999);
+			var recipe = mod.CreateRecipe(ItemID.Amber);
 			// This adds a requirement of 1 dirt block to the recipe.
 			recipe.AddIngredient(ItemID.StoneBlock);
 			// When you're done, call this to register the recipe.

@@ -28,7 +28,7 @@ namespace MyFirstBasicMod.Projectiles
 			Projectile.timeLeft = 600;          //The live time for the Projectile (60 = 1 second, so 600 is 10 seconds)
 			Projectile.tileCollide = true;          //Can the Projectile collide with tiles?
 			Projectile.extraUpdates = 1;            //Set to above 0 if you want the Projectile to update multiple time in a frame
-			aiType = ProjectileID.WoodenArrowHostile;           //Act exactly like default Bullet
+			AIType = ProjectileID.WoodenArrowHostile;           //Act exactly like default Bullet
 		}
 
         public override bool OnTileCollide(Vector2 oldVelocity)
@@ -61,24 +61,24 @@ namespace MyFirstBasicMod.Projectiles
             return false;
         }
 
-        public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
-        {
-            Main.instance.LoadProjectile(Projectile.type);
-            Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
+		public override bool PreDraw(ref Color lightColor)
+		{
+			Main.instance.LoadProjectile(Projectile.type);
+			Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
 
-            //Redraw the Projectile with the color not influenced by light
-            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-            for (int k = 0; k < Projectile.oldPos.Length; k++)
-            {
-                Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-                Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-                spriteBatch.Draw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
-            }
+			// Redraw the projectile with the color not influenced by light
+			Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+			for (int k = 0; k < Projectile.oldPos.Length; k++)
+			{
+				Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+				Color color = Projectile.GetAlpha(lightColor) * ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
+				Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+			}
 
-            return true;
-        }
+			return true;
+		}
 
-        public override void Kill(int timeLeft)
+		public override void Kill(int timeLeft)
 		{
 			// This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
 			Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);

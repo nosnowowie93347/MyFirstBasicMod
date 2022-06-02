@@ -9,12 +9,13 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Terraria.GameContent.ObjectInteractions;
 
 namespace MyFirstBasicMod.Tiles
 {
     public class PinksChest : ModTile
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
             // Properties
             Main.tileSpelunker[Type] = false;
@@ -27,19 +28,19 @@ namespace MyFirstBasicMod.Tiles
             TileID.Sets.BasicChest[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
 
-            dustType = ModContent.DustType<Sparkle>();
-            adjTiles = new int[] { TileID.Containers };
-            chestDrop = ModContent.ItemType<Items.Placeable.PinksChest>();
+            DustType = ModContent.DustType<Sparkle>();
+            AdjTiles = new int[] { TileID.Containers };
+            ChestDrop = ModContent.ItemType<Items.Placeable.PinksChest>();
 
             // Names
-            ContainerName.SetDefault("Example Chest");
+            ContainerName.SetDefault("Pink's Chest");
 
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Example Chest");
+            name.SetDefault("Pink's Chest");
             AddMapEntry(new Color(200, 200, 200), name, MapChestName);
 
             name = CreateMapEntryName(Name + "_Locked"); // With multiple map entries, you need unique translation keys.
-            name.SetDefault("Locked Example Chest");
+            name.SetDefault("Locked Pink's Chest");
             AddMapEntry(new Color(0, 141, 63), name, MapChestName);
 
             // Placement
@@ -55,20 +56,21 @@ namespace MyFirstBasicMod.Tiles
             TileObjectData.addTile(Type);
         }
 
-        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].frameX / 36);
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
 
-        public override bool HasSmartInteract() => true;
+        public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
-        public override bool IsLockedChest(int i, int j) => Main.tile[i, j].frameX / 36 == 1;
+        public override bool IsLockedChest(int i, int j) => Main.tile[i, j].TileFrameX / 36 == 1;
 
         public override bool UnlockChest(int i, int j, ref short frameXAdjustment, ref int dustType, ref bool manual)
         {
             if (Main.dayTime)
             {
+                Main.NewText("The chest stubbornly refuses to open in the light of the day. Try again at night.", Color.Orange);
                 return false;
             }
 
-            dustType = this.dustType;
+            DustType = dustType;
             return true;
         }
 
@@ -77,12 +79,12 @@ namespace MyFirstBasicMod.Tiles
             int left = i;
             int top = j;
             Tile tile = Main.tile[i, j];
-            if (tile.frameX % 36 != 0)
+            if (tile.TileFrameX % 36 != 0)
             {
                 left--;
             }
 
-            if (tile.frameY != 0)
+            if (tile.TileFrameY != 0)
             {
                 top--;
             }
@@ -105,7 +107,7 @@ namespace MyFirstBasicMod.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, chestDrop);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ChestDrop);
             Chest.DestroyChest(i, j);
         }
 
@@ -116,12 +118,12 @@ namespace MyFirstBasicMod.Tiles
             Main.mouseRightRelease = false;
             int left = i;
             int top = j;
-            if (tile.frameX % 36 != 0)
+            if (tile.TileFrameX % 36 != 0)
             {
                 left--;
             }
 
-            if (tile.frameY != 0)
+            if (tile.TileFrameY != 0)
             {
                 top--;
             }
@@ -210,12 +212,12 @@ namespace MyFirstBasicMod.Tiles
             Tile tile = Main.tile[i, j];
             int left = i;
             int top = j;
-            if (tile.frameX % 36 != 0)
+            if (tile.TileFrameX % 36 != 0)
             {
                 left--;
             }
 
-            if (tile.frameY != 0)
+            if (tile.TileFrameY != 0)
             {
                 top--;
             }
@@ -227,11 +229,11 @@ namespace MyFirstBasicMod.Tiles
             }
             else
             {
-                player.cursorItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Example Chest";
-                if (player.cursorItemIconText == "Example Chest")
+                player.cursorItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Pink's Chest";
+                if (player.cursorItemIconText == "Pink's Chest")
                 {
                     player.cursorItemIconID = ModContent.ItemType<Items.Placeable.PinksChest>();
-                    if (Main.tile[left, top].frameX / 36 == 1)
+                    if (Main.tile[left, top].TileFrameX / 36 == 1)
                     {
                         player.cursorItemIconID = ModContent.ItemType<ExampleChestKey>();
                     }

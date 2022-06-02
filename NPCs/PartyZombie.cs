@@ -3,6 +3,7 @@ using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
 
 namespace MyFirstBasicMod.NPCs
 {
@@ -27,10 +28,10 @@ namespace MyFirstBasicMod.NPCs
             NPC.value = 60f;
             NPC.knockBackResist = 0.5f;
             NPC.aiStyle = 3;
-            aiType = NPCID.Zombie;
-            animationType = NPCID.Zombie;
-            banner = Item.NPCtoBanner(NPCID.Zombie);
-            bannerItem = Item.BannerToItem(banner);
+            AIType = NPCID.Zombie;
+            AnimationType = NPCID.Zombie;
+            Banner = Item.NPCtoBanner(NPCID.Zombie);
+            BannerItem = Item.BannerToItem(Banner);
         }
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {

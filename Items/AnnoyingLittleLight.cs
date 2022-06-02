@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace MyFirstBasicMod.Items
 {
-	public class ExampleLightPetItem : ModItem
+	public class AnnoyingLittleLight : ModItem
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Annoying Little Light");

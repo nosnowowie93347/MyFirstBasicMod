@@ -8,7 +8,7 @@ namespace MyFirstBasicMod.Tiles
 {
 	public class GlowingOre : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.tileSpelunker[Type] = true;
 			Main.tileSolid[Type] = true;
@@ -16,12 +16,12 @@ namespace MyFirstBasicMod.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;  //true for block to emit light
 			Main.tileLighted[Type] = true;
-			drop = ModContent.ItemType<Items.Placeable.GlowingOre>();   //put your CustomBlock name
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Glowing Ore");
 			AddMapEntry(new Color(204, 0, 102), name);
-			soundType = SoundID.Tink;
-			minPick = 180;
+			ItemDrop = ModContent.ItemType<Items.Placeable.GlowingOre>();
+			HitSound = SoundID.Tink;
+			MinPick = 180;
 
 		}
 

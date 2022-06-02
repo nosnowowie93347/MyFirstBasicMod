@@ -20,6 +20,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using Terraria.GameContent.Personalities;
 using Terraria.DataStructures;
+using System.Collections.Generic;
 
 namespace MyFirstBasicMod.NPCs
 {
@@ -27,11 +28,7 @@ namespace MyFirstBasicMod.NPCs
 	[AutoloadHead]
 	public class ModdedNPC : ModNPC
 	{
-		public override bool Autoload(ref string name)
-        {
-            name = "Modded NPC";
-            return mod.Properties.Autoload;
-        }
+		
 		public override void SetStaticDefaults() {
 			// DisplayName automatically assigned from localization files, but the commented line below is the normal approach.
 			// DisplayName.SetDefault("Example Person");
@@ -128,7 +125,7 @@ namespace MyFirstBasicMod.NPCs
 					continue;
 				}
 
-				if (player.inventory.Any(item => item.type == ModContent.ItemType<PinksBar>())) {
+				if (player.inventory.Any(item => item.type == ModContent.ItemType<Items.Placeable.PinksBar>())) {
 					return true;
 				}
 			}
@@ -137,20 +134,14 @@ namespace MyFirstBasicMod.NPCs
 		}
 
 
-		public override string TownNPCName() {
-			switch (WorldGen.genRand.Next(4)) {
-				case 0: // The cases are potential names for the NPC.
-					return "Pinkalicious";
-
-				case 1:
-					return "Mr. Blue";
-
-				case 2:
-					return "Blocky";
-
-				default:
-					return "Pink";
-			}
+		public override List<string> SetNPCNameList()
+		{
+			return new List<string>() {
+				"Pinkalicious",
+				"Mr. Blue",
+				"Blocky",
+				"Pink"
+			};
 		}
 
 		public override void FindFrame(int frameHeight) {
@@ -174,10 +165,9 @@ namespace MyFirstBasicMod.NPCs
 			}
 			// These are things that the NPC has a chance of telling you when you talk to it.
 			chat.Add("Sometimes I feel like I'm different from everyone else here.");
-			chat.Add("What's your favorite color? My favorite colors are white and black.");
-			chat.Add("What? I don't have any arms or legs? Oh, don't be ridiculous!");
 			chat.Add("This place is pretty great, I gotta admit.");
 			chat.Add("Hello There!");
+			chat.Add("Sorry! My shop's not ready yet! My creator hasn't figured out how to code that yet.");
 			return chat; // chat is implicitly cast to a string.
 		}
 
@@ -195,32 +185,34 @@ namespace MyFirstBasicMod.NPCs
 
 		// Not completely finished, but below is what the NPC will sell
 
-		 public override void SetupShop(Chest shop, ref int nextSlot) {
-		 	shop.item[nextSlot++].SetDefaults(ItemType<ExampleItem>());
-			shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksWorkbench>());
-			shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.SylvsChair>());
-			shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.SylvsDoor>());
-			shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksBed>());
-			shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksChest>());
-			shop.item[nextSlot++].SetDefaults(ItemType<BreadPickaxe>());
-			shop.item[nextSlot++].SetDefaults(ItemType<IrohsHamaxe>());
-		//
-			if (Main.LocalPlayer.HasBuff(BuffID.Lifeforce)) {
-				shop.item[nextSlot++].SetDefaults(ItemType<GodlyHealingPotion>());
-			}
-		//
-		    shop.item[nextSlot].SetDefaults(ItemType<ExampleWings>());
-		    nextSlot++;
-		//
-		//
-			if (Main.moonPhase < 2) {
-				shop.item[nextSlot++].SetDefaults(ItemType<Test>());
-			}
-			else if (Main.moonPhase < 4) {
-				shop.item[nextSlot++].SetDefaults(ItemType<TerrabotsGun>());
-				shop.item[nextSlot].SetDefaults(ItemType<TerrabotsBullet>());
-			}
-		}
+		// public override void SetupShop(Chest shop, ref int nextSlot) {
+			
+
+		//	shop.item[nextSlot++].SetDefaults(ItemType<ExampleItem>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksWorkbench>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.SylvsChair>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.SylvsDoor>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksBed>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksChest>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<BreadPickaxe>());
+		//	shop.item[nextSlot++].SetDefaults(ItemType<IrohsHamaxe>());
+		////
+		//	if (Main.LocalPlayer.HasBuff(BuffID.Lifeforce)) {
+		//		shop.item[nextSlot++].SetDefaults(ItemType<GodlyHealingPotion>());
+		//	}
+		////
+		//    shop.item[nextSlot].SetDefaults(ItemType<ExampleWings>());
+		//    nextSlot++;
+		////
+		////
+		//	if (Main.moonPhase < 2) {
+		//		shop.item[nextSlot++].SetDefaults(ItemType<Test>());
+		//	}
+		//	else if (Main.moonPhase < 4) {
+		//		shop.item[nextSlot++].SetDefaults(ItemType<TerrabotsGun>());
+		//		shop.item[nextSlot].SetDefaults(ItemType<TerrabotsBullet>());
+		//	}
+		//}
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot) {
 			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HardCrystalHelm>()));
@@ -268,10 +260,10 @@ namespace MyFirstBasicMod.NPCs
 		}
 
 		// todo: implement
-		public override void TownNPCAttackProj(ref int projType, ref int attackDelay) {
-			projType = ProjectileType<SparklingBall>();
-			attackDelay = 1;
-		}
+		//public override void TownNPCAttackProj(ref int projType, ref int attackDelay) {
+		//	projType = ProjectileType<SparklingBall>();
+		//	attackDelay = 1;
+		//}
 
 		public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset) {
 			multiplier = 12f;

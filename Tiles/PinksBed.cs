@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
+using Terraria.GameContent.ObjectInteractions;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -8,7 +10,7 @@ namespace MyFirstBasicMod.Tiles
 {
 	public class PinksBed : ModTile
 	{
-		public override void SetDefaults() {
+		public override void SetStaticDefaults() {
 			Main.tileFrameImportant[Type] = true;
 			Main.tileLavaDeath[Type] = true;
 			TileID.Sets.HasOutlines[Type] = true;
@@ -18,29 +20,45 @@ namespace MyFirstBasicMod.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Pink's Bed");
 			AddMapEntry(new Color(200, 200, 200), name);
-			dustType = ModContent.DustType<Dusts.Sparkle>();
-			adjTiles = new int[] { TileID.Beds };
+			DustType = ModContent.DustType<Dusts.Sparkle>();
+			AdjTiles = new int[] { TileID.Beds };
 		}
 
-		public override bool HasSmartInteract() {
+		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
+		{
 			return true;
+		}
+		public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
+		{
+			// Because beds have special smart interaction, this splits up the left and right side into the necessary 2x2 sections
+			width = 2; // Default to the Width defined for TileObjectData.newTile
+			height = 2; // Default to the Height defined for TileObjectData.newTile
+						//extraY = 0; // Depends on how you set up frameHeight and CoordinateHeights and CoordinatePaddingFix.Y
+		}
+
+		public override void ModifySleepingTargetInfo(int i, int j, ref TileRestingInfo info)
+		{
+			// Default values match the regular vanilla bed
+			// You might need to mess with the info here if your bed is not a typical 4x2 tile
+			info.VisualOffset.Y += 4f; // Move player down a notch because the bed is not as high as a regular bed
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num) {
 			num = 1;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY) {
-			Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<Items.Placeable.PinksBed>());
+		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		{
+			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<Items.Placeable.PinksBed>());
 		}
 
 		public override bool RightClick(int i, int j) {
 			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[i, j];
-			int spawnX = i - tile.frameX / 18;
+			int spawnX = i - tile.TileFrameX / 18;
 			int spawnY = j + 2;
-			spawnX += tile.frameX >= 72 ? 5 : 2;
-			if (tile.frameY % 38 != 0) {
+			spawnX += tile.TileFrameX >= 72 ? 5 : 2;
+			if (tile.TileFrameY % 38 != 0) {
 				spawnY--;
 			}
 			player.FindSpawn();

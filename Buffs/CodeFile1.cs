@@ -3,19 +3,17 @@ using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Buffs
 {
-    public class ExampleDefenseBuff : ModBuff
-    {
-        public override void SetDefaults()
-        {
-            DisplayName.SetDefault("Defensive Buff");
-            Description.SetDefault("Grants +12 defense.");
-            Main.buffNoTimeDisplay[Type] = false;
-            Main.debuff[Type] = false; //Add this so the nurse doesn't remove the buff when healing
-        }
+	public class ExampleDefenseBuff : ModBuff
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Defensive Buff");
+			Description.SetDefault("Grants +12 defense.");
+		}
 
-        public override void Update(Player player, ref int buffIndex)
-        {
-            player.statDefense += 12; //Grant a +4 defense boost to the player while the buff is active.
-        }
-    }
+		public override void Update(Player player, ref int buffIndex)
+		{
+			player.statDefense += 12; // Grant a +4 defense boost to the player while the buff is active.
+		}
+	}
 }

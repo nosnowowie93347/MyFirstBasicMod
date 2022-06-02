@@ -9,17 +9,16 @@ namespace MyFirstBasicMod.Tiles
 {
     public class SylvsBlock : ModTile
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
             Main.tileSolid[Type] = true;
             Main.tileMergeDirt[Type] = true;
             Main.tileBlockLight[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sylv's Block");
-            drop = ItemType<Items.Placeable.SylvsBlock>();         
+            ItemDrop = ItemType<Items.Placeable.SylvsBlock>();         
             AddMapEntry(new Color(200, 200, 200));
-            soundType = SoundID.Tink;
-            soundStyle = 1;
+            HitSound = SoundID.Tink;
         }
       
     }

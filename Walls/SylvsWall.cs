@@ -7,11 +7,11 @@ namespace MyFirstBasicMod.Walls
 {
     public class SylvsWall : ModWall
     {
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
             Main.wallHouse[Type] = true;
-            dustType = ModContent.DustType<Sparkle>();
-            drop = ModContent.ItemType<Items.Placeable.SylvsWall>();
+            DustType = ModContent.DustType<Sparkle>();
+            ItemDrop = ModContent.ItemType<Items.Placeable.SylvsWall>();
             AddMapEntry(new Color(150, 150, 150));
         }
 

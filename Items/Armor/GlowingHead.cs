@@ -33,7 +33,7 @@ namespace MyFirstBasicMod.Items.Armor
 		public override void UpdateEquip(Player player)
 		{
             player.GetDamage(DamageClass.Melee) += .12f;
-			player.meleeSpeed += .13f;
+			player.GetAttackSpeed(DamageClass.Melee) += .13f;
 
 		}
 		public override void ArmorSetShadows(Player player)

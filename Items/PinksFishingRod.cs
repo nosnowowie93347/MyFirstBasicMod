@@ -53,7 +53,7 @@ namespace MyFirstBasicMod.Items
 			CreateRecipe()
 				.AddIngredient(ItemID.WoodFishingPole)
 				.AddIngredient<Items.Placeable.PinksBar>(5)
-				.AddTile<Tiles.Furniture.ExampleWorkbench>()
+				.AddTile<Tiles.PinksWorkbench>()
 				.Register();
 		}
 	}

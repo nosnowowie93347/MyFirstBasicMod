@@ -7,7 +7,7 @@ namespace MyFirstBasicMod.Items.Accessories
 	public class Ultimatum : ModItem
 	{
 		public override void SetStaticDefaults() {
-		DisplayName.SetDefault("Ultimatum")
+			DisplayName.SetDefault("Ultimatum");
 			Tooltip.SetDefault("25% increased damage\n"
 							 + "Increases base damage for all weapons by 3\n"
 							 + "Increases total damage for all weapons by 4\n"

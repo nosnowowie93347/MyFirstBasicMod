@@ -42,7 +42,7 @@ namespace MyFirstBasicMod.Projectiles
 				}
 				if (Projectile.ai[0] < 0f && Main.expertMode)
 				{
-					cooldownSlot = 1;
+					CooldownSlot = 1;
 				}
 				Projectile.Name = GetName();
 				Projectile.localAI[0] = 1f;

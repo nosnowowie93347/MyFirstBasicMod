@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -9,7 +10,7 @@ namespace MyFirstBasicMod.Tiles
 {
 	public class PinksBar : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.tileShine[Type] = 1100;
 			Main.tileSolid[Type] = true;
@@ -27,10 +28,10 @@ namespace MyFirstBasicMod.Tiles
 		public override bool Drop(int i, int j)
 		{
 			Tile t = Main.tile[i, j];
-			int style = t.frameX / 18;
+			int style = t.TileFrameX / 18;
 			if (style == 0) // It can be useful to share a single tile with multiple styles. This code will let you drop the appropriate bar if you had multiple.
 			{
-				Item.NewItem(i * 16, j * 16, 16, 16, ItemType<Items.Placeable.PinksBar>());
+				Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<Items.Placeable.PinksBar>());
 			}
 			return base.Drop(i, j);
 		}
