@@ -9,7 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace ExampleMod.Content.Tiles
+namespace MyFirstBasicMod.Tiles
 {
 	public class SylvsTorch : ModTile
 	{
