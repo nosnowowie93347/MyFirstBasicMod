@@ -111,91 +111,68 @@ namespace MyFirstBasicMod.Tiles
             Chest.DestroyChest(i, j);
         }
 
-        public override bool RightClick(int i, int j)
-        {
+        public override bool RightClick(int i, int j) {
             Player player = Main.LocalPlayer;
             Tile tile = Main.tile[i, j];
             Main.mouseRightRelease = false;
             int left = i;
             int top = j;
-            if (tile.TileFrameX % 36 != 0)
-            {
+            if (tile.TileFrameX % 36 != 0) {
                 left--;
             }
 
-            if (tile.TileFrameY != 0)
-            {
+            if (tile.TileFrameY != 0) {
                 top--;
             }
 
-            if (player.sign >= 0)
-            {
-                SoundEngine.PlaySound(SoundID.MenuClose);
-                player.sign = -1;
-                Main.editSign = false;
-                Main.npcChatText = "";
-            }
-
-            if (Main.editChest)
-            {
+            player.CloseSign();
+            player.SetTalkNPC(-1);
+            Main.npcChatCornerItem = 0;
+            Main.npcChatText = "";
+            if (Main.editChest) {
                 SoundEngine.PlaySound(SoundID.MenuTick);
                 Main.editChest = false;
-                Main.npcChatText = "";
+                Main.npcChatText = string.Empty;
             }
 
-            if (player.editedChestName)
-            {
+            if (player.editedChestName) {
                 NetMessage.SendData(MessageID.SyncPlayerChest, -1, -1, NetworkText.FromLiteral(Main.chest[player.chest].name), player.chest, 1f);
                 player.editedChestName = false;
             }
 
-            bool isLocked = IsLockedChest(left, top);
-            if (Main.netMode == NetmodeID.MultiplayerClient && !isLocked)
-            {
-                if (left == player.chestX && top == player.chestY && player.chest >= 0)
-                {
+            bool isLocked = Chest.IsLocked(left, top);
+            if (Main.netMode == NetmodeID.MultiplayerClient && !isLocked) {
+                if (left == player.chestX && top == player.chestY && player.chest >= 0) {
                     player.chest = -1;
                     Recipe.FindRecipes();
                     SoundEngine.PlaySound(SoundID.MenuClose);
                 }
-                else
-                {
+                else {
                     NetMessage.SendData(MessageID.RequestChestOpen, -1, -1, null, left, top);
                     Main.stackSplit = 600;
                 }
             }
-            else
-            {
-                if (isLocked)
-                {
+            else {
+                if (isLocked) {
+                    // Make sure to change the code in UnlockChest if you don't want the chest to only unlock at night.
                     int key = ModContent.ItemType<ExampleChestKey>();
-                    if (player.ConsumeItem(key) && Chest.Unlock(left, top))
-                    {
-                        if (Main.netMode == NetmodeID.MultiplayerClient)
-                        {
+                    if (player.ConsumeItem(key) && Chest.Unlock(left, top)) {
+                        if (Main.netMode == NetmodeID.MultiplayerClient) {
                             NetMessage.SendData(MessageID.Unlock, -1, -1, null, player.whoAmI, 1f, left, top);
                         }
                     }
                 }
-                else
-                {
+                else {
                     int chest = Chest.FindChest(left, top);
-                    if (chest >= 0)
-                    {
+                    if (chest >= 0) {
                         Main.stackSplit = 600;
-                        if (chest == player.chest)
-                        {
+                        if (chest == player.chest) {
                             player.chest = -1;
                             SoundEngine.PlaySound(SoundID.MenuClose);
                         }
-                        else
-                        {
-                            player.chest = chest;
-                            Main.playerInventory = true;
-                            Main.recBigList = false;
-                            player.chestX = left;
-                            player.chestY = top;
+                        else {
                             SoundEngine.PlaySound(player.chest < 0 ? SoundID.MenuOpen : SoundID.MenuTick);
+                            player.OpenChest(left, top, chest);
                         }
 
                         Recipe.FindRecipes();
