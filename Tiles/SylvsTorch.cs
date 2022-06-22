@@ -58,7 +58,7 @@ namespace MyFirstBasicMod.Tiles
 
 			// Assets
 			if (!Main.dedServ) {
-				flameTexture = ModContent.Request<Texture2D>("ExampleMod/Content/Tiles/ExampleTorch_Flame");
+				flameTexture = ModContent.Request<Texture2D>("MyFirstBasicMod/Tiles/SylvsTorch_Flame");
 			}
 		}
 

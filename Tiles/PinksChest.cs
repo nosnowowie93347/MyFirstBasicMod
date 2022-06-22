@@ -155,7 +155,7 @@ namespace MyFirstBasicMod.Tiles
             else {
                 if (isLocked) {
                     // Make sure to change the code in UnlockChest if you don't want the chest to only unlock at night.
-                    int key = ModContent.ItemType<ExampleChestKey>();
+                    int key = ModContent.ItemType<PinksChestKey>();
                     if (player.ConsumeItem(key) && Chest.Unlock(left, top)) {
                         if (Main.netMode == NetmodeID.MultiplayerClient) {
                             NetMessage.SendData(MessageID.Unlock, -1, -1, null, player.whoAmI, 1f, left, top);
@@ -212,7 +212,7 @@ namespace MyFirstBasicMod.Tiles
                     player.cursorItemIconID = ModContent.ItemType<Items.Placeable.PinksChest>();
                     if (Main.tile[left, top].TileFrameX / 36 == 1)
                     {
-                        player.cursorItemIconID = ModContent.ItemType<ExampleChestKey>();
+                        player.cursorItemIconID = ModContent.ItemType<PinksChestKey>();
                     }
 
                     player.cursorItemIconText = "";

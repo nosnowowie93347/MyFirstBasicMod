@@ -61,7 +61,7 @@ namespace MyFirstBasicMod.Items.Placeable
 		public override void AddRecipes() {
 			CreateRecipe()
 				.AddIngredient<SylvsBlock>()
-				.AddTile<Tiles.Furniture.ExampleWorkbench>()
+				.AddTile<Tiles.PinksWorkbench>()
 				.Register();
 		}
 	}
