@@ -37,7 +37,7 @@ namespace MyFirstBasicMod.Items.Placeable
         }
     }
 
-    public class ExampleChestKey : ModItem
+    public class PinksChestKey : ModItem
     {
         public override void SetStaticDefaults()
         {
