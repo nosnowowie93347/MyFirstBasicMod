@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items
 	public class TerrabotsPickaxe : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("This pickaxe was created by Terrabot, Pink's Discord bot.");
-			DisplayName.SetDefault("Terrabot's Pickaxe");
+			// Tooltip.SetDefault("This pickaxe was created by Terrabot, Pink's Discord bot.");
+			// DisplayName.SetDefault("Terrabot's Pickaxe");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

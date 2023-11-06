@@ -4,6 +4,7 @@ using MyFirstBasicMod.Items.Placeable;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
@@ -41,11 +42,11 @@ namespace MyFirstBasicMod.Tiles
 			TileObjectData.addAlternate(0);
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Sylv's Door");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Sylv's Door");
 			AddMapEntry(new Color(200, 200, 200), name);
 			AdjTiles = new int[] { TileID.ClosedDoor };
-			OpenDoorID = TileType<SylvsDoorOpen>();
+			TileID.Sets.OpenDoorID[Type] = TileType<SylvsDoorOpen>();
 		}
 
 		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)

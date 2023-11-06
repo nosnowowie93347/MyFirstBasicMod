@@ -9,9 +9,8 @@ namespace MyFirstBasicMod.Items.Weapons
     public class JoeysFlail : ModItem
     {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Joey's Flail");
-            Tooltip.SetDefault("This is a flail made by Joey.");
-            SacrificeTotal = 1;
+
+            Item.ResearchUnlockCount = 1;
 
             // This line will make the damage shown in the tooltip twice the actual Item.damage. This multiplier is used to adjust for the dynamic damage capabilities of the projectile.
             // When thrown directly at enemies, the flail projectile will deal double Item.damage, matching the tooltip, but deals normal damage in other modes.
@@ -22,12 +21,12 @@ namespace MyFirstBasicMod.Items.Weapons
             Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
             Item.useAnimation = 45; // The item's use time in ticks (60 ticks == 1 second.)
             Item.useTime = 45; // The item's use time in ticks (60 ticks == 1 second.)
-            Item.knockBack = 5.5f; // The knockback of your flail, this is dynamically adjusted in the projectile code.
+            Item.knockBack = 6.5f; // The knockback of your flail, this is dynamically adjusted in the projectile code.
             Item.width = 32; // Hitbox width of the item.
             Item.height = 32; // Hitbox height of the item.
             Item.damage = 200; // The damage of your flail, this is dynamically adjusted in the projectile code.
             Item.noUseGraphic = true; // This makes sure the item does not get shown when the player swings his hand
-            Item.shoot = ModContent.ProjectileType<ExampleAdvancedFlailProjectile>(); // The flail projectile
+            Item.shoot = ModContent.ProjectileType<JoeysFlailProjectile>(); // The flail projectile
             Item.shootSpeed = 12f; // The speed of the projectile measured in pixels per frame.
             Item.UseSound = SoundID.Item1; // The sound that this item makes when used
             Item.rare = ItemRarityID.Green; // The color of the name of your item
@@ -40,7 +39,8 @@ namespace MyFirstBasicMod.Items.Weapons
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes() {
             CreateRecipe()
-                .AddIngredient<Items.EpicSoul>()
+                .AddIngredient<Items.EpicSoul>(3)
+                .AddIngredient<Items.Placeable.PinksBar>(2)
                 .AddTile<Tiles.PinksWorkbench>()
                 .Register();
         }

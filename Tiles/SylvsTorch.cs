@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -27,7 +28,6 @@ namespace MyFirstBasicMod.Tiles
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			TileID.Sets.Torch[Type] = true;
 
-			ItemDrop = ModContent.ItemType<Items.Placeable.SylvsTorch>();
 			DustType = ModContent.DustType<Sparkle>();
 			AdjTiles = new int[] { TileID.Torches };
 
@@ -50,9 +50,9 @@ namespace MyFirstBasicMod.Tiles
 			TileObjectData.addTile(Type);
 
 			// Etc
-			ModTranslation name = CreateMapEntryName();
+			LocalizedText name = CreateMapEntryName();
 
-			name.SetDefault("Torch");
+			// name.SetDefault("Torch");
 
 			AddMapEntry(new Color(200, 200, 200), name);
 

@@ -12,8 +12,8 @@ namespace MyFirstBasicMod.Items.Weapons
 	public class Banhammer : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Banhammer");
-			Tooltip.SetDefault("One of the best hammers I've ever seen");
+			// DisplayName.SetDefault("Banhammer");
+			// Tooltip.SetDefault("One of the best hammers I've ever seen");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

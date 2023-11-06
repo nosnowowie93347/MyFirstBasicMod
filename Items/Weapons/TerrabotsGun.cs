@@ -12,8 +12,8 @@ namespace MyFirstBasicMod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Made by Terrabot himself.");
-			DisplayName.SetDefault("Terrabot's Gun");
+			// Tooltip.SetDefault("Made by Terrabot himself.");
+			// DisplayName.SetDefault("Terrabot's Gun");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 

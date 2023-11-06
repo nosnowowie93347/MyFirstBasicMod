@@ -12,7 +12,7 @@ namespace MyFirstBasicMod.Projectiles
 	public class TwilightArrow : ModProjectile
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Twilight's Arrow");     //The English name of the Projectile
+			// DisplayName.SetDefault("Twilight's Arrow");     //The English name of the Projectile
 			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;    //The length of old position to be recorded
 			ProjectileID.Sets.TrailingMode[Projectile.type] = 0;        //The recording mode
 		}
@@ -78,7 +78,7 @@ namespace MyFirstBasicMod.Projectiles
 			return true;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			// This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
 			Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);

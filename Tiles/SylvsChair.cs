@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
@@ -25,8 +26,8 @@ namespace MyFirstBasicMod.Tiles{
 			TileObjectData.addAlternate(1); //facing right will use the second texture style
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Sylv's Chair");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Sylv's Chair");
 			AddMapEntry(new Color(200, 200, 200), name);
 			AdjTiles = new int[] { TileID.Chairs };
 		}

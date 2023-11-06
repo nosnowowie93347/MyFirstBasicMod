@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
@@ -26,7 +26,7 @@ namespace MyFirstBasicMod.Projectiles
 		public ref float AIDashCharge => ref Projectile.ai[1];
 
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Annoying Little Light");
+			// DisplayName.SetDefault("Annoying Little Light");
 
 			Main.projFrames[Projectile.type] = 1;
 			Main.projPet[Projectile.type] = true;

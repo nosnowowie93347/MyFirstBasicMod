@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items
     public class BreadPickaxe : ModItem 
     {
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Made of the strongest bread in all the land.");
-            DisplayName.SetDefault("Bread Pickaxe");
+            // Tooltip.SetDefault("Made of the strongest bread in all the land.");
+            // DisplayName.SetDefault("Bread Pickaxe");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
         }

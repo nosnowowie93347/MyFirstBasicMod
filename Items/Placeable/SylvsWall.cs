@@ -9,8 +9,8 @@ namespace MyFirstBasicMod.Items.Placeable
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sylv's Wall");
-            Tooltip.SetDefault("This is a modded wall for Sylv.");
+            // DisplayName.SetDefault("Sylv's Wall");
+            // Tooltip.SetDefault("This is a modded wall for Sylv.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 999;
         }
 

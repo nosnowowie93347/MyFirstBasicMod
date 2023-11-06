@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Items.Armor
@@ -8,10 +9,13 @@ namespace MyFirstBasicMod.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class HelmetName : ModItem
     {
-        
+        public static readonly int MoveSpeedBonus = 5;
+
+        public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(MoveSpeedBonus);
+
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Pink's Helmet");
-            Tooltip.SetDefault("Pink's Helmet\n Immune to most debuffs");
+            // DisplayName.SetDefault("Pink's Helmet");
+            // Tooltip.SetDefault("Pink's Helmet\n Immune to most debuffs");
         }
         public override void SetDefaults()
         {
@@ -46,13 +50,12 @@ namespace MyFirstBasicMod.Items.Armor
             player.buffImmune[BuffID.CursedInferno] = true;
             player.GetDamage(DamageClass.Melee) += 0.25f; //+15 % damage
             player.GetDamage(DamageClass.Ranged) += 0.19f;
-            player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
             player.statLifeMax2 += 30;
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "You are awesome!. Full set bonus: +6 defense";
-            player.statDefense = (int)(player.statDefense + 6.00);
+            player.setBonus = "You are awesome!. Full set bonus: +5% move speed";
+            player.moveSpeed += MoveSpeedBonus / 100f;
         }
         public override void AddRecipes()
         {

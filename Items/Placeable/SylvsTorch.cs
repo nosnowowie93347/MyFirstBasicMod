@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using MyFirstBasicMod.Dusts;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
@@ -9,7 +10,10 @@ namespace MyFirstBasicMod.Items.Placeable
 	public class SylvsTorch : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Thid torch is super bright. Be careful.");
+			ItemID.Sets.ShimmerTransformToItem[Type] = ItemID.ShimmerTorch;
+			ItemID.Sets.SingleUseInGamepad[Type] = true;
+			ItemID.Sets.Torches[Type] = true;
+			// Tooltip.SetDefault("Thid torch is super bright. Be careful.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 
@@ -53,14 +57,12 @@ namespace MyFirstBasicMod.Items.Placeable
 			}
 		}
 
-		public override void AutoLightSelect(ref bool dryTorch, ref bool wetTorch, ref bool glowstick) {
-			dryTorch = true; // This makes our item eligible for being selected with smart select at a short distance when not underwater.
-		}
+		
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
 			CreateRecipe()
-				.AddIngredient<SylvsBlock>()
+				.AddIngredient<SylvsBlock>(5)
 				.AddTile<Tiles.PinksWorkbench>()
 				.Register();
 		}

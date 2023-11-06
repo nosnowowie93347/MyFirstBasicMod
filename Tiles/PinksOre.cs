@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
@@ -22,12 +23,11 @@ namespace MyFirstBasicMod.Tiles
 			Main.tileBlockLight[Type] = true;
             TileObjectData.newTile.LavaDeath = false;
 
-            ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Pink's Ore");
+            LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Pink's Ore");
 			AddMapEntry(new Color(255, 200, 200), name);
 
 			DustType = 84;
-			ItemDrop = ItemType<Items.Placeable.PinksOre>();
 			HitSound = SoundID.Tink;
             MineResist = 4f;
             MinPick = 200;

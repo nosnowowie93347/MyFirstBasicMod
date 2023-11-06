@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using MyFirstBasicMod.Items;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Tiles
@@ -16,10 +17,9 @@ namespace MyFirstBasicMod.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;  //true for block to emit light
 			Main.tileLighted[Type] = true;
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Glowing Ore");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Glowing Ore");
 			AddMapEntry(new Color(204, 0, 102), name);
-			ItemDrop = ModContent.ItemType<Items.Placeable.GlowingOre>();
 			HitSound = SoundID.Tink;
 			MinPick = 180;
 

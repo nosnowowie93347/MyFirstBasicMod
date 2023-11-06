@@ -12,8 +12,8 @@ namespace MyFirstBasicMod.Items.Weapons
 	public class IrohsHamaxe : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Iroh's Hamaxe");
-			Tooltip.SetDefault("Made by IrohPlayz999YT, a friend of Pink");
+			// DisplayName.SetDefault("Iroh's Hamaxe");
+			// Tooltip.SetDefault("Made by IrohPlayz999YT, a friend of Pink");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

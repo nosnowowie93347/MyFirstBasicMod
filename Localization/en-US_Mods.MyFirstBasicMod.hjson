@@ -1,0 +1,615 @@
+NPCs: {
+	ModdedNPC: {
+		Census.SpawnCondition: Must have Pink's Bar in your inventory.
+
+		TownNPCMood: {
+			Princess_LovesNPC: I like {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			LikeNPC: I like {NPCName}.
+			LoveNPC: I love {NPCName}.
+			DislikeBiome: I dislike {BiomeName}.
+			LikeBiome: I like {BiomeName}.
+			LoveBiome: I love {BiomeName}.
+			HateCrowded: I hate how crowded I am.
+			DislikeCrowded: I dislike how crowded I am.
+			LoveSpace: I love having so much space.
+			FarFromHome: I am too far from home.
+			NoHome: I hate not having a home.
+			Content: I am content.
+		}
+
+		DisplayName: Modded NPC
+	}
+
+	PartyZombie.DisplayName: Party Zombie
+	FlutterSlime.DisplayName: Flutter Slime
+	Ocram2.DisplayName: Ocram 2
+	Shadowflamer.DisplayName: Shadowflamer
+	ShadowBall.DisplayName: Shadow Ball
+	Dusking.DisplayName: Skull King
+
+	Pinkalicious21902: {
+		DisplayName: Pinkalicious21902
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeBiome: I like {BiomeName}.
+			DislikeBiome: I dislike {BiomeName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		Census.SpawnCondition: Must have Pink's Bar or Pink's Ore in inventory.
+	}
+
+	FrostSaucer.DisplayName: Frost Saucer
+	DragonNPC.DisplayName: Dragon
+	PirateLobber.DisplayName: Pirate Lobber
+	KingOfTheNightMinion.DisplayName: King Of The Night Minion
+	KingOfTheNight.DisplayName: King Of The Night
+}
+
+Conditions.LowHealth: Mods.MyFirstBasicMod.Conditions.LowHealth
+
+Projectiles: {
+	TwilightArrow.DisplayName: Twilight Arrow
+	TerrabotsBullet.DisplayName: Terrabot's Bullet
+	PixelBall.DisplayName: Pixel Ball
+	PinkWhipProjectileAdvanced.DisplayName: Pink Whip Projectile Advanced
+	PinkWhipProjectile.DisplayName: Pink Whip Projectile
+	PinksGolfBallProjectile.DisplayName: Pink's Golf Ball Projectile
+	PinksBobber.DisplayName: Pinks Bobber
+	JoeysFlailProjectile.DisplayName: Joey's Flail Projectile
+	FrostburnShortbowProj.DisplayName: Frostburn Shortbow Proj
+	ElliesSpearProjectile.DisplayName: Ellie's Spear Projectile
+	ElementBall.DisplayName: Element Ball
+	AnnoyingLittleLight.DisplayName: Annoying Little Light
+	AmberDagger.DisplayName: Amber Dagger
+	PinksHookProjectile.DisplayName: Pink's Hook Projectile
+	ShadowPulse.DisplayName: Shadow Pulse
+	SnowBall.DisplayName: Snow Ball
+	SnowMongerBeam.DisplayName: Snow Monger Beam
+	ExampleHomingProjectile.DisplayName: Example Homing Projectile
+	RealityQuillProjectile.DisplayName: Reality Quill Projectile
+	RealityQuillProjectileTwo.DisplayName: Reality Quill Projectile Two
+	PinksDrillProjectile.DisplayName: Pinks Drill Projectile
+}
+
+Items: {
+	TitaniumWarhammer: {
+		Tooltip:
+			'''
+			A very strong warhammer.
+			'I am titanium'
+			'''
+		DisplayName: Titanium Warhammer
+	}
+
+	TerrabotsGun: {
+		Tooltip: ""
+		DisplayName: Terrabot's Gun
+	}
+
+	TerrabotsBullet: {
+		Tooltip: ""
+		DisplayName: Terrabot's Bullet
+	}
+
+	SwordOfDreams: {
+		Tooltip: ""
+		DisplayName: Sword Of Dreams
+	}
+
+	SuperSword: {
+		Tooltip: ""
+		DisplayName: Super Sword
+	}
+
+	PinkWhipAdvanced: {
+		Tooltip: ""
+		DisplayName: Pink Whip Advanced
+	}
+
+	PinkWhip: {
+		Tooltip: "'Whip it! Into shape!'"
+		DisplayName: Pink Whip
+	}
+
+	Krono: {
+		Tooltip:
+			'''
+			We all have darkness inside us.This weapon brings it out.
+			'You can't lock up the darkness'
+			'''
+		DisplayName: Krono
+	}
+
+	JoeysFlail: {
+		Tooltip: ""
+		DisplayName: Joey's Flail
+	}
+
+	IrohsHamaxe: {
+		Tooltip: ""
+		DisplayName: Iroh's Hamaxe
+	}
+
+	ElliesSpear: {
+		Tooltip: ""
+		DisplayName: Ellie's Spear
+	}
+
+	DoomPrism: {
+		Tooltip: Bring doom upon your enemies!
+		DisplayName: Doom Prism
+	}
+
+	Banhammer: {
+		Tooltip:
+			'''
+			Unleash your inner discord mod
+			'And... you are banned.'
+			'''
+		DisplayName: Banhammer
+	}
+
+	TwilightsBow: {
+		Tooltip: "'Drenched in vanilla twilight'"
+		DisplayName: Twilight's Bow
+	}
+
+	TwilightArrow: {
+		Tooltip: ""
+		DisplayName: Twilight Arrow
+	}
+
+	Test: {
+		Tooltip: It's OPNess is over 9000!
+		DisplayName: Pink's Sword
+	}
+
+	TerrabotsPickaxe: {
+		Tooltip: ""
+		DisplayName: Terrabot's Pickaxe
+	}
+
+	SylvsWall: {
+		Tooltip: ""
+		DisplayName: Sylv's Wall
+	}
+
+	SylvsTorch: {
+		Tooltip: This torch is super bright. Be careful.
+		DisplayName: Sylv's Torch
+	}
+
+	SylvsDoor: {
+		Tooltip: ""
+		DisplayName: Sylv's Door
+	}
+
+	SylvsClock: {
+		Tooltip: A clock to tell the time.
+		DisplayName: Sylv's Clock
+	}
+
+	SylvsChair: {
+		Tooltip: ""
+		DisplayName: Sylv's Chair
+	}
+
+	SylvsBlock: {
+		Tooltip: ""
+		DisplayName: Sylv's Block
+	}
+
+	PinksWorkbench: {
+		Tooltip: Used to craft various items.
+		DisplayName: Pink's Workbench
+	}
+
+	PinksOre: {
+		Tooltip: ""
+		DisplayName: Pink's Ore
+	}
+
+	PinksChestKey: {
+		Tooltip: ""
+		DisplayName: Pink's Chest Key
+	}
+
+	PinksChest: {
+		Tooltip: ""
+		DisplayName: Pink's Chest
+	}
+
+	PinksBed: {
+		Tooltip: ""
+		DisplayName: Pink's Bed
+	}
+
+	PinksBar: {
+		Tooltip: ""
+		DisplayName: Pink's Bar
+	}
+
+	PinksAnvil: {
+		Tooltip: Used to craft various items.
+		DisplayName: Pink's Anvil
+	}
+
+	GlowingOre: {
+		Tooltip: "'Glowing metal'"
+		DisplayName: Glowing Ore
+	}
+
+	GlowingBar: {
+		Tooltip: "'Pulsating with glowing energy...'"
+		DisplayName: Glowing Bar
+	}
+
+	PinksWings: {
+		Tooltip: These wings are very pink.
+		DisplayName: Pink's Wings
+	}
+
+	PinksLifeFruit: {
+		Tooltip: Permanently increases maximum life by 5
+		DisplayName: Pink's Life Fruit
+	}
+
+	PinksHookItem: {
+		Tooltip: ""
+		DisplayName: Pink's Hook
+	}
+
+	PinksGolfBall: {
+		Tooltip: ""
+		DisplayName: Pink's Golf Ball
+	}
+
+	PinksGift: {
+		Tooltip: ""
+		DisplayName: Pink's Gift
+	}
+
+	PinksFishingRod: {
+		Tooltip: ""
+		DisplayName: Pink's Fishing Rod
+	}
+
+	PinksFish: {
+		Tooltip: ""
+		DisplayName: Pink's Fish
+	}
+
+	MinecartKeys: {
+		Tooltip: ""
+		DisplayName: Minecart Keys
+	}
+
+	GodlyHealingPotion: {
+		Tooltip: Heals for half of your maximum life.
+		DisplayName: Godly Healing Potion
+		RestoreLifeText: Mods.MyFirstBasicMod.Items.GodlyHealingPotion.RestoreLifeText
+	}
+
+	FrostburnShortbow: {
+		Tooltip: IDK.
+		DisplayName: Frostburn Shortbow
+	}
+
+	EpicSoul: {
+		Tooltip: ""
+		DisplayName: Epic Soul
+	}
+
+	DiamondskinPotion: {
+		Tooltip: Grants +12 defense. Good for what ails you.
+		DisplayName: Diamondskin Potion
+	}
+
+	BreadsShield: {
+		Tooltip: +10 defense, +10% damage.
+		DisplayName: Bread Shield
+	}
+
+	BreadPickaxe: {
+		Tooltip: Made out of bread. Just kidding.
+		DisplayName: Bread Pickaxe
+	}
+
+	Leggings: {
+		Tooltip: +15% ranged damage, +30 max life
+		DisplayName: Pink's Leggings
+	}
+
+	HelmetName: {
+		Tooltip: Immune to most debuffs.
+		DisplayName: Pink's Helmet
+	}
+
+	HardCrystalLeggings: {
+		Tooltip: Increases maximum minions by 2
+		DisplayName: Hard Crystal Leggings
+	}
+
+	HardCrystalHelm: {
+		Tooltip:
+			'''
+			16% increased magic and summon damage
+			Increases maximum minions by 1
+			'''
+		DisplayName: Hard Crystal Helm
+	}
+
+	HardCrystalBreastplate: {
+		Tooltip: 8% increased magic and summon damage, increases max minions by 1
+		DisplayName: Hard Crystal Breastplate
+	}
+
+	GlowingLegs: {
+		Tooltip: Increases movement speed by 7% and 20% chance not to consume ammo\n+20% ranged damage and crit chance
+		DisplayName: Glowing Greaves
+	}
+
+	GlowingHead: {
+		Tooltip: Increases ranged damage by 12% and ranged crit chance by 13%
+		DisplayName: Glowing Faceplate
+	}
+
+	GlowingBody: {
+		Tooltip: Increases ranged damage by 25%, 20% chance not to consume ammo\n10% Increased ranged crit chance.
+		DisplayName: Glowing Body
+	}
+
+	BreastplateName: {
+		Tooltip: +30 Max Life, +15% Melee Damage
+		DisplayName: Pink's Breastplate
+	}
+
+	AnnoyingLittleLight: {
+		Tooltip: ""
+		DisplayName: Annoying Little Light
+	}
+
+	OrangeRing: {
+		Tooltip: 5% increased movement speed
+		DisplayName: Orange Ring
+	}
+
+	ManaHeart: {
+		Tooltip: Heals you by 20 health for every 200 mana consumed.
+		DisplayName: Mana Heart
+	}
+
+	GreenRing: {
+		Tooltip: 5% increased damage
+		DisplayName: Green Ring
+	}
+
+	FlashBoots: {
+		Tooltip: These boots were made to become the fastest man alive.
+		DisplayName: Flash Boots
+	}
+
+	EpicShield: {
+		Tooltip: 25% increased damage, and a few other things.
+		DisplayName: Epic Shield
+	}
+
+	Trophy6: {
+		Tooltip: Your reward for defeating the Skull King
+		DisplayName: Skull King Trophy
+	}
+
+	DuskCrown: {
+		Tooltip: Spawns the Skull King at night.
+		DisplayName: Dusk Crown
+	}
+
+	SkullKingBag: {
+		Tooltip: ""
+		DisplayName: Skull King Bag
+	}
+
+	CobaltShortsword: {
+		Tooltip: ""
+		DisplayName: Cobalt Shortsword
+	}
+
+	CarrotCake: {
+		Tooltip: Mmmm, cake...
+		DisplayName: Carrot Cake
+	}
+
+	RunicGreaves: {
+		DisplayName: Runic Greaves
+		Tooltip: Reduces mana cost by 15% and increases magic damage by 10%
+	}
+
+	RunicHood: {
+		DisplayName: Runic Hood
+		Tooltip: Increases magic damage by 12% and movement speed by 5%
+	}
+
+	RunicPlate: {
+		DisplayName: Runic Plate
+		Tooltip: Increases magic critical strike chance by 18%
+	}
+
+	Rune: {
+		DisplayName: Rune
+		Tooltip: "'It's inscribed in some archaic language'"
+	}
+
+	ExampleCustomAmmo: {
+		DisplayName: Frosty Gun Ammo
+		Tooltip: For use with the frosty gun. Stay frosty!
+	}
+
+	FrostyGun: {
+		DisplayName: Frosty Gun
+		Tooltip: Stay frosty!
+	}
+
+	FunShotgun: {
+		DisplayName: Fun Shotgun
+		Tooltip: ""
+	}
+
+	RealityQuill: {
+		DisplayName: Reality Quill
+		Tooltip:
+			'''
+			Creates a tear in reality, damaging enemies 
+			 Write faster to deal more damage
+			'Write your own destiny'
+			'''
+	}
+
+	Diamond_Bow: {
+		DisplayName: Diamond Bow
+		Tooltip: Turns wooden arrows into modded arrows.
+	}
+
+	SylvsSink: {
+		DisplayName: Sylv's Sink
+		Tooltip: ...modded liquids sold separately.
+	}
+
+	SylvsTable: {
+		DisplayName: Sylv's Table
+		Tooltip: ""
+	}
+
+	BloodCourtChestplate: {
+		DisplayName: Bloodcourt's Vestments
+		Tooltip:
+			'''
+			6% increased damage
+			+5 magic regen
+			20% chance to not consume ammo
+			+100 max life, -5% mana cost
+			'''
+	}
+
+	BloodCourtHead: {
+		DisplayName: Bloodcourt's Visage
+		Tooltip:
+			'''
+			30% increased magic damage
+			Increases your max number of minions, Increases magic crit strike chance by 20%, and +100 max mana
+			'''
+	}
+
+	BloodCourtLeggings: {
+		DisplayName: Blood Court Leggings
+		Tooltip:
+			'''
+			Increases movement speed by 10%
+			Increases maximum mana by 30
+			'''
+	}
+
+	DreamstrideEssence: {
+		DisplayName: Dreamstride Essence
+		Tooltip: ""
+	}
+
+	PinksDrill: {
+		Tooltip: ""
+		DisplayName: Pinks Drill
+	}
+
+	GreaterRestorationPotion: {
+		Tooltip: ""
+		DisplayName: Greater Restoration Potion
+	}
+
+	KingOfTheNightBag: {
+		Tooltip: ""
+		DisplayName: King Of The Night Bag
+	}
+
+	SteelOre: {
+		Tooltip: ""
+		DisplayName: Steel Ore
+	}
+
+	SteelBar: {
+		Tooltip: ""
+		DisplayName: Steel Bar
+	}
+
+	PinkLootBox: {
+		Tooltip: ""
+		DisplayName: Pink Loot Box
+	}
+}
+
+Buffs: {
+	PinkWhipDebuff: {
+		Description: Mods.MyFirstBasicMod.Buffs.PinkWhipDebuff.Description
+		DisplayName: Pink Whip Debuff
+	}
+
+	PinkMinecartBuff.DisplayName: Pink Minecart Buff
+
+	ExampleDefenseBuff: {
+		Description: Mods.MyFirstBasicMod.Buffs.ExampleDefenseBuff.Description
+		DisplayName: Diamondskin Potion Buff
+	}
+
+	ColdFire: {
+		Description: Mods.MyFirstBasicMod.Buffs.ColdFire.Description
+		DisplayName: Cold Fire
+	}
+
+	AnnoyingLittleLight: {
+		Description: Mods.MyFirstBasicMod.Buffs.AnnoyingLittleLight.Description
+		DisplayName: Annoying Little Light
+	}
+}
+
+Tiles: {
+	SylvsTorch.MapEntry: Sylv's Torch
+	SylvsDoorOpen.MapEntry: Sylv's Door Open
+	SylvsDoorClosed.MapEntry: Sylv's Door Closed
+	SylvsClock.MapEntry: Sylv's Clock
+	SylvsChair.MapEntry: Sylv's Chair
+	SylvsBlock.MapEntry: Sylv's Block
+	PinksWorkbench.MapEntry: Pink's Workbench
+	PinksOre.MapEntry: Pink's Ore
+
+	PinksChest: {
+		MapEntry1: Mods.MyFirstBasicMod.Tiles.PinksChest.MapEntry1
+		MapEntry0: Mods.MyFirstBasicMod.Tiles.PinksChest.MapEntry0
+	}
+
+	PinksBed.MapEntry: Pink's Bed
+	PinksAnvil.MapEntry: Pink's Anvil
+	GlowingOre.MapEntry: Glowing Ore
+	SteelOre.MapEntry: Steel Ore
+	PinkLootBoxTile.MapEntry: Pink Loot Box Tile
+}
+
+Prefixes: {
+	ExamplePrefix: {
+		DisplayName: Absolutely Legendary
+		AdditionalTooltip: More Power!
+	}
+
+	# This special format will force a + or - sign to display depending on the value: -3, +0, +3. (https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings?redirectedfrom=MSDN#SectionSeparator)
+	PowerTooltip: "{0:+0;-#} Power"
+}

@@ -13,7 +13,7 @@ namespace MyFirstBasicMod.Items
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Pink's Fish");
+            // DisplayName.SetDefault("Pink's Fish");
         }
 
         public override void SetDefaults()

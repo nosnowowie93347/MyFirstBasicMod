@@ -1,4 +1,5 @@
 using MyFirstBasicMod.Projectiles;
+using MyFirstBasicMod.Items.Placeable;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;

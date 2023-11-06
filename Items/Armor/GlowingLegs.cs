@@ -10,8 +10,8 @@ namespace MyFirstBasicMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glowing Greaves");
-			Tooltip.SetDefault("Increases movement speed by 7% and melee speed by 9%");
+			// DisplayName.SetDefault("Glowing Greaves");
+			// Tooltip.SetDefault("Increases movement speed by 7% and 20% chance not to consume ammo\n+20% ranged damage and crit chance");
 		}
 		public override void SetDefaults()
 		{
@@ -19,12 +19,15 @@ namespace MyFirstBasicMod.Items.Armor
 			Item.height = 24;
 			Item.value = Terraria.Item.sellPrice(0, 5, 0, 0);
 			Item.rare = ItemRarityID.Yellow;
-			Item.defense = 21;
+			Item.defense = 51;
 		}
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += .07f;
-			player.GetAttackSpeed(DamageClass.Melee) += .09f;
+			player.GetDamage(DamageClass.Ranged) += .20f;
+			player.GetCritChance(DamageClass.Ranged) += 20;
+			player.maxRunSpeed += .03f;
+			player.ammoCost80 = true;
 
 		}
         public override void AddRecipes()

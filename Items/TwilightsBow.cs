@@ -14,8 +14,8 @@ namespace MyFirstBasicMod.Items
 	public class TwilightsBow : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Behold! It's Twilight's Bow!");
-			DisplayName.SetDefault("Twilight's Bow");
+			// Tooltip.SetDefault("Behold! It's Twilight's Bow!");
+			// DisplayName.SetDefault("Twilight's Bow");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

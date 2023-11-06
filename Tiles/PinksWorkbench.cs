@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -20,8 +21,8 @@ namespace MyFirstBasicMod.Tiles
 			TileObjectData.newTile.CoordinateHeights = new[] { 18 };
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Pink's Workbench");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Pink's Workbench");
 			AddMapEntry(new Color(200, 200, 200), name);
 			AdjTiles = new int[] { TileID.WorkBenches };
 		}

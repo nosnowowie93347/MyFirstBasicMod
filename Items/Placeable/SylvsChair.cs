@@ -9,8 +9,8 @@ namespace MyFirstBasicMod.Items.Placeable
 	public class SylvsChair : ModItem
 	{
 		public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Sylv's Chair");
-			Tooltip.SetDefault("This chair was made by Sylv.\nDo not underestimate its power.");
+            // DisplayName.SetDefault("Sylv's Chair");
+			// Tooltip.SetDefault("This chair was made by Sylv.\nDo not underestimate its power.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
 

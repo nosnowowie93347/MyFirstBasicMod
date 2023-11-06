@@ -9,14 +9,14 @@ namespace MyFirstBasicMod.Items
 	public class AnnoyingLittleLight : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Annoying Little Light");
-			Tooltip.SetDefault("Summons an annoying light");
+			// DisplayName.SetDefault("Annoying Little Light");
+			// Tooltip.SetDefault("Summons an annoying light");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults() {
-			Item.damage = 0;
+            Item.damage = 0;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.shoot = ModContent.ProjectileType<Projectiles.AnnoyingLittleLight>();
 			Item.width = 16;

@@ -9,8 +9,8 @@ namespace MyFirstBasicMod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Krono"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("We all have darkness inside us.\nThis weapon brings it out.");
+			// DisplayName.SetDefault("Krono"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			// Tooltip.SetDefault("We all have darkness inside us.\nThis weapon brings it out.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

@@ -28,8 +28,9 @@ namespace MyFirstBasicMod.NPCs
 	[AutoloadHead]
 	public class ModdedNPC : ModNPC
 	{
-		
-		public override void SetStaticDefaults() {
+        public const string ShopName = "Shop";
+
+        public override void SetStaticDefaults() {
 			// DisplayName automatically assigned from localization files, but the commented line below is the normal approach.
 			// DisplayName.SetDefault("Example Person");
 			Main.npcFrameCount[Type] = 25; // The amount of frames the NPC has
@@ -110,7 +111,7 @@ namespace MyFirstBasicMod.NPCs
 			return true;
 		}
 
-		public override void HitEffect(int hitDirection, double damage) {
+		public override void HitEffect(NPC.HitInfo hit) {
 			int num = NPC.life > 0 ? 1 : 5;
 
 			for (int k = 0; k < num; k++) {
@@ -118,7 +119,7 @@ namespace MyFirstBasicMod.NPCs
 			}
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money) { // Requirements for the town NPC to spawn.
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */ { // Requirements for the town NPC to spawn.
 			for (int k = 0; k < 255; k++) {
 				Player player = Main.player[k];
 				if (!player.active) {
@@ -176,46 +177,54 @@ namespace MyFirstBasicMod.NPCs
 			button2 = "Unfinished";
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop) {
+		public override void OnChatButtonClicked(bool firstButton, ref string shop) {
 			if (firstButton) {
                 // We want 3 different functionalities for chat buttons, so we use HasItem to change button 1 between a shop and upgrade action.
-                shop = true;
+                shop = ShopName;
             }
 		}
 
-		// Not completely finished, but below is what the NPC will sell
+        // Not completely finished, but below is what the NPC will sell
 
-		// public override void SetupShop(Chest shop, ref int nextSlot) {
-			
+        public override void AddShops()
+        {
+			var npcShop = new NPCShop(Type, ShopName)
+				.Add<Items.Consumables.DiamondskinPotion>()
+				//.Add<EquipMaterial>()
+				//.Add<BossItem>()
+				.Add(new Item(ModContent.ItemType<Items.Placeable.PinksWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
+				.Add<Items.Placeable.PinksBar>()
+				.Add<Items.PinksWings>()
+				.Add<Items.Accessories.EpicShield>()
+				.Add<Items.Weapons.ElliesSpear>()
+				.Add<Items.TerrabotsPickaxe>();
+                
 
-		//	shop.item[nextSlot++].SetDefaults(ItemType<ExampleItem>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksWorkbench>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.SylvsChair>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.SylvsDoor>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksBed>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<Items.Placeable.PinksChest>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<BreadPickaxe>());
-		//	shop.item[nextSlot++].SetDefaults(ItemType<IrohsHamaxe>());
-		////
-		//	if (Main.LocalPlayer.HasBuff(BuffID.Lifeforce)) {
-		//		shop.item[nextSlot++].SetDefaults(ItemType<GodlyHealingPotion>());
-		//	}
-		////
-		//    shop.item[nextSlot].SetDefaults(ItemType<ExampleWings>());
-		//    nextSlot++;
-		////
-		////
-		//	if (Main.moonPhase < 2) {
-		//		shop.item[nextSlot++].SetDefaults(ItemType<Test>());
-		//	}
-		//	else if (Main.moonPhase < 4) {
-		//		shop.item[nextSlot++].SetDefaults(ItemType<TerrabotsGun>());
-		//		shop.item[nextSlot].SetDefaults(ItemType<TerrabotsBullet>());
-		//	}
-		//}
+            
+            npcShop.Register(); // Name of this shop tab
+        }
 
-		public override void ModifyNPCLoot(NPCLoot npcLoot) {
-			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<HardCrystalHelm>()));
+        public override void ModifyActiveShop(string shopName, Item[] items)
+        {
+            foreach (Item item in items)
+            {
+                // Skip 'air' items and null items.
+                if (item == null || item.type == ItemID.None)
+                {
+                    continue;
+                }
+
+                // If NPC is shimmered then reduce all prices by 50%.
+                if (NPC.IsShimmerVariant)
+                {
+                    int value = item.shopCustomPrice ?? item.value;
+                    item.shopCustomPrice = value / 2;
+                }
+            }
+        }
+
+        public override void ModifyNPCLoot(NPCLoot npcLoot) {
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Armor.HelmetName>()));
 		}
 
 		// Make this Town NPC teleport to the King and/or Queen statue when triggered.

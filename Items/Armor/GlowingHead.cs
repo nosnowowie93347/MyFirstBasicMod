@@ -10,8 +10,8 @@ namespace MyFirstBasicMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glowing Faceplate");
-			Tooltip.SetDefault("Increases melee damage by 12% and melee speed by 13%");
+			// DisplayName.SetDefault("Glowing Faceplate");
+			// Tooltip.SetDefault("Increases ranged damage by 12% and ranged crit chance by 13%");
 		}
 		public override void SetDefaults()
 		{
@@ -19,7 +19,7 @@ namespace MyFirstBasicMod.Items.Armor
 			Item.height = 24;
 			Item.value = Terraria.Item.sellPrice(0, 5, 0, 0);
 			Item.rare = ItemRarityID.Yellow;
-			Item.defense = 28;
+			Item.defense = 41;
 		}
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
@@ -27,13 +27,14 @@ namespace MyFirstBasicMod.Items.Armor
 		}
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "You are glowing. Full set bonus: +4 defense";
-			player.statDefense = (int)(player.statDefense + 4.00);
+			player.setBonus = "You are glowing. Full set bonus: +4 defense, and +30% ranged damage.";
+			player.statDefense = (player.statDefense + 4);
+			player.GetDamage(DamageClass.Ranged) += .30f;
 		}
 		public override void UpdateEquip(Player player)
 		{
-            player.GetDamage(DamageClass.Melee) += .12f;
-			player.GetAttackSpeed(DamageClass.Melee) += .13f;
+            player.GetDamage(DamageClass.Ranged) += .12f;
+			player.GetCritChance(DamageClass.Ranged) += 13;
 
 		}
 		public override void ArmorSetShadows(Player player)

@@ -9,14 +9,14 @@ namespace MyFirstBasicMod.Items
 	{
 
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Pink's Gift");
-			Tooltip.SetDefault("A gift from the mod creator! Try researching it for infinite of it!");
+			// DisplayName.SetDefault("Pink's Gift");
+			// Tooltip.SetDefault("A gift from the mod creator! Try researching it for infinite of it!");
 
 			
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = Utils.Clamp(ItemLoader.ItemCount,1,9999);
 
 			// Use a MonoMod hook to allow our presents to run through the Sacrifice system.
-			On.Terraria.GameContent.Creative.CreativeUI.SacrificeItem_refItem_refInt32_bool += OnSacrificeItem;
+			Terraria.GameContent.Creative.On_CreativeUI.SacrificeItem_refItem_refInt32_bool += OnSacrificeItem;
 		}
 
 		public override void SetDefaults() {
@@ -24,7 +24,7 @@ namespace MyFirstBasicMod.Items
 		}
 
 		
-		private CreativeUI.ItemSacrificeResult OnSacrificeItem(On.Terraria.GameContent.Creative.CreativeUI.orig_SacrificeItem_refItem_refInt32_bool orig,
+		private CreativeUI.ItemSacrificeResult OnSacrificeItem(Terraria.GameContent.Creative.On_CreativeUI.orig_SacrificeItem_refItem_refInt32_bool orig,
 				ref Item item, out int amountWeSacrificed, bool returnRemainderToPlayer) {
 
 			if (item.type == Type && CreativeUI.GetSacrificesRemaining(Type) == 0) {

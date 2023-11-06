@@ -7,8 +7,8 @@ namespace MyFirstBasicMod.Items.Placeable
 	public class SylvsDoor : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Sylv's Door");
-			Tooltip.SetDefault("Sylv's very own door.\nMade by Sylv.");
+			// DisplayName.SetDefault("Sylv's Door");
+			// Tooltip.SetDefault("Sylv's very own door.\nMade by Sylv.");
 		}
 
 		public override void SetDefaults() {

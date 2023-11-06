@@ -7,17 +7,13 @@ using Terraria.DataStructures;
 
 namespace MyFirstBasicMod.Items.Weapons
 {
-    /// <summary>
-    ///     Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
-    ///     See Source code for Star Wrath projectile to see how it passes through tiles.
-    ///     For a detailed sword guide see <see cref="ExampleSword" />
-    /// </summary>
+    
     public class SwordOfDreams : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sword of Dreams");
-            Tooltip.SetDefault("This sword belongs to a user going by the name Dream.\nIt's OPNess is over 9000!!");
+            // DisplayName.SetDefault("Sword of Dreams");
+            // Tooltip.SetDefault("This sword belongs to a user going by the name Dream.\nIt's OPNess is over 9000!!");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -36,7 +32,7 @@ namespace MyFirstBasicMod.Items.Weapons
             Item.knockBack = 6;
             Item.crit = 9;
 
-            Item.value = Item.buyPrice(gold: 5);
+            Item.value = Item.buyPrice(gold: 25);
             Item.rare = ItemRarityID.Pink;
             Item.UseSound = SoundID.Item1;
 

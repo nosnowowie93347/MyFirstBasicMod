@@ -9,8 +9,8 @@ namespace MyFirstBasicMod.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Orange Ring");
-            Tooltip.SetDefault("5% increased movement speed");
+            // DisplayName.SetDefault("Orange Ring");
+            // Tooltip.SetDefault("5% increased movement speed");
         }
 
         public override void SetDefaults()

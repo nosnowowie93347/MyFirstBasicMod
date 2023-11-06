@@ -10,7 +10,7 @@ namespace MyFirstBasicMod.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("This is a modded bullet ammo."); // The Item's description, can be set to whatever you want.
+            // Tooltip.SetDefault("This is a modded bullet ammo."); // The Item's description, can be set to whatever you want.
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
 

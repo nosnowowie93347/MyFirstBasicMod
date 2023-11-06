@@ -30,18 +30,11 @@ namespace MyFirstBasicMod.Tiles
 
             DustType = ModContent.DustType<Sparkle>();
             AdjTiles = new int[] { TileID.Containers };
-            ChestDrop = ModContent.ItemType<Items.Placeable.PinksChest>();
 
             // Names
-            ContainerName.SetDefault("Pink's Chest");
 
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Pink's Chest");
-            AddMapEntry(new Color(200, 200, 200), name, MapChestName);
-
-            name = CreateMapEntryName(Name + "_Locked"); // With multiple map entries, you need unique translation keys.
-            name.SetDefault("Locked Pink's Chest");
-            AddMapEntry(new Color(0, 141, 63), name, MapChestName);
+            AddMapEntry(new Color(200, 200, 200), this.GetLocalization("MapEntry0"), MapChestName);
+            AddMapEntry(new Color(0, 141, 63), this.GetLocalization("MapEntry1"), MapChestName);
 
             // Placement
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
@@ -107,7 +100,7 @@ namespace MyFirstBasicMod.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ChestDrop);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Placeable.PinksChest>());
             Chest.DestroyChest(i, j);
         }
 
@@ -158,7 +151,7 @@ namespace MyFirstBasicMod.Tiles
                     int key = ModContent.ItemType<PinksChestKey>();
                     if (player.ConsumeItem(key) && Chest.Unlock(left, top)) {
                         if (Main.netMode == NetmodeID.MultiplayerClient) {
-                            NetMessage.SendData(MessageID.Unlock, -1, -1, null, player.whoAmI, 1f, left, top);
+                            NetMessage.SendData(MessageID.LockAndUnlock, -1, -1, null, player.whoAmI, 1f, left, top);
                         }
                     }
                 }

@@ -13,7 +13,7 @@ namespace MyFirstBasicMod.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pink's Hook"); // The item's name in-game.
+			// DisplayName.SetDefault("Pink's Hook"); // The item's name in-game.
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1; // Amount of this item needed to research and become available in Journey mode's duplication menu. Amount based on vanilla hooks' amount needed
 		}
@@ -52,7 +52,7 @@ namespace MyFirstBasicMod.Items
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("${ProjectileName.GemHookAmethyst}");
+            // DisplayName.SetDefault("${ProjectileName.GemHookAmethyst}");
         }
 
         public override void SetDefaults()

@@ -8,7 +8,7 @@ namespace MyFirstBasicMod.Items.Placeable
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("This is a modded chest.");
+            // Tooltip.SetDefault("This is a modded chest.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

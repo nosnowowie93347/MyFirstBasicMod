@@ -12,7 +12,7 @@ namespace MyFirstBasicMod.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pixel Ball");
+			// DisplayName.SetDefault("Pixel Ball");
 		}
 
 		public override void PlaySound()

@@ -10,7 +10,7 @@ namespace MyFirstBasicMod.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Amber Dagger");
+            // DisplayName.SetDefault("Amber Dagger");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 9;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -35,7 +35,7 @@ namespace MyFirstBasicMod.Projectiles
 			 target.AddBuff(BuffType<Cut>(), 500);
 		 } */
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
             for (int i = 0; i < 5; i++)
             {

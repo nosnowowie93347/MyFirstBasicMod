@@ -10,7 +10,7 @@ namespace MyFirstBasicMod.Items.Accessories
 	public class ManaHeart : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Heals you by 20 health for every 200 mana consumed.");
+			// Tooltip.SetDefault("Heals you by 20 health for every 200 mana consumed.");
 		}
 
 		public override void SetDefaults() {

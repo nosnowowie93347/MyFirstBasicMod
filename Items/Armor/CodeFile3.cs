@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hard Crystal Leggings");
-            Tooltip.SetDefault("Increases maximum minions by 2");
+            // DisplayName.SetDefault("Hard Crystal Leggings");
+            // Tooltip.SetDefault("Increases maximum minions by 2");
         }
 
         public override void SetDefaults()

@@ -10,8 +10,8 @@ namespace MyFirstBasicMod.Items
 	public class EpicSoul : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Soul of Epicness");
-			Tooltip.SetDefault("'Pure epicness'");
+			// DisplayName.SetDefault("Soul of Epicness");
+			// Tooltip.SetDefault("'Pure epicness'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             // ticksperframe, frameCount
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));

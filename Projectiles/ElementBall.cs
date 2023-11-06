@@ -11,7 +11,7 @@ namespace MyFirstBasicMod.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Elemental Ball");
+			// DisplayName.SetDefault("Elemental Ball");
 		}
 
 		public override void SetDefaults()
@@ -54,7 +54,7 @@ namespace MyFirstBasicMod.Projectiles
 			SoundEngine.PlaySound(SoundID.Item20, Projectile.position);
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if ((Main.expertMode || Main.rand.NextBool()) && Projectile.ai[0] >= 0f)
 			{

@@ -6,8 +6,8 @@ namespace MyFirstBasicMod.Items.Placeable
 	public class PinksBed : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("This is a modded bed.");
-			DisplayName.SetDefault("Pink's Bed");
+			// Tooltip.SetDefault("This is a modded bed.");
+			// DisplayName.SetDefault("Pink's Bed");
 		}
 
 		public override void SetDefaults() {

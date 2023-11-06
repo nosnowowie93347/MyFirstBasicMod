@@ -11,9 +11,9 @@ namespace MyFirstBasicMod.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hard Crystal Helm");
-            Tooltip.SetDefault("16% increased magic and summon damage"
-                + "\nIncreases maximum minions by 1");
+            // DisplayName.SetDefault("Hard Crystal Helm");
+            /* Tooltip.SetDefault("16% increased magic and summon damage"
+                + "\nIncreases maximum minions by 1"); */
         }
 
         public override void SetDefaults()

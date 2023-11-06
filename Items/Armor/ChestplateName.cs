@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items.Armor
     {
         
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Pink's Chestplate");
-            Tooltip.SetDefault("Pink's Chestplate");
+            // DisplayName.SetDefault("Pink's Chestplate");
+            // Tooltip.SetDefault("Pink's Chestplate");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -28,8 +28,6 @@ namespace MyFirstBasicMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetDamage(DamageClass.Melee) += 0.15f; //+15 % damage
-            player.GetDamage(DamageClass.Ranged) += 0.15f; //Ranged damage +45%
-            player.statDefense = (int)(player.statDefense * 1.00);  // 65% defense
             player.statLifeMax2 += 30;
         }
         public override void AddRecipes()

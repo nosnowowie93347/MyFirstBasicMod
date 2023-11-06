@@ -10,23 +10,22 @@ namespace MyFirstBasicMod.Items
 	public class BreadsShield : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault(""
-				+ "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 1000));
+			/* Tooltip.SetDefault(""
+				+ "\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 1000)); */
 		}
 
 		public override void SetDefaults() {
 			Item.width = 24;
 			Item.height = 28;
-			Item.value = 100000;
+			Item.value = 10000;
 			Item.rare = ItemRarityID.Green;
 			Item.accessory = true;
-			Item.defense = 100;
-			Item.lifeRegen = 19;
+			Item.defense = 10;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 
-            player.GetDamage(DamageClass.Generic) += 10f; // increase all damage by 1900%
+            player.GetDamage(DamageClass.Generic) += 0.10f; // increase all damage by 1900%
 
         }
 

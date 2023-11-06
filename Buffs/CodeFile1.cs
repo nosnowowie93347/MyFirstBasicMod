@@ -1,19 +1,17 @@
 ﻿using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MyFirstBasicMod.Buffs
 {
 	public class ExampleDefenseBuff : ModBuff
 	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Defensive Buff");
-			Description.SetDefault("Grants +12 defense.");
-		}
+		public static readonly int DefenseBonus = 12;
 
-		public override void Update(Player player, ref int buffIndex)
-		{
-			player.statDefense += 12; // Grant a +4 defense boost to the player while the buff is active.
+		public override LocalizedText Description => base.Description.WithFormatArgs(DefenseBonus);
+
+		public override void Update(Player player, ref int buffIndex) {
+			player.statDefense += DefenseBonus; // Grant a +4 defense boost to the player while the buff is active.
 		}
 	}
 }

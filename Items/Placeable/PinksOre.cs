@@ -11,7 +11,7 @@ namespace MyFirstBasicMod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pink's Ore");
+			// DisplayName.SetDefault("Pink's Ore");
 			ItemID.Sets.SortingPriorityMaterials[Item.type] = 58;
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         }

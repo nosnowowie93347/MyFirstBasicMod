@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items.Placeable
     public class SylvsBlock: ModItem
     {
     	public override void SetStaticDefaults() {
-    		Tooltip.SetDefault("This is Sylv's Block!");
-    		DisplayName.SetDefault("Sylv's Block");
+    		// Tooltip.SetDefault("This is Sylv's Block!");
+    		// DisplayName.SetDefault("Sylv's Block");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()

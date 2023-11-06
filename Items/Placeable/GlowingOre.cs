@@ -9,8 +9,8 @@ namespace MyFirstBasicMod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glowing Ore");
-			Tooltip.SetDefault("'Glowing metal'");
+			// DisplayName.SetDefault("Glowing Ore");
+			// Tooltip.SetDefault("'Glowing metal'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 110;
         }
 

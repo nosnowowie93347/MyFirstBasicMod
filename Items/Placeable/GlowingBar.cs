@@ -8,7 +8,7 @@ namespace MyFirstBasicMod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glowing Bar");
+			// DisplayName.SetDefault("Glowing Bar");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
 

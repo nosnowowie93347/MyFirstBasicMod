@@ -10,7 +10,7 @@ namespace MyFirstBasicMod.Items.Placeable
 		public override void SetStaticDefaults()
 		{
 			ItemID.Sets.SortingPriorityMaterials[Item.type] = 59; // influences the inventory sort order. 59 is PlatinumBar, higher is more valuable.
-			DisplayName.SetDefault("Pink's Bar");
+			// DisplayName.SetDefault("Pink's Bar");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
 

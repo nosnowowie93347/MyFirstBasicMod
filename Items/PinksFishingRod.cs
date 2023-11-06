@@ -13,9 +13,9 @@ namespace MyFirstBasicMod.Items
 	public class PinksFishingRod : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Pink's Fishing Rod");
-			Tooltip.SetDefault("Fires multiple lines at once. Can fish in lava.\n" +
-				"The fishing line never snaps.");
+			// DisplayName.SetDefault("Pink's Fishing Rod");
+			/* Tooltip.SetDefault("Fires multiple lines at once. Can fish in lava.\n" +
+				"The fishing line never snaps."); */
 
 			// Allows the pole to fish in lava
 			ItemID.Sets.CanFishInLava[Item.type] = true;

@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.GameContent.ObjectInteractions;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
@@ -59,11 +60,11 @@ namespace MyFirstBasicMod.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			TileID.Sets.HasOutlines[Type] = true;
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Sylv's Door");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Sylv's Door");
 			AddMapEntry(new Color(200, 200, 200), name);
 			AdjTiles = new int[] { TileID.OpenDoor };
-			CloseDoorID = TileType<SylvsDoorClosed>();
+			TileID.Sets.CloseDoorID[Type] = TileType<SylvsDoorClosed>();
 		}
 
 		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)

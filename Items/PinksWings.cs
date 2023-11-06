@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("These wings are very pink.");
-            DisplayName.SetDefault("Pink's Wings");
+            // Tooltip.SetDefault("These wings are very pink.");
+            // DisplayName.SetDefault("Pink's Wings");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
             

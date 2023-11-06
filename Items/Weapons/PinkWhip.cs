@@ -1,4 +1,5 @@
 using MyFirstBasicMod.Projectiles;
+using MyFirstBasicMod.Items.Placeable;
 using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -9,7 +10,7 @@ namespace MyFirstBasicMod.Items.Weapons
     public class PinkWhip : ModItem
     {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Pink Whip");
+            // DisplayName.SetDefault("Pink Whip");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

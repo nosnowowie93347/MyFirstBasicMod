@@ -9,7 +9,7 @@ namespace MyFirstBasicMod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("This is a modded Anvil.");
+			// Tooltip.SetDefault("This is a modded Anvil.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
         }
 

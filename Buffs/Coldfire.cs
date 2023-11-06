@@ -7,8 +7,8 @@ namespace MyFirstBasicMod.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cold Fire");
-            Description.SetDefault("You're Slow.");
+            // DisplayName.SetDefault("Cold Fire");
+            // Description.SetDefault("You're Slow.");
             Main.debuff[Type] = true;
             Main.buffNoTimeDisplay[Type] = false;
         }

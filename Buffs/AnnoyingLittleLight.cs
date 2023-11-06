@@ -8,8 +8,8 @@ namespace MyFirstBasicMod.Buffs
 	public class AnnoyingLittleLight : ModBuff
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Annoying Little Light");
-			Description.SetDefault("Ugh, soooo annoying");
+			// DisplayName.SetDefault("Annoying Little Light");
+			// Description.SetDefault("Ugh, soooo annoying");
 
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.lightPet[Type] = true;

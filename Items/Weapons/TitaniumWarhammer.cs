@@ -8,7 +8,7 @@ namespace MyFirstBasicMod.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Titanium Warhammer");
+            // DisplayName.SetDefault("Titanium Warhammer");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

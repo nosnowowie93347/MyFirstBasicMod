@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using MyFirstBasicMod.NPCs;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using Terraria.Localization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,23 +28,44 @@ namespace MyFirstBasicMod
 		public const int maxPinkLifeFruits = 20;
         public int pinkLifeFruits;
 
-        public int constantDamage { get; internal set; }
-        public override void ResetEffects () {
-        	Player.statLifeMax2 += pinkLifeFruits * 5;
+        public override void ModifyMaxStats(out StatModifier health, out StatModifier mana) {
+			health = StatModifier.Default;
+			health.Base = pinkLifeFruits * PinksLifeFruit.LifePerFruit;
+			mana = StatModifier.Default;
+			// Alternatively:  health = StatModifier.Default with { Base = exampleLifeFruits * ExampleLifeFruit.LifePerFruit };
+			
+		}
 
-        }
         public override void SyncPlayer(int toWho, int fromWho, bool newPlayer) {
 			ModPacket packet = Mod.GetPacket();
 			packet.Write((byte)Player.whoAmI);
-			packet.Write(pinkLifeFruits);
+			packet.Write((byte)pinkLifeFruits);
 			packet.Send(toWho, fromWho);
 		}
+
+		public void ReceivePlayerSync(BinaryReader reader) {
+			pinkLifeFruits = reader.ReadByte();
+		}
+
+		public override void CopyClientState(ModPlayer targetCopy) {
+			PinksPlayer clone = (PinksPlayer)targetCopy;
+			clone.pinkLifeFruits = pinkLifeFruits;
+		}
+
+		public override void SendClientChanges(ModPlayer clientPlayer) {
+			PinksPlayer clone = (PinksPlayer)clientPlayer;
+
+			if (pinkLifeFruits != clone.pinkLifeFruits) {
+				SyncPlayer(toWho: -1, fromWho: Main.myPlayer, newPlayer: false);
+			}
+		}
+
         public override void SaveData(TagCompound tag) {
 			tag["pinkLifeFruits"] = pinkLifeFruits;
 		}
 
 		public override void LoadData(TagCompound tag) {
-			pinkLifeFruits = (int) tag["pinkLifeFruits"];
+			pinkLifeFruits = tag.GetInt("pinkLifeFruits");
 		}
         public override void OnConsumeMana(Item item, int manaConsumed) {
 			if (manaHeart) {

@@ -9,8 +9,8 @@ namespace MyFirstBasicMod.Items.Placeable
 	public class PinksWorkbench : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("This is a modded workbench.");
-            DisplayName.SetDefault("Pink's Work Bench");
+			// Tooltip.SetDefault("This is a modded workbench.");
+            // DisplayName.SetDefault("Pink's Work Bench");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 30;
         }
 

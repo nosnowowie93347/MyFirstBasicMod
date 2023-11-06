@@ -11,8 +11,8 @@ namespace MyFirstBasicMod.Items
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Pink's Sword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("It's OPNess is over 9000!!");
+			// DisplayName.SetDefault("Pink's Sword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			// Tooltip.SetDefault("It's OPNess is over 9000!!");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
