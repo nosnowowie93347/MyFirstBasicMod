@@ -1,4 +1,4 @@
 displayName = My First Basic Mod
 author = Pinkalicious21902
-version = 1.15
+version = 1.16
 hideCode = true
